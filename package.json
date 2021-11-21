@@ -1,12 +1,28 @@
 {
-  "devDependencies": {
-    "webpack": "^5.64.2"
+  "name": "react-movies-app",
+  "version": "1.0.0",
+  "description": "React app",
+  "scripts": {
+    "build": "webpack --config webpack.config.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Olga2157/react-movies-app.git"
+  },
+  "author": "Olga Goliakova",
+  "license": "ISC",
   "dependencies": {
-    "jest": "^27.3.1",
-    "react": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router": "^6.0.2",
-    "redux": "^4.1.2"
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.8.24",
+    "@types/react-dom": "^16.0.5",
+    "@types/webpack": "4.1.4",
+    "html-webpack-plugin": "^4.5.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.4.3",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
   }
 }
