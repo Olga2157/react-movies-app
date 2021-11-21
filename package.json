@@ -11,6 +11,12 @@
   },
   "author": "Olga Goliakova",
   "license": "ISC",
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
