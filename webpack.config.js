@@ -1,38 +1,57 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: "none",
-  entry: {
-    app: path.join(__dirname, "src", "index.tsx"),
+  entry: path.join(__dirname, "src", "index.tsx"),
+  output: {
+    path: path.resolve(__dirname, "build"),
+    filename: "bundle.js",
   },
-  target: "web",
+  devServer: {
+    static: "./build",
+    port: 5500,
+    historyApiFallback: true,
+  },
   resolve: {
-    extensions: [".ts", ".tsx", ".js"],
+    modules: [path.join(__dirname, "src"), "node_modules"],
+    alias: {
+      react: path.join(__dirname, "node_modules", "react"),
+    },
   },
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: "/node_modules/",
-      },
-      {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "ts-loader",
+        },
+      },
+      // Optimize CSS Loading
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
+      },
+      // Handle Images
+      {
+        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        use: ["file-loader"],
+      },
     ],
   },
-  output: {
-    filename: "[name].js",
-    path: path.resolve(__dirname, "dist"),
-  },
+  resolve: { extensions: [".tsx", ".ts", ".js", ".jsx"] },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
     }),
+    new MiniCssExtractPlugin(),
   ],
 };
