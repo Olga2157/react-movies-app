@@ -6,6 +6,7 @@ import ResultsFilters from "./ResultsFilters";
 import ResultsSort from "./ResultsSort";
 import MoviesCounterComponent from "./MoviesCounterComponent";
 import Footer from "../shared/Footer";
+import AddMoviePopup from "./AddMoviePopup";
 
 const HomePage: React.FC<{}> = (props) => {
   return (
@@ -35,6 +36,7 @@ const HomePage: React.FC<{}> = (props) => {
           <Col><Footer /></Col>
         </Row>
       </Container>
+    <AddMoviePopup/>
     </React.Fragment>
   );
 };
