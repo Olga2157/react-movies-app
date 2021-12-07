@@ -151,3 +151,64 @@ footer {
 
   /* todo: check index later */
 }
+
+/* styles for pagination */
+
+#nav-pagination {
+  position: relative;
+  display: flex;
+  flex: row;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.pagination-item-style {
+  margin-left: 5px;
+}
+
+.pagination-item-style .page-link {
+  color: #fff;
+}
+
+.pagination-item-style.page-item.active button {
+  background-color: #f65261;
+  border-color: #f65261;
+}
+
+.pagination-link-style {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.pagination-link-style:hover {
+  background-color: #232323;
+}
+
+.pagination-link-style:active {
+  background-color: #f65261;
+}
+
+.pagination-link-style-arrow {
+  /* background-color: #555; */
+  color: black;
+  border-radius: 5px;
+}
+
+.pagination-link-style-arrow:hover {
+  /* background-color: #232323; */
+  color: black;
+}
+
+.pagination-link-style-arrow:active {
+  color: black;
+
+  /* background-color: #232323; */
+}
+
+#next-page {
+  margin-left: 5px;
+}
+
+.pagination button {
+  width: 40px;
+}

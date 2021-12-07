@@ -8,6 +8,7 @@ import MoviesCounterComponent from "./MoviesCounterComponent";
 import Footer from "../shared/Footer";
 import MovieList from "./MovieList";
 import AddMoviePopup from "./AddMoviePopup";
+import PaginationComponent from "./PaginationComponent";
 
 const HomePage: React.FC<{}> = (props) => {
   return (
@@ -32,6 +33,9 @@ const HomePage: React.FC<{}> = (props) => {
         </Row>
         <Row>
           <MovieList />
+        </Row>
+        <Row >
+          <Col className='text-center'><PaginationComponent /></Col>
         </Row>
         <Row>
           <Col><Footer /></Col>
