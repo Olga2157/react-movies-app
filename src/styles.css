@@ -105,7 +105,16 @@ footer {
   height: auto;
 }
 
+.burger-menu-movie {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: 100px;
+}
 
+.burger-menu-movie button {
+  width: 60px;
+}
 
 .movie-details {
   height: 30px;

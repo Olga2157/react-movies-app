@@ -1,4 +1,5 @@
 import * as React from "react";
+import BurgerMenu from "./BurgerMenu";
 
 type MovieProps = {
   movieName: string;
@@ -16,6 +17,7 @@ class Movie extends React.Component<MovieProps, MovieState> {
       <React.Fragment>
         <div>
           <img src={this.props.moviePath} alt="" />
+          <BurgerMenu />
         </div>
         <div className="d-flex flex-row justify-content-between movie-details">
           <div className="p-2">
