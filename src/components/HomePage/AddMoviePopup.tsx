@@ -6,7 +6,7 @@ const AddMoviePopup: React.FC<{}> = (props) => {
   const popupClass = "popup-container invisible";
   const popupId = "add-movie-popup";
 
-  const closePopup = function () {
+  const closePopup = () => {
     let addMoviePopup = document.getElementById(
       popupId
     ) as HTMLButtonElement;
@@ -18,7 +18,7 @@ const AddMoviePopup: React.FC<{}> = (props) => {
       <div>
         <Button close onClick={closePopup} />
       </div>
-      {/* <p className="text-black-50">to be added smt...</p> */}
+      <p className="text-black-50">to be added smt...</p>
     </div>
   );
 };

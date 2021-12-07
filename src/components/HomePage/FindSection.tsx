@@ -5,7 +5,7 @@ import Heading from '../shared/Heading';
 
 const FindSection: React.FC<{}> = props => {
 
-  const addMovieClick = function () {
+  const addMovieClick = () => {
     let addMoviePopup = document.getElementById("add-movie-popup") as HTMLButtonElement;
     addMoviePopup.classList.remove("invisible");
     // todo: add logic when I start task 4 and 7

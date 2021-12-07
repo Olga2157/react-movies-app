@@ -4,10 +4,10 @@ import SortOrderButton from './SortOrderButton';
 
 const ResultsSort: React.FC<{}> = props => {
 
-  const sortFilterClick = function () {
+  const sortFilterClick = () => {
     // todo: add logic when I start next tasks
   }
-  const sortOrderClick = function () {
+  const sortOrderClick = () => {
     // todo: add logic when I start next tasks
   }
   const choosenSortOrder = "desc";

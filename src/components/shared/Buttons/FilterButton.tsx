@@ -14,7 +14,7 @@ class FilterButton extends React.Component<FilterButtonProps, FilterButtonState>
     render() {
 
         return (
-            <Button id={this.props.buttonId} color="dark" onClick={this.props.listener}  data-bs-toggle="button" aria-pressed="true" autocomplete="off" className="text-uppercase btn btn-primary  active">{this.props.buttonText}</Button>
+            <Button id={this.props.buttonId} color="dark" onClick={this.props.listener}  data-bs-toggle="button" aria-pressed="true" autoComplete="off" className="text-uppercase btn btn-primary  active w-auto">{this.props.buttonText}</Button>
         );
     }
 }
