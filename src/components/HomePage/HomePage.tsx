@@ -6,6 +6,7 @@ import ResultsFilters from "./ResultsFilters";
 import ResultsSort from "./ResultsSort";
 import MoviesCounterComponent from "./MoviesCounterComponent";
 import Footer from "../shared/Footer";
+import MovieList from "./MovieList";
 import AddMoviePopup from "./AddMoviePopup";
 
 const HomePage: React.FC<{}> = (props) => {
@@ -30,21 +31,15 @@ const HomePage: React.FC<{}> = (props) => {
           <MoviesCounterComponent />
         </Row>
         <Row>
-          here section with movies will be added
+          <MovieList />
         </Row>
         <Row>
           <Col><Footer /></Col>
         </Row>
       </Container>
-    <AddMoviePopup/>
+      <AddMoviePopup />
     </React.Fragment>
   );
 };
 
 export default HomePage;
-
-// test adding images
-// import MyImage from 'images/IMG_test.jpg';
-
-// const imgSrc = "../../images/IMG_test.jpg";
-// <img src={MyImage} alt="the road" />

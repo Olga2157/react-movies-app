@@ -16,11 +16,6 @@ body {
   padding: 30px 50px;
 }
 
-img {
-  width: 500px;
-  height: auto;
-}
-
 .logo-message {
   color: #f65261;
 }
@@ -33,8 +28,6 @@ button {
 #color-active-button .chosen {
   background-color: coral;
 }
-
-/* todo: add color to footer */
 
 footer {
   background-color: #555;
@@ -61,6 +54,66 @@ footer {
 
 .row-flex button {
   border-radius: 5px;
+}
+
+/* styles for section with movies */
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.item {
+  flex: 0 1 calc(100% / 4 - 20px);
+  min-height: 450px;
+  margin: 10px;
+  background: #232323;
+}
+
+@media (max-width: 1155px) {
+  .item {
+    flex: 0 1 calc(100% / 3 - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .item {
+    flex: 0 1 calc(100% / 2 - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex: 0 1 100%;
+  }
+}
+
+.movie-area {
+  position: relative;
+  height: auto;
+}
+
+.movie-area img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+.movie-details {
+  height: 30px;
+  font-size: 14px;
+}
+
+.movie-details-genre {
+  font-size: 11px;
 }
 
 /* invisible elements */
