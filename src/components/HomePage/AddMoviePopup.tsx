@@ -1,16 +1,15 @@
-import * as React from "react";
-import { Button } from "reactstrap";
+import * as React from 'react';
+import { Button } from 'reactstrap';
 
-const AddMoviePopup: React.FC<{}> = (props) => {
-
-  const popupClass = "popup-container invisible";
-  const popupId = "add-movie-popup";
+const AddMoviePopup: React.FC<{}> = () => {
+  const popupClass = 'popup-container invisible';
+  const popupId = 'add-movie-popup';
 
   const closePopup = () => {
-    let addMoviePopup = document.getElementById(
-      popupId
+    const addMoviePopup = document.getElementById(
+      popupId,
     ) as HTMLButtonElement;
-    addMoviePopup.classList.add("invisible");
+    addMoviePopup.classList.add('invisible');
   };
 
   return (

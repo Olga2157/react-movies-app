@@ -1,32 +1,30 @@
-import * as React from "react";
-import { Component } from "react";
+import React from 'react';
 import {
   Collapse,
   Nav,
   Navbar,
   NavbarToggler,
   NavItem,
-} from "reactstrap";
+} from 'reactstrap';
 
 type BurgerMenuProps = {
 };
 type BurgerMenuState = {
   isOpen: boolean;
 };
-class BurgerMenu extends Component<BurgerMenuProps, BurgerMenuState> {
+class BurgerMenu extends React.Component<BurgerMenuProps, BurgerMenuState> {
   constructor(props: BurgerMenuProps) {
     super(props);
 
     this.state = {
-      isOpen: false
+      isOpen: false,
     };
-
     this.toggle = this.toggle.bind(this);
   }
 
   toggle() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
 
@@ -34,23 +32,21 @@ class BurgerMenu extends Component<BurgerMenuProps, BurgerMenuState> {
 
   render() {
     return (
-      <>
-        <div className="burger-menu-movie">
-          <Navbar color="light" light>
-            <NavbarToggler className="me-2" onClick={this.toggle} />
-            <Collapse navbar isOpen={this.state.isOpen} className="mt-2">
-              <Nav navbar>
-                <NavItem>
-                  <button className="btn btn-light btn-block border-bottom m-0">Edit</button>
-                </NavItem>
-                <NavItem>
-                  <button className="btn btn-light btn-block border-bottom mt-2">Delete</button>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
-        </div>
-      </>
+      <div className="burger-menu-movie">
+        <Navbar color="light" light>
+          <NavbarToggler className="me-2" onClick={this.toggle} />
+          <Collapse navbar isOpen={this.state.isOpen} className="mt-2">
+            <Nav navbar>
+              <NavItem>
+                <button type="button" className="btn btn-light btn-block border-bottom m-0">Edit</button>
+              </NavItem>
+              <NavItem>
+                <button type="button" className="btn btn-light btn-block border-bottom mt-2">Delete</button>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
     );
   }
 }

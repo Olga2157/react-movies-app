@@ -1,5 +1,5 @@
-import * as React from "react";
-import BurgerMenu from "./BurgerMenu";
+import * as React from 'react';
+import BurgerMenu from './BurgerMenu';
 
 type MovieProps = {
   movieName: string;
@@ -11,24 +11,26 @@ type MovieState = {
 };
 
 class Movie extends React.Component<MovieProps, MovieState> {
-
   render() {
+    const {
+      moviePath, movieName, movieYear, movieGenre,
+    } = this.props;
     return (
-      <React.Fragment>
+      <>
         <div>
-          <img src={this.props.moviePath} alt="" />
+          <img src={moviePath} alt="" />
           <BurgerMenu />
         </div>
         <div className="d-flex flex-row justify-content-between movie-details">
           <div className="p-2">
-            <p>{this.props.movieName}</p>
+            <p>{movieName}</p>
           </div>
-          <div className="p-2">{this.props.movieYear}</div>
+          <div className="p-2">{movieYear}</div>
         </div>
         <div className="p-2 movie-details-genre">
-          <p>{this.props.movieGenre}</p>
+          <p>{movieGenre}</p>
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

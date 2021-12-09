@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 import { Container } from 'reactstrap';
 import { MovieInfo } from '../../types';
 import Movie from './Movie';
@@ -8,47 +8,54 @@ type MovieListProps = {
 }
 type MovieListState = {}
 class MovieList extends React.Component<MovieListProps, MovieListState> {
-
   private static movies: MovieInfo[] = [
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Black Panther", posterPath: "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+      title: 'Black Panther',
+      posterPath: 'https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg',
       year: 2018,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Animation, Adventure,Family, Comedy"
+      genre: 'Animation, Adventure,Family, Comedy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
     {
-      title: "Star Wars: The Last Jedi", posterPath: "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+      title: 'Star Wars: The Last Jedi',
+      posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
-      genre: "Fantasy"
+      genre: 'Fantasy',
     },
   ];
 
@@ -56,10 +63,10 @@ class MovieList extends React.Component<MovieListProps, MovieListState> {
     return (
       <Container>
         {MovieList.movies.map((movie, id) => (
-          <div className="item d-flex flex-column movie-area"><Movie movieName={movie.title} movieGenre={movie.genre} movieYear={movie.year} moviePath={movie.posterPath} /></div>
+          <div key={id} className="item d-flex flex-column movie-area"><Movie movieName={movie.title} movieGenre={movie.genre} movieYear={movie.year} moviePath={movie.posterPath} /></div>
         ))}
       </Container>
     );
   }
 }
-export default MovieList
+export default MovieList;

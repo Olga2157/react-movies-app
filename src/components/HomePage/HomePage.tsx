@@ -1,18 +1,18 @@
-import * as React from "react";
-import { Col, Container, Row } from "reactstrap";
-import Header from "../shared/Header";
-import FindSection from "./FindSection";
-import ResultsFilters from "./ResultsFilters";
-import ResultsSort from "./ResultsSort";
-import MoviesCounterComponent from "./MoviesCounterComponent";
-import Footer from "../shared/Footer";
-import MovieList from "./MovieList";
-import AddMoviePopup from "./AddMoviePopup";
-import PaginationComponent from "./PaginationComponent";
+import * as React from 'react';
+import { Col, Container, Row } from 'reactstrap';
+import Header from '../shared/Header';
+import FindSection from './FindSection';
+import ResultsFilters from './ResultsFilters';
+import ResultsSort from './ResultsSort';
+import MoviesCounterComponent from './MoviesCounterComponent';
+import Footer from '../shared/Footer';
+import MovieList from './MovieList';
+import AddMoviePopup from './AddMoviePopup';
+import PaginationComponent from './PaginationComponent';
 
-const HomePage: React.FC<{}> = (props) => {
+const HomePage: React.FC<{}> = () => {
   return (
-    <React.Fragment>
+    <>
       <Container fluid>
         <Row>
           <Col><Header /></Col>
@@ -34,15 +34,15 @@ const HomePage: React.FC<{}> = (props) => {
         <Row>
           <MovieList />
         </Row>
-        <Row >
-          <Col className='text-center'><PaginationComponent /></Col>
+        <Row>
+          <Col className="text-center"><PaginationComponent /></Col>
         </Row>
         <Row>
           <Col><Footer /></Col>
         </Row>
       </Container>
       <AddMoviePopup />
-    </React.Fragment>
+    </>
   );
 };
 

@@ -3,7 +3,7 @@ export type FilterButtonInfo = {
   buttonText: string;
   };
 
-  export type MovieInfo = {
+export type MovieInfo = {
     // movieId: number;
     title: string;
     posterPath: string;

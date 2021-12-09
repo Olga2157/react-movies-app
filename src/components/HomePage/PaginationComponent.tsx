@@ -19,7 +19,7 @@ class PaginationComponent extends React.Component<PaginationComponentProps, Pagi
       currentPage: 2,
       totalPages: 10,
       pageSize: 8,
-      pages: [1, 2]
+      pages: [1, 2],
     };
 
     this.changePage = this.changePage.bind(this);
@@ -37,47 +37,47 @@ class PaginationComponent extends React.Component<PaginationComponentProps, Pagi
 
       <Pagination id="nav-pagination">
         <PaginationItem>
-          <PaginationLink className={'pagination-link-style-arrow'} previous />
+          <PaginationLink className="pagination-link-style-arrow" previous />
         </PaginationItem>
         {/* Now the is just mock data in UI. Will be changed in the next tasks */}
         <PaginationItem
           key={0}
-          className={'pagination-item-style'}
+          className="pagination-item-style"
           active={false}
         >
           <PaginationLink
 
-            className={'pagination-link-style'}
+            className="pagination-link-style"
           >
             1
           </PaginationLink>
         </PaginationItem>
         <PaginationItem
           key={1}
-          className={'pagination-item-style'}
-          active={true}
+          className="pagination-item-style"
+          active
         >
           <PaginationLink
 
-            className={'pagination-link-style'}
+            className="pagination-link-style"
           >
             2
           </PaginationLink>
         </PaginationItem>
         <PaginationItem
           key={2}
-          className={'pagination-item-style'}
+          className="pagination-item-style"
           active={false}
         >
           <PaginationLink
-            className={'pagination-link-style'}
+            className="pagination-link-style"
           >
             3
           </PaginationLink>
         </PaginationItem>
 
         <PaginationItem>
-          <PaginationLink id="next-page" className={'pagination-link-style-arrow'} next />
+          <PaginationLink id="next-page" className="pagination-link-style-arrow" next />
         </PaginationItem>
       </Pagination>
     );

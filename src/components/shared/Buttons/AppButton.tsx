@@ -1,5 +1,4 @@
-import * as React from 'react'
-import { MouseEventHandler } from "react";
+import React, { MouseEventHandler } from 'react';
 import { Button } from 'reactstrap';
 
 type AppButtonProps = {
@@ -11,14 +10,13 @@ type AppButtonProps = {
 type AppButtonState = {}
 
 class AppButton extends React.Component<AppButtonProps, AppButtonState> {
-
-    render() {
-
-        return (
-            <Button id={this.props.buttonId} onClick={this.props.listener} color="danger" className="text-uppercase">{this.props.buttonText}</Button>
-            // className={this.props.class}
-        );
-    }
+  render() {
+    const { buttonId, listener, buttonText } = this.props;
+    return (
+      <Button id={buttonId} onClick={listener} color="danger" className="text-uppercase">{buttonText}</Button>
+    // className={this.props.class}
+    );
+  }
 }
 
-export default AppButton
+export default AppButton;

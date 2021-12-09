@@ -33,10 +33,10 @@ footer {
   background-color: #555;
   position: fixed;
   height: 50px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  margin-bottom: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
 }
 
 #add-movie-btn {
@@ -107,8 +107,8 @@ footer {
 
 .burger-menu-movie {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 0;
+  right: 0;
   width: 100px;
 }
 
