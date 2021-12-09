@@ -5,8 +5,6 @@ import {
 } from 'reactstrap';
 
 type SortByButtonProps = {
-  buttonId: string;
-  buttonText: string,
   listener?: MouseEventHandler<HTMLButtonElement>
 }
 type SortByButtonState = {}
@@ -14,21 +12,26 @@ type SortByButtonState = {}
 class SortByButton extends React.Component<SortByButtonProps, SortByButtonState> {
   render() {
     return (
-      <ButtonDropdown
-        toggle={function sortFunction() { }}
-      >
-        <DropdownToggle caret>
-          Choose
-        </DropdownToggle>
-        <DropdownMenu>
-          <DropdownItem header>
-            Release date
-          </DropdownItem>
-          <DropdownItem divider>
-            Rating
-          </DropdownItem>
-        </DropdownMenu>
-      </ButtonDropdown>
+      <div className="row-flex">
+        <ButtonDropdown id="sort-filter"
+          toggle={function sortFunction() { }}
+        >
+          <DropdownToggle caret>
+            Sort
+          </DropdownToggle>
+          <DropdownMenu>
+            <DropdownItem divider>
+              Highest Rating
+            </DropdownItem>
+            <DropdownItem divider>
+              Newest
+            </DropdownItem>
+            <DropdownItem divider>
+              Top Rated
+            </DropdownItem>
+          </DropdownMenu>
+        </ButtonDropdown>
+      </div>
     );
   }
 }

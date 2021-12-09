@@ -49,7 +49,7 @@ footer {
   display: flex;
   width: 300px;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: right;
 }
 
 .row-flex button {

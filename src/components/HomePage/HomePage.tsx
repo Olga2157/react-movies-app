@@ -3,12 +3,12 @@ import { Col, Container, Row } from 'reactstrap';
 import Header from '../shared/Header';
 import FindSection from './FindSection';
 import ResultsFilters from './ResultsFilters';
-import ResultsSort from './ResultsSort';
 import MoviesCounterComponent from './MoviesCounterComponent';
 import Footer from '../shared/Footer';
 import MovieList from './MovieList';
 import AddMoviePopup from './AddMoviePopup';
 import PaginationComponent from './PaginationComponent';
+import SortByButton from './SortByButton';
 
 const HomePage: React.FC<{}> = () => {
   return (
@@ -25,7 +25,7 @@ const HomePage: React.FC<{}> = () => {
             <ResultsFilters />
           </Col>
           <Col xs={6} md={4}>
-            <ResultsSort />
+            <SortByButton />
           </Col>
         </Row>
         <Row>
