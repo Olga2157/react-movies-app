@@ -2,7 +2,7 @@ import * as React from 'react';
 import SortByButton from './SortByButton';
 import SortOrderButton from './SortOrderButton';
 
-const ResultsSort: React.FC<{}> = function (props) {
+const ResultsSort: React.FC<{}> = () => {
   const sortFilterClick = () => {
     // todo: add logic when I start next tasks
   };
