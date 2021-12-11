@@ -8,7 +8,7 @@ import Footer from '../shared/Footer';
 import MovieList from './MovieList';
 import PaginationComponent from './PaginationComponent';
 import SortByButton from './SortByButton';
-import AddMovieModal from './AddMovieModal';
+import AddMovieModal from './Modals/AddMovieModal';
 
 const HomePage: React.FC<{}> = () => {
   return (

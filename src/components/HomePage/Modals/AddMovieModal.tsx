@@ -1,18 +1,13 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import AppButton from '../shared/Buttons/AppButton';
+import AppButton from '../../shared/Buttons/AppButton';
+import AddMovieForm from '../Forms/AddMovieForm';
 
 const AddMovieModal: React.FC<{}> = () => {
 
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
-  const resetFunction = () => {
-    // todo: add logic later
-  }
-  const submitFunction = () => {
-    // todo: add logic later
-  }
 
   return (
     <>
@@ -31,23 +26,8 @@ const AddMovieModal: React.FC<{}> = () => {
         ADD MOVIE
       </ModalHeader>
       <ModalBody>
-        {/* todo: add form */}
+        <AddMovieForm/>
       </ModalBody>
-      <ModalFooter>
-        <Button type="reset"
-          color="outline-danger"  className="text-uppercase"
-          onClick={resetFunction}
-        >
-          Reset
-        </Button>
-        <Button type="submit"
-          color="danger"  className="text-uppercase"
-          onClick={submitFunction}
-        >
-          Submit
-        </Button>
-        {/* <AppButton buttonId="submit-btn" listener={submitFunction} buttonText="Submit" /> */}
-      </ModalFooter>
     </Modal>
   </div>
   </>

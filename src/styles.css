@@ -138,6 +138,7 @@ footer {
 
 .modal-header {
   border-bottom: none;
+  /* color: rgb(215, 210, 210); */
 }
 
 .modal-footer {
@@ -151,6 +152,25 @@ footer {
 /* question: In react-bootstrap we can add closeVariant='white' 
 for ModalHeader in AddMovieModal instead of changing background-color in css.
 what we can add in reactstrap for ModalHeader in AddMovieModal ? */
+
+/* styles for form */
+
+/* todo choose the style for forms: light or dark? */
+/* #addMovieFormId input,
+#addMovieFormId textarea,
+#addMovieFormId select {
+  background-color: #424242;
+  color: rgb(215, 210, 210);
+  border: black;
+} */
+
+#addMovieFormId label {
+  color: #f65261;
+}
+
+/* ::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+} */
 
 /* styles for pagination */
 
