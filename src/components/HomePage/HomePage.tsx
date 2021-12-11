@@ -6,17 +6,16 @@ import ResultsFilters from './ResultsFilters';
 import MoviesCounterComponent from './MoviesCounterComponent';
 import Footer from '../shared/Footer';
 import MovieList from './MovieList';
-import AddMoviePopup from './AddMoviePopup';
 import PaginationComponent from './PaginationComponent';
 import SortByButton from './SortByButton';
+import AddMovieModal from './AddMovieModal';
 
 const HomePage: React.FC<{}> = () => {
   return (
     <>
+    <Header />
+      
       <Container fluid>
-        <Row>
-          <Col><Header /></Col>
-        </Row>
         <Row>
           <Col><FindSection /></Col>
         </Row>
@@ -37,11 +36,10 @@ const HomePage: React.FC<{}> = () => {
         <Row>
           <Col className="text-center"><PaginationComponent /></Col>
         </Row>
-        <Row>
-          <Col><Footer /></Col>
-        </Row>
-      </Container>
-      <AddMoviePopup />
+      </Container>  
+
+      <AddMovieModal/>   
+      <Footer />
     </>
   );
 };

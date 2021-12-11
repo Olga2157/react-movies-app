@@ -125,32 +125,32 @@ footer {
   font-size: 11px;
 }
 
-/* invisible elements */
+/* invisible elements
 
 .invisible {
   display: none;
+} */
+
+.my-modal .modal-content {
+  background-color: #232323;
+  padding: 2%;
 }
 
-.popup-container {
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  width: 50%;
-  height: 60%;
-  min-width: 200px;
-  min-height: 250px;
-  background: #fff;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  padding: 5%;
-  z-index: 5;
-
-  /* todo: check index later */
+.modal-header {
+  border-bottom: none;
 }
+
+.modal-footer {
+  border-top: none;
+}
+
+.modal-header button {
+  background-color: white;
+}
+
+/* question: In react-bootstrap we can add closeVariant='white' 
+for ModalHeader in AddMovieModal instead of changing background-color in css.
+what we can add in reactstrap for ModalHeader in AddMovieModal ? */
 
 /* styles for pagination */
 
