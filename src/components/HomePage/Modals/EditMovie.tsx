@@ -1,18 +1,18 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Button, Modal, ModalBody, ModalFooter, ModalHeader } from 'reactstrap';
-import AppButton from '../../shared/Buttons/AppButton';
-import AddMovieForm from '../Forms/AddMovieForm';
+import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { MovieInfo } from '../../../types';
+import EditMovieForm from '../Forms/EditMovieForm';
 
-const AddMovieModal: React.FC<{}> = () => {
-
+const EditMovie: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
+  
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 
   return (
     <>
-    <div>
-    <AppButton buttonId="add-movie-btn" listener={handleShow} buttonText="+ Add movie" />
+    <button type="button" onClick={handleShow} className="btn btn-light btn-block border-bottom m-0">Edit</button>
+     
     <Modal
       backdrop={false}
       centered
@@ -23,15 +23,14 @@ const AddMovieModal: React.FC<{}> = () => {
       isOpen={modal}
     >
       <ModalHeader toggle={handleShow}>
-        ADD MOVIE
+        EDIT MOVIE
       </ModalHeader>
       <ModalBody>
-        <AddMovieForm/>
+        <EditMovieForm movieInfo={movieInfo.movieInfo} />
       </ModalBody>
     </Modal>
-  </div>
   </>
   );
 };
 
-export default AddMovieModal;
+export default EditMovie;

@@ -1,16 +1,31 @@
 import * as React from 'react';
 import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
+import { MovieInfo } from '../../../types';
 
-const AddMovieForm: React.FC<{}> = () => {
+const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
 
   const movieGenres = ["Action", "Adventure", "Animation",
     "Comedy", "Drama", "Family",
     "Fantasy", "Horror", "Music",
     "Mystery", "Romance", "Science Fiction",
     "Thriller"];
+    // todo: this edit form will be updated with relevant data later (in next tasks)
 
   return (
-    <Form id="addMovieFormId">
+    <Form id="editMovieFormId">
+      <FormGroup>
+        <Label for="movieId">
+          Movie ID
+        </Label>
+        <Input
+          id="movieId"
+          // type="textarea"
+          placeholder={movieInfo.movieInfo.id.toString()}
+          bsSize="sm"
+          readonly="readonly"
+        />
+      </FormGroup>
+      
       <FormGroup>
         <Label for="movieTitle">
           Title
@@ -18,7 +33,7 @@ const AddMovieForm: React.FC<{}> = () => {
         <Input
           id="movieTitle"
           type="textarea"
-          placeholder="Title here"
+          placeholder={movieInfo.movieInfo.title}
           bsSize="sm"
         />
       </FormGroup>
@@ -56,10 +71,9 @@ const AddMovieForm: React.FC<{}> = () => {
           name="select"
           type="select"
           bsSize="sm"
-          // multiple
+          multiple
         >
-          <option value="" disabled selected className='display:none;'>Select Genre</option>
-
+          
           {movieGenres.map((genre, id) => (
             <option key={id}>{genre}</option>
           ))}
@@ -102,7 +116,7 @@ const AddMovieForm: React.FC<{}> = () => {
         <Button type="submit"
           color="danger" className="text-uppercase"
         >
-          Submit
+          Save
         </Button>
       </div>
 
@@ -110,4 +124,4 @@ const AddMovieForm: React.FC<{}> = () => {
   );
 };
 
-export default AddMovieForm;
+export default EditMovieForm;

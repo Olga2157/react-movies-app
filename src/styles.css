@@ -164,8 +164,12 @@ what we can add in reactstrap for ModalHeader in AddMovieModal ? */
   border: black;
 } */
 
-#addMovieFormId label {
+#addMovieFormId label,
+#editMovieFormId label {
   color: #f65261;
+  text-transform: uppercase;
+
+  /* todo correct in react components instead of css */
 }
 
 /* ::-webkit-calendar-picker-indicator {

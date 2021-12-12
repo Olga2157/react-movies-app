@@ -4,7 +4,7 @@ export type FilterButtonInfo = {
   };
 
 export type MovieInfo = {
-    // movieId: number;
+    id: number;
     title: string;
     posterPath: string;
     year: number;

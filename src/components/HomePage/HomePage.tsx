@@ -8,7 +8,7 @@ import Footer from '../shared/Footer';
 import MovieList from './MovieList';
 import PaginationComponent from './PaginationComponent';
 import SortByButton from './SortByButton';
-import AddMovieModal from './Modals/AddMovieModal';
+import AddMovie from './Modals/AddMovie';
 
 const HomePage: React.FC<{}> = () => {
   return (
@@ -38,7 +38,7 @@ const HomePage: React.FC<{}> = () => {
         </Row>
       </Container>  
 
-      <AddMovieModal/>   
+      <AddMovie/>   
       <Footer />
     </>
   );
