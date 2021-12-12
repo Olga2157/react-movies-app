@@ -14,7 +14,6 @@ const HomePage: React.FC<{}> = () => {
   return (
     <>
     <Header />
-      
       <Container fluid>
         <Row>
           <Col><FindSection /></Col>

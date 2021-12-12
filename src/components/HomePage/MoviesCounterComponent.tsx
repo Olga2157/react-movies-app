@@ -8,7 +8,6 @@ const MoviesCounterComponent: React.FC<{}> = () => {
     <p className="mt-2">
       <strong id="movies-counter" className="fw-bold">
         {moviesCounter}
-        {' '}
       </strong>
       {' '}
       movies found

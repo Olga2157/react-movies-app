@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { MovieInfo } from '../../../types';
+import Heading from '../../shared/Text/Heading';
 import EditMovieForm from '../Forms/EditMovieForm';
 
 const EditMovie: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
@@ -23,7 +24,7 @@ const EditMovie: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
       isOpen={modal}
     >
       <ModalHeader toggle={handleShow}>
-        EDIT MOVIE
+      <Heading headingText="EDIT MOVIE"/>
       </ModalHeader>
       <ModalBody>
         <EditMovieForm movieInfo={movieInfo.movieInfo} />

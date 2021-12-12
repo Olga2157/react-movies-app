@@ -9,19 +9,12 @@ const DeleteMovieForm: React.FC<{ movieInfo: MovieInfo }> = (movieInfo) => {
   // update data in the next tasks with State and Redux
 
   return (
-    <Form id="DeleteMovieFormId">
-
-      <p>Are you shure you want to delete this movie?</p>
-
-      <div className="d-flex justify-content-md-end">
-
+    <Form id="DeleteMovieFormId" className="text-right">
         <Button type="submit"
           color="danger" className="text-uppercase"
         >
           Confirm
         </Button>
-      </div>
-
     </Form>
   );
 };

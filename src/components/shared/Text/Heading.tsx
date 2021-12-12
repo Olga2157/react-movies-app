@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 type HeadingProps = {
-  // headingClass?: string
   headingText: string
 }
 type HeadingState = {

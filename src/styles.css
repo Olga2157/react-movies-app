@@ -26,7 +26,7 @@ button {
 }
 
 #color-active-button .chosen {
-  background-color: coral;
+  background-color: #f65261;
 }
 
 footer {
@@ -66,7 +66,7 @@ footer {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1140px;
+  /* max-width: 1140px; */
   margin: 0 auto;
 }
 
@@ -125,12 +125,6 @@ footer {
   font-size: 11px;
 }
 
-/* invisible elements
-
-.invisible {
-  display: none;
-} */
-
 .my-modal .modal-content {
   background-color: #232323;
   padding: 2%;
@@ -146,22 +140,23 @@ footer {
 }
 
 .modal-header button {
-  background-color: white;
+  background-color: #fff;
 }
 
-/* question: In react-bootstrap we can add closeVariant='white' 
+/* question: In react-bootstrap we can add closeVariant='#fff' 
 for ModalHeader in AddMovieModal instead of changing background-color in css.
 what we can add in reactstrap for ModalHeader in AddMovieModal ? */
 
 /* styles for form */
 
 /* todo choose the style for forms: light or dark? */
+
 /* #addMovieFormId input,
 #addMovieFormId textarea,
 #addMovieFormId select {
   background-color: #424242;
   color: rgb(215, 210, 210);
-  border: black;
+  border: #141414;
 } */
 
 #addMovieFormId label,
@@ -214,17 +209,17 @@ what we can add in reactstrap for ModalHeader in AddMovieModal ? */
 
 .pagination-link-style-arrow {
   /* background-color: #555; */
-  color: black;
+  color: #141414;
   border-radius: 5px;
 }
 
 .pagination-link-style-arrow:hover {
   /* background-color: #232323; */
-  color: black;
+  color: #141414;
 }
 
 .pagination-link-style-arrow:active {
-  color: black;
+  color: #141414;
 
   /* background-color: #232323; */
 }
@@ -236,3 +231,8 @@ what we can add in reactstrap for ModalHeader in AddMovieModal ? */
 .pagination button {
   width: 40px;
 }
+
+/* todo: improve position for sort button */
+
+/* todo: add adaptive design for screens with width less than 640px. 
+Currently responsive design works correctly only for screens with width more than 640px */

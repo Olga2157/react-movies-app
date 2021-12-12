@@ -2,6 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import AppButton from '../../shared/Buttons/AppButton';
+import Heading from '../../shared/Text/Heading';
 import AddMovieForm from '../Forms/AddMovieForm';
 
 const AddMovie: React.FC<{}> = () => {
@@ -22,7 +23,7 @@ const AddMovie: React.FC<{}> = () => {
       isOpen={modal}
     >
       <ModalHeader toggle={handleShow}>
-        ADD MOVIE
+        <Heading headingText="ADD MOVIE"/>
       </ModalHeader>
       <ModalBody>
         <AddMovieForm/>

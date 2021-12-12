@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Input, InputGroup } from 'reactstrap';
 import AppButton from '../shared/Buttons/AppButton';
-import Heading from '../shared/Heading';
+import Heading from '../shared/Text/Heading';
 
 const FindSection: React.FC<{}> = () => {
 
