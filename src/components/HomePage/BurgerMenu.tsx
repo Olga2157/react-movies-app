@@ -7,6 +7,7 @@ import {
   NavItem,
 } from 'reactstrap';
 import { MovieInfo } from '../../types';
+import DeleteMovie from './Modals/DeleteMovie';
 import EditMovie from './Modals/EditMovie';
 
 type BurgerMenuProps = {
@@ -42,10 +43,10 @@ class BurgerMenu extends React.Component<BurgerMenuProps, BurgerMenuState> {
           <Collapse navbar isOpen={this.state.isOpen} className="mt-2">
             <Nav navbar>
               <NavItem>
-                <EditMovie movieInfo={this.props.movieInfo}/>
+                <EditMovie movieInfo={this.props.movieInfo} />
               </NavItem>
               <NavItem>
-                <button type="button" className="btn btn-light btn-block border-bottom mt-2">Delete</button>
+                <DeleteMovie movieInfo={this.props.movieInfo} />
               </NavItem>
             </Nav>
           </Collapse>
