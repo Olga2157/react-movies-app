@@ -7,7 +7,7 @@ import MoviesCounterComponent from './MoviesCounterComponent';
 import Footer from '../shared/Footer';
 import MovieList from './MovieList';
 import PaginationComponent from './PaginationComponent';
-import SortByButton from './SortByButton';
+import SortDropdown from './SortDropdown';
 import AddMovie from './Modals/AddMovie';
 
 const HomePage: React.FC<{}> = () => {
@@ -23,7 +23,7 @@ const HomePage: React.FC<{}> = () => {
             <ResultsFilters />
           </Col>
           <Col xs={6} md={4}>
-            <SortByButton />
+            <SortDropdown />
           </Col>
         </Row>
         <Row>
