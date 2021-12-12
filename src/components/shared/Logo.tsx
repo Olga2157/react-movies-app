@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Logo: React.FC<{}> = () => {
+const Logo: React.FC<{}> = function () {
   const logoClass = 'text-right  text-lowercase logo-message';
   const boldClass = 'fw-bold';
 

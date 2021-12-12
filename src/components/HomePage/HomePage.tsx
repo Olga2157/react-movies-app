@@ -10,10 +10,10 @@ import PaginationComponent from './PaginationComponent';
 import SortDropdown from './SortDropdown';
 import AddMovie from './Modals/AddMovie';
 
-const HomePage: React.FC<{}> = () => {
+const HomePage: React.FC<{}> = function () {
   return (
     <>
-    <Header />
+      <Header />
       <Container fluid>
         <Row>
           <Col><FindSection /></Col>
@@ -35,9 +35,9 @@ const HomePage: React.FC<{}> = () => {
         <Row>
           <Col className="text-center"><PaginationComponent /></Col>
         </Row>
-      </Container>  
+      </Container>
 
-      <AddMovie/>   
+      <AddMovie />
       <Footer />
     </>
   );

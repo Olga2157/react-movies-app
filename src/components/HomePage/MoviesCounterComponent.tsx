@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const MoviesCounterComponent: React.FC<{}> = () => {
+const MoviesCounterComponent: React.FC<{}> = function () {
   const moviesCounter = '15';
   // mock data, later it will be data from (db results)
 

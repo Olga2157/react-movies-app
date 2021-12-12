@@ -28,25 +28,28 @@ class BurgerMenu extends React.Component<BurgerMenuProps, BurgerMenuState> {
   }
 
   toggle() {
+    const { isOpen } = this.state;
     this.setState({
-      isOpen: !this.state.isOpen,
+      isOpen: !isOpen,
     });
   }
 
   // todo: update logic in the nest tasks
 
   render() {
+    const { isOpen } = this.state;
+    const { movieInfo } = this.props;
     return (
       <div className="burger-menu-movie">
         <Navbar color="light" light>
           <NavbarToggler className="me-2" onClick={this.toggle} />
-          <Collapse navbar isOpen={this.state.isOpen} className="mt-2">
+          <Collapse navbar isOpen={isOpen} className="mt-2">
             <Nav navbar>
               <NavItem>
-                <EditMovie movieInfo={this.props.movieInfo} />
+                <EditMovie movieInfo={movieInfo} />
               </NavItem>
               <NavItem>
-                <DeleteMovie movieInfo={this.props.movieInfo} />
+                <DeleteMovie movieInfo={movieInfo} />
               </NavItem>
             </Nav>
           </Collapse>

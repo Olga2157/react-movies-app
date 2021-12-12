@@ -3,7 +3,7 @@ import { ButtonGroup } from 'reactstrap';
 import { FilterButtonInfo } from '../../types';
 import FilterButton from '../shared/Buttons/FilterButton';
 
-const ResultsFilters: React.FC<{}> = () => {
+const ResultsFilters: React.FC<{}> = function () {
   const filterClick = (button: FilterButtonInfo) => {
     // console.log(button.buttonText);
     // todo: add logic when I start next tasks

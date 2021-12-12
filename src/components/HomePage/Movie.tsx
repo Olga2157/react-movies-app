@@ -12,22 +12,22 @@ type MovieState = {
 class Movie extends React.Component<MovieProps, MovieState> {
   render() {
     const {
-      posterPath, title, genre, year
-      //  movieInfo
+      posterPath, title, genre, year,
     } = this.props.movieInfo;
-
+    const { movieInfo } = this.props;
     return (
       <>
         <div>
           <img src={posterPath} alt="" />
-          <BurgerMenu movieInfo={this.props.movieInfo} />
+          <BurgerMenu movieInfo={movieInfo} />
         </div>
         <div className="d-flex flex-row justify-content-between movie-details">
           <div className="p-2">
             <AppText text={title} />
           </div>
           <div className="p-2">
-            <AppText text={year.toString()} /></div>
+            <AppText text={year.toString()} />
+          </div>
         </div>
         <div className="p-2 movie-details-genre">
           <AppText text={genre} />

@@ -7,7 +7,6 @@ type AppTextProps = {
 type AppTextState = {
 }
 class AppText extends React.Component<AppTextProps, AppTextState> {
-  
   render() {
     const { textClass, text } = this.props;
     return (

@@ -11,7 +11,8 @@ type PaginationComponentState = {
   pages: number[]
 }
 
-class PaginationComponent extends React.Component<PaginationComponentProps, PaginationComponentState> {
+class PaginationComponent extends React.Component<PaginationComponentProps,
+  PaginationComponentState> {
   constructor(props: PaginationComponentProps) {
     super(props);
 
@@ -46,7 +47,6 @@ class PaginationComponent extends React.Component<PaginationComponentProps, Pagi
           active={false}
         >
           <PaginationLink
-
             className="pagination-link-style"
           >
             1
@@ -58,7 +58,6 @@ class PaginationComponent extends React.Component<PaginationComponentProps, Pagi
           active
         >
           <PaginationLink
-
             className="pagination-link-style"
           >
             2

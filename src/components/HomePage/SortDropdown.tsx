@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import { SortName } from '../../model/enums/SortName';
 
-const SortDropdown = () => {
+const SortDropdown = function () {
   const defaultSortName = 'Sort';
   const [dropdownOpen, setOpen] = React.useState(false);
   const [SortNameValue, setSortName] = React.useState(defaultSortName);
@@ -12,7 +12,7 @@ const SortDropdown = () => {
   const toggle = () => setOpen(!dropdownOpen);
 
   const chooseSortName = (e: React.MouseEvent<HTMLButtonElement>) => {
-    let button = e.target as HTMLButtonElement;
+    const button = e.target as HTMLButtonElement;
     e.stopPropagation();
     if (button.textContent) {
       setSortName(button.textContent);
@@ -24,22 +24,22 @@ const SortDropdown = () => {
     } else {
       setSortName(defaultSortName);
     }
-  }
+  };
 
   return (
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} size="md">
-      <DropdownToggle caret >{SortNameValue}</DropdownToggle>
+      <DropdownToggle caret>{SortNameValue}</DropdownToggle>
       <DropdownMenu onClickCapture={chooseSortName}>
         <DropdownItem>
           {SortName.HIGHEST_RATING}
         </DropdownItem>
         <DropdownItem divider />
         <DropdownItem>
-        {SortName.NEWEST}
+          {SortName.NEWEST}
         </DropdownItem>
       </DropdownMenu>
     </ButtonDropdown>
   );
-}
+};
 
-export default SortDropdown
+export default SortDropdown;

@@ -1,13 +1,14 @@
 import * as React from 'react';
-import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
+import {
+  Button, Form, FormGroup, Input, Label,
+} from 'reactstrap';
 
-const AddMovieForm: React.FC<{}> = () => {
-
-  const movieGenres = ["Action", "Adventure", "Animation",
-    "Comedy", "Drama", "Family",
-    "Fantasy", "Horror", "Music",
-    "Mystery", "Romance", "Science Fiction",
-    "Thriller"];
+const AddMovieForm: React.FC<{}> = function () {
+  const movieGenres = ['Action', 'Adventure', 'Animation',
+    'Comedy', 'Drama', 'Family',
+    'Fantasy', 'Horror', 'Music',
+    'Mystery', 'Romance', 'Science Fiction',
+    'Thriller'];
 
   return (
     <Form id="addMovieFormId">
@@ -58,7 +59,7 @@ const AddMovieForm: React.FC<{}> = () => {
           bsSize="sm"
           // multiple
         >
-          <option value="" disabled selected className='display:none;'>Select Genre</option>
+          <option value="" disabled selected className="display:none;">Select Genre</option>
 
           {movieGenres.map((genre, id) => (
             <option key={id}>{genre}</option>
@@ -87,20 +88,24 @@ const AddMovieForm: React.FC<{}> = () => {
         <Input
           id="movieRuntime"
           type="textarea"
-          //think: or better type="number" ?
+          // think: or better type="number" ?
           placeholder="Runtime here"
           bsSize="sm"
         />
       </FormGroup>
 
       <div className="d-flex justify-content-md-end">
-        <Button type="reset"
-          color="outline-danger" className="text-uppercase"
+        <Button
+          type="reset"
+          color="outline-danger"
+          className="text-uppercase"
         >
           Reset
         </Button>
-        <Button type="submit"
-          color="danger" className="text-uppercase"
+        <Button
+          type="submit"
+          color="danger"
+          className="text-uppercase"
         >
           Submit
         </Button>

@@ -3,8 +3,7 @@ import { Input, InputGroup } from 'reactstrap';
 import AppButton from '../shared/Buttons/AppButton';
 import Heading from '../shared/Text/Heading';
 
-const FindSection: React.FC<{}> = () => {
-
+const FindSection: React.FC<{}> = function () {
   return (
     <section>
       <Heading headingText="Find your movie" />

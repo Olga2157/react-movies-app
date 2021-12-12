@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Logo from './Logo';
 
-const Footer: React.FC<{}> = () => {
+const Footer: React.FC<{}> = function () {
   const footerClass = 'text-center';
   const marginClass = 'mt-2';
 

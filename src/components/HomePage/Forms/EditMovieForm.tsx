@@ -1,16 +1,17 @@
 import * as React from 'react';
-import { Button, Form, FormGroup, Input, Label} from 'reactstrap';
+import {
+  Button, Form, FormGroup, Input, Label,
+} from 'reactstrap';
 import { MovieInfo } from '../../../types';
 
-const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
-
-  const movieGenres = ["Action", "Adventure", "Animation",
-    "Comedy", "Drama", "Family",
-    "Fantasy", "Horror", "Music",
-    "Mystery", "Romance", "Science Fiction",
-    "Thriller"];
+const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
+  const movieGenres = ['Action', 'Adventure', 'Animation',
+    'Comedy', 'Drama', 'Family',
+    'Fantasy', 'Horror', 'Music',
+    'Mystery', 'Romance', 'Science Fiction',
+    'Thriller'];
     // todo: this edit form will be updated with relevant data later (in next tasks)
-
+  const { id, title } = movieInfo.movieInfo;
   return (
     <Form id="editMovieFormId">
       <FormGroup>
@@ -20,12 +21,12 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
         <Input
           id="movieId"
           // type="textarea"
-          placeholder={movieInfo.movieInfo.id.toString()}
+          placeholder={id.toString()}
           bsSize="sm"
           readonly="readonly"
         />
       </FormGroup>
-      
+
       <FormGroup>
         <Label for="movieTitle">
           Title
@@ -33,7 +34,7 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
         <Input
           id="movieTitle"
           type="textarea"
-          placeholder={movieInfo.movieInfo.title}
+          placeholder={title}
           bsSize="sm"
         />
       </FormGroup>
@@ -73,7 +74,7 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
           bsSize="sm"
           multiple
         >
-          
+
           {movieGenres.map((genre, id) => (
             <option key={id}>{genre}</option>
           ))}
@@ -101,20 +102,24 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = (movieInfo) => {
         <Input
           id="movieRuntime"
           type="textarea"
-          //think: or better type="number" ?
+          // think: or better type="number" ?
           placeholder="Runtime here"
           bsSize="sm"
         />
       </FormGroup>
 
       <div className="d-flex justify-content-md-end">
-        <Button type="reset"
-          color="outline-danger" className="text-uppercase"
+        <Button
+          type="reset"
+          color="outline-danger"
+          className="text-uppercase"
         >
           Reset
         </Button>
-        <Button type="submit"
-          color="danger" className="text-uppercase"
+        <Button
+          type="submit"
+          color="danger"
+          className="text-uppercase"
         >
           Save
         </Button>
