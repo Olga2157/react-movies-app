@@ -3,6 +3,7 @@ import "./App.css";
 import { HelloWorld1 } from "./components/task1/HelloWorld1";
 import { HelloWorld2 } from "./components/task1/HelloWorld2";
 import { HelloWorld3 } from "./components/task1/HelloWorld3";
+import HelloWorld4 from "./components/task1/HelloWorld4";
 
 class App extends React.Component {
 
@@ -14,10 +15,6 @@ class App extends React.Component {
       <HelloWorld4/>
     </div>
   }
-}
-
-function HelloWorld4() {
-  return <p>Hello World 4</p>;
 }
 
 export default App;
