@@ -14,6 +14,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
+    extensions: [".tsx", ".ts", ".js", ".jsx"],
     modules: [path.join(__dirname, "src"), "node_modules"],
     alias: {
       react: path.join(__dirname, "node_modules", "react"),
@@ -35,6 +36,16 @@ module.exports = {
           loader: "ts-loader",
         },
       },
+      // для автоматической сборки проекта со стилями
+      // {
+      //   test: /\.css$/,
+      //   use: ExtractTextPlugin.extract(
+      //     {
+      //       fallback: 'style-loader',
+      //       use: ['css-loader']
+      //     })
+      // }
+      // ниже плагин MiniCssExtractPlugin тоже самое делает
       // Optimize CSS Loading
       {
         test: /\.css$/,
@@ -42,15 +53,27 @@ module.exports = {
       },
       // Handle Images
       {
-        test: /\.(jpg|jpeg|png|gif|mp3|svg)$/,
+        test: /\.(jpg|jpeg|png|gif|mp3|svg|ico)$/,
         use: ["file-loader"],
       },
+      // {
+      //   test: /\.(jpg|jpeg|png|gif|mp3|svg|ico)$/,
+      //   use: [
+      //     {
+      //       loader: "url-loader",
+      //       options: {
+      //         limit: 8192, // in bytes
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
-  resolve: { extensions: [".tsx", ".ts", ".js", ".jsx"] },
+  // resolve: { extensions: [".tsx", ".ts", ".js", ".jsx"] },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./public/index.html",
+      template: "./src/index.html",
+      favicon: "./src/images/favicon.ico",
     }),
     new MiniCssExtractPlugin(),
   ],
