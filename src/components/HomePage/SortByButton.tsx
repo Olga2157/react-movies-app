@@ -10,25 +10,37 @@ type SortByButtonProps = {
 type SortByButtonState = {}
 
 class SortByButton extends React.Component<SortByButtonProps, SortByButtonState> {
+
+  sortOptions = ["Highest Rating", "Newest", "Top Rated"];
+
   render() {
+    const items = [];
+    for (let i = 0; i < this.sortOptions.length; i++) {
+      items.push(<DropdownItem>
+        {this.sortOptions[i]}
+      </DropdownItem>);
+      if (i < this.sortOptions.length - 1) {
+        items.push(<DropdownItem divider />);
+      }
+    }
+
     return (
       <div className="row-flex">
         <ButtonDropdown id="sort-filter"
+          // isOpen={true}
           toggle={function sortFunction() { }}
         >
           <DropdownToggle caret>
             Sort
           </DropdownToggle>
           <DropdownMenu>
-            <DropdownItem divider>
-              Highest Rating
-            </DropdownItem>
-            <DropdownItem divider>
-              Newest
-            </DropdownItem>
-            <DropdownItem divider>
-              Top Rated
-            </DropdownItem>
+            {this.sortOptions.map((option, id) => (
+              <DropdownItem>
+                {option}
+              </DropdownItem>
+            ))
+            }
+            {/* {items} */}
           </DropdownMenu>
         </ButtonDropdown>
       </div>
