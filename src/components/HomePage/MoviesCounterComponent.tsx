@@ -1,6 +1,6 @@
-import * as React from 'react';
+import { FC } from "react";
 
-const MoviesCounterComponent: React.FC<{}> = function () {
+export const MoviesCounterComponent: FC = () => {
   const moviesCounter = '15';
   // mock data, later it will be data from (db results)
 
@@ -14,5 +14,3 @@ const MoviesCounterComponent: React.FC<{}> = function () {
     </p>
   );
 };
-
-export default MoviesCounterComponent;

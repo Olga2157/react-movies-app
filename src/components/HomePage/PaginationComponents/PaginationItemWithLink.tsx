@@ -1,8 +1,8 @@
-import * as React from 'react';
+import {FC}  from 'react';
 import { PaginationItem, PaginationLink } from 'reactstrap';
 import { PaginationItemInfo } from '../../../types';
 
-const PaginationItemWithLink: React.FC<{ itemInfo: PaginationItemInfo, callBack: Function }> = (props) => {
+export const PaginationItemWithLink: FC<{ itemInfo: PaginationItemInfo, callBack: Function }> = (props) => {
   const { pageKey, active } = props.itemInfo;
 
   return (
@@ -21,5 +21,3 @@ const PaginationItemWithLink: React.FC<{ itemInfo: PaginationItemInfo, callBack:
     
   );
 };
-
-export default PaginationItemWithLink;

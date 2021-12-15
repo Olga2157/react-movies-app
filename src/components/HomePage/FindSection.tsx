@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { Input, InputGroup } from 'reactstrap';
-import AppButton from '../shared/Buttons/AppButton';
-import Heading from '../shared/Text/Heading';
+import { AppButton } from '../shared/Buttons/AppButton';
+import { Heading } from '../shared/Text/Heading';
 
-const FindSection: React.FC<{}> = function () {
+export const FindSection: FC = () => {
   return (
     <section>
       <Heading headingText="Find your movie" />
@@ -14,5 +14,3 @@ const FindSection: React.FC<{}> = function () {
     </section>
   );
 };
-
-export default FindSection;

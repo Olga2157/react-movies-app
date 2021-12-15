@@ -1,20 +1,19 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { MovieInfo } from '../../types';
-import AppText from '../shared/Text/AppText';
+import { AppText } from '../shared/Text/AppText';
 import BurgerMenu from './BurgerMenu';
 
 type MovieProps = {
   movieInfo: MovieInfo
 };
-type MovieState = {
-};
 
-class Movie extends React.Component<MovieProps, MovieState> {
-  render() {
+export const Movie: FC<MovieProps> = (props) => {
+  
     const {
       posterPath, title, genre, year,
-    } = this.props.movieInfo;
-    const { movieInfo } = this.props;
+    } = props.movieInfo;
+    const { movieInfo } = props;
+    
     return (
       <>
         <div>
@@ -34,7 +33,4 @@ class Movie extends React.Component<MovieProps, MovieState> {
         </div>
       </>
     );
-  }
-}
-
-export default Movie;
+};

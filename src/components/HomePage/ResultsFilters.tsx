@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { ButtonGroup } from 'reactstrap';
 import { FilterButtonInfo } from '../../types';
-import FilterButton from '../shared/Buttons/FilterButton';
+import { FilterButton } from '../shared/Buttons/FilterButton';
 
-const ResultsFilters: React.FC<{}> = function () {
+export const ResultsFilters: FC = () => {
   const filterClick = (button: FilterButtonInfo) => {
     // console.log(button.buttonText);
     // todo: add logic when I start next tasks
@@ -19,10 +19,10 @@ const ResultsFilters: React.FC<{}> = function () {
 
   return (
     <ButtonGroup size="sm" id="color-active-button">
-      {buttons.map((button, id) => (
+      {buttons.map((button) => (
         <FilterButton
           buttonId={button.buttonId}
-          key={button.buttonText}
+          key={button.buttonId}
           listener={() => filterClick(button)}
           buttonText={button.buttonText}
         />
@@ -30,5 +30,3 @@ const ResultsFilters: React.FC<{}> = function () {
     </ButtonGroup>
   );
 };
-
-export default ResultsFilters;

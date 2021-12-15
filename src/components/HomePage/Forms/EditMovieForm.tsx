@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { FC } from 'react';
 import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { MovieInfo } from '../../../types';
 
-const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
+export const EditMovieForm: FC<{movieInfo: MovieInfo}> = (movieInfo) => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',
@@ -75,8 +75,8 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
           multiple
         >
 
-          {movieGenres.map((genre, id) => (
-            <option key={id}>{genre}</option>
+          {movieGenres.map((genre) => (
+            <option key={genre}>{genre}</option>
           ))}
 
         </Input>
@@ -102,7 +102,6 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
         <Input
           id="movieRuntime"
           type="textarea"
-          // think: or better type="number" ?
           placeholder="Runtime here"
           bsSize="sm"
         />
@@ -128,5 +127,3 @@ const EditMovieForm: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
     </Form>
   );
 };
-
-export default EditMovieForm;

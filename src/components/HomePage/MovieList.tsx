@@ -1,12 +1,9 @@
-import React, {FC} from 'react';
+import {FC} from 'react';
 import { Container } from 'reactstrap';
 import { MovieInfo } from '../../types';
-import Movie from './Movie';
+import { Movie } from './Movie';
 
-type MovieListProps = {
-  movieId?: string;
-}
-export const MovieList: FC<MovieListProps> = () => {
+export const MovieList: FC = () => {
   const movies: MovieInfo[] = [
     {
       id: 1,
@@ -73,5 +70,4 @@ export const MovieList: FC<MovieListProps> = () => {
         ))}
       </Container>
     );
-  }
-export default MovieList;
+  };

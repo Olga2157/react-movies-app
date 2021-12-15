@@ -1,11 +1,10 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { MovieInfo } from '../../../types';
-import Heading from '../../shared/Text/Heading';
-import EditMovieForm from '../Forms/EditMovieForm';
+import { Heading } from '../../shared/Text/Heading';
+import { EditMovieForm } from '../Forms/EditMovieForm';
 
-const EditMovie: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
+export const EditMovie: FC<{movieInfo: MovieInfo}> = (prop) => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 
@@ -26,11 +25,9 @@ const EditMovie: React.FC<{movieInfo: MovieInfo}> = function (movieInfo) {
           <Heading headingText="EDIT MOVIE" />
         </ModalHeader>
         <ModalBody>
-          <EditMovieForm movieInfo={movieInfo.movieInfo} />
+          <EditMovieForm movieInfo={prop.movieInfo} />
         </ModalBody>
       </Modal>
     </>
   );
 };
-
-export default EditMovie;

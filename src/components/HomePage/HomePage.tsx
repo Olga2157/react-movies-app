@@ -1,17 +1,16 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import Header from '../shared/Header';
-import FindSection from './FindSection';
-import ResultsFilters from './ResultsFilters';
-import MoviesCounterComponent from './MoviesCounterComponent';
-import Footer from '../shared/Footer';
-import SortDropdown from './SortDropdown';
-import AddMovie from './Modals/AddMovie';
-import PaginationComponent from './PaginationComponents/PaginationComponent';
-import MovieList from './MovieList';
+import { MovieList } from './MovieList';
+import { SortDropdown } from './SortDropdown';
+import { FindSection } from './FindSection';
+import { AddMovie } from './Modals/AddMovie';
+import { PaginationComponent } from './PaginationComponents/PaginationComponent';
+import { MoviesCounterComponent } from './MoviesCounterComponent';
+import { ResultsFilters } from './ResultsFilters';
+import { Header } from '../shared/Header';
+import { Footer } from '../shared/Footer';
 
-const HomePage: React.FC = () => {
-  // const HomePage = () => {
+const HomePage: FC = () => {
   return (
     <>
       <Header />

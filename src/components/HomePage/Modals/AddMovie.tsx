@@ -1,11 +1,11 @@
-import * as React from 'react';
+import { FC } from 'react';
 import { useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
-import AppButton from '../../shared/Buttons/AppButton';
-import Heading from '../../shared/Text/Heading';
-import AddMovieForm from '../Forms/AddMovieForm';
+import { AppButton } from '../../shared/Buttons/AppButton';
+import { Heading } from '../../shared/Text/Heading';
+import { AddMovieForm } from '../Forms/AddMovieForm';
 
-const AddMovie: React.FC<{}> = function () {
+export const AddMovie: FC = () => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 
@@ -31,5 +31,3 @@ const AddMovie: React.FC<{}> = function () {
     </>
   );
 };
-
-export default AddMovie;

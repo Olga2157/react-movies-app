@@ -1,9 +1,9 @@
-import * as React from 'react';
+import { FC } from 'react';
 import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 
-const AddMovieForm: React.FC<{}> = function () {
+export const AddMovieForm: FC = () => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',
@@ -61,8 +61,8 @@ const AddMovieForm: React.FC<{}> = function () {
         >
           <option value="" disabled selected className="display:none;">Select Genre</option>
 
-          {movieGenres.map((genre, id) => (
-            <option key={id}>{genre}</option>
+          {movieGenres.map((genre) => (
+            <option key={genre}>{genre}</option>
           ))}
 
         </Input>
@@ -114,5 +114,3 @@ const AddMovieForm: React.FC<{}> = function () {
     </Form>
   );
 };
-
-export default AddMovieForm;

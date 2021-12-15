@@ -1,7 +1,6 @@
-import * as React from 'react';
+import { FC } from 'react';
 
-const Logo: React.FC<{}> = () => {
-
+export const Logo: FC = () => {
   return (
     <p className="text-right  text-lowercase logo-message">
       <strong>neetflix</strong>
@@ -9,5 +8,3 @@ const Logo: React.FC<{}> = () => {
     </p>
   );
 };
-
-export default Logo;

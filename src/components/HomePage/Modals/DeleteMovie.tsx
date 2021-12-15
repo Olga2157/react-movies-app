@@ -1,14 +1,13 @@
-import * as React from 'react';
-import { useState } from 'react';
+import { FC, useState } from 'react';
 import {
   Modal, ModalBody, ModalFooter, ModalHeader,
 } from 'reactstrap';
 import { MovieInfo } from '../../../types';
-import AppText from '../../shared/Text/AppText';
-import Heading from '../../shared/Text/Heading';
-import DeleteMovieForm from '../Forms/DeleteMovieForm';
+import { AppText } from '../../shared/Text/AppText';
+import { Heading } from '../../shared/Text/Heading';
+import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 
-const DeleteMovie: React.FC<{ movieInfo: MovieInfo }> = function (movieInfo) {
+export const DeleteMovie: FC<{ movieInfo: MovieInfo }> = (movieInfo) => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 
@@ -38,5 +37,3 @@ const DeleteMovie: React.FC<{ movieInfo: MovieInfo }> = function (movieInfo) {
     </>
   );
 };
-
-export default DeleteMovie;
