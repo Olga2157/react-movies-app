@@ -1,12 +1,10 @@
 import * as React from 'react';
 
-const Logo: React.FC<{}> = function () {
-  const logoClass = 'text-right  text-lowercase logo-message';
-  const boldClass = 'fw-bold';
+const Logo: React.FC<{}> = () => {
 
   return (
-    <p className={logoClass}>
-      <strong className={boldClass}>neetflix</strong>
+    <p className="text-right  text-lowercase logo-message">
+      <strong>neetflix</strong>
       roulette
     </p>
   );

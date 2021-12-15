@@ -10,3 +10,8 @@ export type MovieInfo = {
     year: number;
     genre: string;
   }
+
+  export type PaginationItemInfo = {
+    pageKey: number;
+    active: boolean;
+  } 

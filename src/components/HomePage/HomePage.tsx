@@ -5,12 +5,13 @@ import FindSection from './FindSection';
 import ResultsFilters from './ResultsFilters';
 import MoviesCounterComponent from './MoviesCounterComponent';
 import Footer from '../shared/Footer';
-import MovieList from './MovieList';
-import PaginationComponent from './PaginationComponent';
 import SortDropdown from './SortDropdown';
 import AddMovie from './Modals/AddMovie';
+import PaginationComponent from './PaginationComponents/PaginationComponent';
+import MovieList from './MovieList';
 
-const HomePage: React.FC<{}> = function () {
+const HomePage: React.FC = () => {
+  // const HomePage = () => {
   return (
     <>
       <Header />
