@@ -1,15 +1,27 @@
-import * as React from 'react';
+import React, {FC}  from 'react';
 import {
   ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle,
 } from 'reactstrap';
 import { SortName } from '../../model/enums/SortName';
 
-const SortDropdown = function () {
+export const SortDropdown: FC = () => {
   const defaultSortName = 'Sort';
   const [dropdownOpen, setOpen] = React.useState(false);
   const [SortNameValue, setSortName] = React.useState(defaultSortName);
 
   const toggle = () => setOpen(!dropdownOpen);
+
+  const sortOptions = [SortName.HIGHEST_RATING, SortName.NEWEST];
+
+  const items = [];
+  for (let i = 0; i < sortOptions.length; i++) {
+    items.push(<DropdownItem>
+      {sortOptions[i]}
+    </DropdownItem>);
+    if (i < sortOptions.length - 1) {
+      items.push(<DropdownItem divider />);
+    }
+  }
 
   const chooseSortName = (e: React.MouseEvent<HTMLButtonElement>) => {
     const button = e.target as HTMLButtonElement;
@@ -24,22 +36,15 @@ const SortDropdown = function () {
     } else {
       setSortName(defaultSortName);
     }
+    toggle();
   };
 
   return (
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} size="md">
       <DropdownToggle caret>{SortNameValue}</DropdownToggle>
       <DropdownMenu onClickCapture={chooseSortName}>
-        <DropdownItem>
-          {SortName.HIGHEST_RATING}
-        </DropdownItem>
-        <DropdownItem divider />
-        <DropdownItem>
-          {SortName.NEWEST}
-        </DropdownItem>
+        {items}
       </DropdownMenu>
     </ButtonDropdown>
   );
 };
-
-export default SortDropdown;
