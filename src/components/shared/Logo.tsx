@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 
-export const Logo: FC = () => {
+export const Logo: FC = function () {
   return (
     <p className="text-right  text-lowercase logo-message">
       <strong>neetflix</strong>

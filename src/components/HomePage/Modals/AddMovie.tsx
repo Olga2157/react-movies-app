@@ -1,11 +1,10 @@
-import { FC } from 'react';
-import { useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { AppButton } from '../../shared/Buttons/AppButton';
 import { Heading } from '../../shared/Text/Heading';
 import { AddMovieForm } from '../Forms/AddMovieForm';
 
-export const AddMovie: FC = () => {
+export const AddMovie: FC = function () {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 

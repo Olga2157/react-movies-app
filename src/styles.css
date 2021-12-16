@@ -143,7 +143,7 @@ footer {
   background-color: #fff;
 }
 
-/* question: In react-bootstrap we can add closeVariant='#fff' 
+/* question: In react-bootstrap we can add closeconstiant='#fff' 
 for ModalHeader in AddMovieModal instead of changing background-color in css.
 what we can add in reactstrap for ModalHeader in AddMovieModal ? */
 

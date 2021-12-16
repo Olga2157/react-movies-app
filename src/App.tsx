@@ -1,9 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FC } from 'react';
+import React, { FC } from 'react';
 import HomePage from './components/HomePage/HomePage';
 import ErrorBoundary from './components/shared/ErrorBoundary';
 
-export const App: FC = () => {
+export const App: FC = function () {
   return (
     <ErrorBoundary>
       <HomePage />

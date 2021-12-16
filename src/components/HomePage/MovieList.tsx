@@ -1,9 +1,9 @@
-import {FC} from 'react';
+import React, { FC } from 'react';
 import { Container } from 'reactstrap';
 import { MovieInfo } from '../../types';
 import { Movie } from './Movie';
 
-export const MovieList: FC = () => {
+export const MovieList: FC = function () {
   const movies: MovieInfo[] = [
     {
       id: 1,
@@ -60,14 +60,14 @@ export const MovieList: FC = () => {
       posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
       year: 2017,
       genre: 'Fantasy',
-    }
+    },
   ];
 
-    return (
-      <Container>
-        {movies.map((movie) => (
-          <div key={movie.id} className="item d-flex flex-column movie-area"><Movie movieInfo={movie} /></div>
-        ))}
-      </Container>
-    );
-  };
+  return (
+    <Container>
+      {movies.map((movie) => (
+        <div key={movie.id} className="item d-flex flex-column movie-area"><Movie movieInfo={movie} /></div>
+      ))}
+    </Container>
+  );
+};

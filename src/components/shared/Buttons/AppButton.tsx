@@ -1,4 +1,4 @@
-import { FC, MouseEventHandler } from 'react';
+import React, { FC, MouseEventHandler } from 'react';
 import { Button } from 'reactstrap';
 
 type AppButtonProps = {
@@ -6,9 +6,9 @@ type AppButtonProps = {
   buttonText: string,
   listener?: MouseEventHandler<HTMLButtonElement>
 }
-export const AppButton: FC<AppButtonProps> = (props) => {
+export const AppButton: FC<AppButtonProps> = function (props) {
   const { buttonId, listener, buttonText } = props;
   return (
     <Button id={buttonId} onClick={listener} color="danger" className="text-uppercase">{buttonText}</Button>
   );
-}
+};

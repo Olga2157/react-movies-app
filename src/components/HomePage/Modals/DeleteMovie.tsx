@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import {
   Modal, ModalBody, ModalFooter, ModalHeader,
 } from 'reactstrap';
@@ -7,7 +7,7 @@ import { AppText } from '../../shared/Text/AppText';
 import { Heading } from '../../shared/Text/Heading';
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 
-export const DeleteMovie: FC<{ movieInfo: MovieInfo }> = (movieInfo) => {
+export const DeleteMovie: FC<{ movieInfo: MovieInfo }> = function (movieInfo) {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 

@@ -1,8 +1,8 @@
-import { FC, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { PaginationItemWithLink } from './PaginationItemWithLink';
 
-export const PaginationComponent: FC = () => {
+export const PaginationComponent: FC = function () {
   const [currentPage, setPage] = useState(1);
   const [totalPages] = useState(8);
   // just mock data that will be updated with Redux in the next tasks
@@ -11,14 +11,18 @@ export const PaginationComponent: FC = () => {
     if (page > 0 && page <= totalPages) {
       setPage(page);
     }
-  }
+  };
 
   const pages = [];
   for (let i = 1; i <= totalPages; i++) {
-    pages.push(<PaginationItemWithLink key={i} itemInfo={{
-      pageKey: i,
-      active: currentPage === i
-    }} callBack={changePage} />);
+    pages.push(<PaginationItemWithLink
+      key={i}
+      itemInfo={{
+        pageKey: i,
+        active: currentPage === i,
+      }}
+      callBack={changePage}
+    />);
   }
 
   return (

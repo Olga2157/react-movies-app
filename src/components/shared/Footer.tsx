@@ -1,7 +1,7 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Logo } from './Logo';
 
-export const Footer: FC = () => {
+export const Footer: FC = function () {
   const footerClass = 'text-center';
   const marginClass = 'mt-2';
 

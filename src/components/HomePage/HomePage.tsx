@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { MovieList } from './MovieList';
 import { SortDropdown } from './SortDropdown';
@@ -10,7 +10,7 @@ import { ResultsFilters } from './ResultsFilters';
 import { Header } from '../shared/Header';
 import { Footer } from '../shared/Footer';
 
-const HomePage: FC = () => {
+const HomePage: FC = function () {
   return (
     <>
       <Header />

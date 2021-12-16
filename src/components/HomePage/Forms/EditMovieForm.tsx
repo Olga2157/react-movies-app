@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { MovieInfo } from '../../../types';
 
-export const EditMovieForm: FC<{movieInfo: MovieInfo}> = (movieInfo) => {
+export const EditMovieForm: FC<{movieInfo: MovieInfo}> = function (movieInfo) {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',

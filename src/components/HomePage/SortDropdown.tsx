@@ -1,10 +1,10 @@
-import React, {FC}  from 'react';
+import React, { FC } from 'react';
 import {
   ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle,
 } from 'reactstrap';
 import { SortName } from '../../model/enums/SortName';
 
-export const SortDropdown: FC = () => {
+export const SortDropdown: FC = function () {
   const defaultSortName = 'Sort';
   const [dropdownOpen, setOpen] = React.useState(false);
   const [SortNameValue, setSortName] = React.useState(defaultSortName);
@@ -17,7 +17,7 @@ export const SortDropdown: FC = () => {
   for (let i = 0; i < sortOptions.length; i++) {
     items.push(<DropdownItem>
       {sortOptions[i]}
-    </DropdownItem>);
+               </DropdownItem>);
     if (i < sortOptions.length - 1) {
       items.push(<DropdownItem divider />);
     }
