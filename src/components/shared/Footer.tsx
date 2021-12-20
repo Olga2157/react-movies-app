@@ -1,8 +1,12 @@
 import React, { FC } from 'react';
-import { Logo } from './Logo';
+import classNames from 'classnames';
+import { Logo } from './Logo/Logo';
+import './Footer.css';
 
 export const Footer: FC = function () {
-  const footerClass = 'text-center';
+  const footerClass = classNames({
+    'text-center': true,
+  });
   const marginClass = 'mt-2';
 
   return (

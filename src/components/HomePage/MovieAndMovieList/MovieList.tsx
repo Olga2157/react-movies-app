@@ -1,7 +1,9 @@
 import React, { FC } from 'react';
 import { Container } from 'reactstrap';
-import { MovieInfo } from '../../types';
+import { MovieInfo } from '../../../types';
 import { Movie } from './Movie';
+// import classNames from 'classnames';
+import './MovieList.css';
 
 export const MovieList: FC = function () {
   const movies: MovieInfo[] = [
@@ -63,10 +65,16 @@ export const MovieList: FC = function () {
     },
   ];
 
+  // const movieClass = classNames({
+  // 'd-flex': true,
+  // 'flex-column': true,
+  // 'item': true,
+  // });
+
   return (
     <Container>
       {movies.map((movie) => (
-        <div key={movie.id} className="item d-flex flex-column movie-area"><Movie movieInfo={movie} /></div>
+        <div key={movie.id} className="item"><Movie movieInfo={movie} /></div>
       ))}
     </Container>
   );

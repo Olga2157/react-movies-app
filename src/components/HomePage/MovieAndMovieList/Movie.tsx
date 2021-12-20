@@ -1,25 +1,32 @@
 import React, { FC } from 'react';
-import { MovieInfo } from '../../types';
-import { AppText } from '../shared/Text/AppText';
-import BurgerMenu from './BurgerMenu';
+import classNames from 'classnames';
+import { MovieInfo } from '../../../types';
+import { AppText } from '../../shared/Text/AppText';
+import BurgerMenu from '../BurgerMenu/BurgerMenu';
+import './Movie.css';
 
 type MovieProps = {
   movieInfo: MovieInfo
 };
 
 export const Movie: FC<MovieProps> = function (props) {
+  const { movieInfo } = props;
   const {
     posterPath, title, genre, year,
-  } = props.movieInfo;
-  const { movieInfo } = props;
-
+  } = movieInfo;
+  const movieClass = classNames({
+    'd-flex': true,
+    'flex-row': true,
+    'justify-content-between': true,
+    'movie-details': true,
+  });
   return (
     <>
       <div>
-        <img src={posterPath} alt="" />
+        <img src={posterPath} alt="poster" />
         <BurgerMenu movieInfo={movieInfo} />
       </div>
-      <div className="d-flex flex-row justify-content-between movie-details">
+      <div className={movieClass}>
         <div className="p-2">
           <AppText text={title} />
         </div>

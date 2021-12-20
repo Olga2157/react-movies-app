@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { MovieList } from './MovieList';
+import { MovieList } from './MovieAndMovieList/MovieList';
 import { SortDropdown } from './SortDropdown';
 import { FindSection } from './FindSection';
 import { AddMovie } from './Modals/AddMovie';
@@ -19,10 +19,10 @@ const HomePage: FC = function () {
           <Col><FindSection /></Col>
         </Row>
         <Row className="mt-5">
-          <Col xs={12} md={8}>
+          <Col>
             <ResultsFilters />
           </Col>
-          <Col xs={6} md={4}>
+          <Col>
             <SortDropdown />
           </Col>
         </Row>

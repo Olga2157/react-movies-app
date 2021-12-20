@@ -3,17 +3,20 @@ import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { MovieInfo } from '../../../types';
+import './Form.css';
 
-export const EditMovieForm: FC<{movieInfo: MovieInfo}> = function (movieInfo) {
+export const EditMovieForm: FC<{movieInfo: MovieInfo}> = function (props) {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',
     'Mystery', 'Romance', 'Science Fiction',
     'Thriller'];
     // todo: this edit form will be updated with relevant data later (in next tasks)
-  const { id, title } = movieInfo.movieInfo;
+  
+  const { movieInfo } = props;
+  const { id, title } = movieInfo;
   return (
-    <Form id="editMovieFormId">
+    <Form id="edit-movie-form-id">
       <FormGroup>
         <Label for="movieId">
           Movie ID

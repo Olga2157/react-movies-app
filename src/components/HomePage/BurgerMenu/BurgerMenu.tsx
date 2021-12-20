@@ -6,17 +6,18 @@ import {
   NavbarToggler,
   NavItem,
 } from 'reactstrap';
-import { MovieInfo } from '../../types';
-import { DeleteMovie } from './Modals/DeleteMovie';
-import { EditMovie } from './Modals/EditMovie';
+import { MovieInfo } from '../../../types';
+import { DeleteMovie } from '../Modals/DeleteMovie';
+import { EditMovie } from '../Modals/EditMovie';
+import './BurgerMenu.css';
 
 type BurgerMenuProps = {
   movieInfo: MovieInfo
 };
 
 export const BurgerMenu: FC<BurgerMenuProps> = function (props) {
+  const { movieInfo } = props;
   const [isOpen, setOpen] = useState(false);
-
   const toggle = () => {
     setOpen(!isOpen);
   };
@@ -30,10 +31,10 @@ export const BurgerMenu: FC<BurgerMenuProps> = function (props) {
         <Collapse navbar isOpen={isOpen} className="mt-2">
           <Nav navbar>
             <NavItem>
-              <EditMovie movieInfo={props.movieInfo} />
+              <EditMovie movieInfo={movieInfo} />
             </NavItem>
             <NavItem>
-              <DeleteMovie movieInfo={props.movieInfo} />
+              <DeleteMovie movieInfo={movieInfo} />
             </NavItem>
           </Nav>
         </Collapse>

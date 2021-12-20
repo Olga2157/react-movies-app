@@ -1,7 +1,8 @@
-import React,{ FC } from 'react';
+import React, { FC } from 'react';
 import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
+import './Form.css';
 
 export const AddMovieForm: FC = function () {
   const movieGenres = ['Action', 'Adventure', 'Animation',
@@ -11,7 +12,7 @@ export const AddMovieForm: FC = function () {
     'Thriller'];
 
   return (
-    <Form id="addMovieFormId">
+    <Form id="add-movie-form-id">
       <FormGroup>
         <Label for="movieTitle">
           Title

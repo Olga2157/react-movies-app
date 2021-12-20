@@ -1,6 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { PaginationItemWithLink } from './PaginationItemWithLink';
+import './Pagination.css';
 
 export const PaginationComponent: FC = function () {
   const [currentPage, setPage] = useState(1);

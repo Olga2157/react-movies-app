@@ -3,29 +3,31 @@ import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { MovieInfo } from '../../../types';
 import { Heading } from '../../shared/Text/Heading';
 import { EditMovieForm } from '../Forms/EditMovieForm';
+import { ButtonType } from '../../../model/enums/ButtonType';
+import { AppButton } from '../../shared/Buttons/AppButton';
+import './Modal.css';
 
-export const EditMovie: FC<{movieInfo: MovieInfo}> = function (prop) {
+export const EditMovie: FC<{movieInfo: MovieInfo}> = function (props) {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
-
+  const { movieInfo } = props;
   return (
     <>
-      <button type="button" onClick={handleShow} className="btn btn-light btn-block border-bottom m-0">Edit</button>
-
+      <AppButton listener={handleShow} buttonText="Edit" buttonType={ButtonType.BURGER_MENU_ITEM} />
       <Modal
         backdrop={false}
         centered
         fullscreen="md"
         scrollable
         size="md"
-        className="my-modal"
+        className="special-modal"
         isOpen={modal}
       >
         <ModalHeader toggle={handleShow}>
           <Heading headingText="EDIT MOVIE" />
         </ModalHeader>
         <ModalBody>
-          <EditMovieForm movieInfo={prop.movieInfo} />
+          <EditMovieForm movieInfo={movieInfo} />
         </ModalBody>
       </Modal>
     </>

@@ -17,7 +17,7 @@ export const SortDropdown: FC = function () {
   for (let i = 0; i < sortOptions.length; i++) {
     items.push(<DropdownItem>
       {sortOptions[i]}
-               </DropdownItem>);
+    </DropdownItem>);
     if (i < sortOptions.length - 1) {
       items.push(<DropdownItem divider />);
     }
