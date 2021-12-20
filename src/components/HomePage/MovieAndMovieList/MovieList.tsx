@@ -5,7 +5,7 @@ import { Movie } from './Movie';
 // import classNames from 'classnames';
 import './MovieList.css';
 
-export const MovieList: FC = function () {
+export const MovieList: FC = () => {
   const movies: MovieInfo[] = [
     {
       id: 1,

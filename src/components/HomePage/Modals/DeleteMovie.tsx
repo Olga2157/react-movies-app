@@ -10,7 +10,7 @@ import { Heading } from '../../shared/Text/Heading';
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 import './Modal.css';
 
-export const DeleteMovie: FC<{ movieInfo: MovieInfo }> = function (props) {
+export const DeleteMovie: FC<{ movieInfo: MovieInfo }>  = (props) => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
   const { movieInfo } = props;

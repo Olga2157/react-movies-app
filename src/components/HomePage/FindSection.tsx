@@ -3,7 +3,7 @@ import { Input, InputGroup } from 'reactstrap';
 import { AppButton } from '../shared/Buttons/AppButton';
 import { Heading } from '../shared/Text/Heading';
 
-export const FindSection: FC = function () {
+export const FindSection: FC = () => {
   return (
     <section>
       <Heading headingText="Find your movie" />

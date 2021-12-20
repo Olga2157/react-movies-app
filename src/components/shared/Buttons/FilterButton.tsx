@@ -9,7 +9,7 @@ type FilterButtonProps = {
   listener?: MouseEventHandler<HTMLButtonElement>
 }
 
-export const FilterButton: FC<FilterButtonProps> = function (props) {
+export const FilterButton: FC<FilterButtonProps> = (props) => {
   const { buttonId, listener, buttonText } = props;
   const btnClass = classNames({
     btn: true,

@@ -3,7 +3,7 @@ import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { PaginationItemWithLink } from './PaginationItemWithLink';
 import './Pagination.css';
 
-export const PaginationComponent: FC = function () {
+export const PaginationComponent: FC = () => {
   const [currentPage, setPage] = useState(1);
   const [totalPages] = useState(8);
   // just mock data that will be updated with Redux in the next tasks

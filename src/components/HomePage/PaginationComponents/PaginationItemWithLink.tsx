@@ -4,7 +4,7 @@ import { PaginationItemInfo } from '../../../types';
 import './Pagination.css';
 
 export const PaginationItemWithLink: FC<{ itemInfo: PaginationItemInfo,
-  callBack: Function }> = function (props) {
+  callBack: Function }>  = (props) => {
     const { callBack, itemInfo } = props;
     const { pageKey, active } = itemInfo;
 

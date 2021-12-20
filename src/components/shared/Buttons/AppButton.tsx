@@ -10,7 +10,7 @@ type AppButtonProps = {
   buttonType?: ButtonType,
   listener?: MouseEventHandler<HTMLButtonElement>
 }
-export const AppButton: FC<AppButtonProps> = function (props) {
+export const AppButton: FC<AppButtonProps> = (props) => {
   const { buttonId, listener, buttonText, buttonType } = props;
   const btnClass = classNames(
     {

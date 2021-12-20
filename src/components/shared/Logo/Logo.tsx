@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import './Logo.css';
 
-export const Logo: FC = function () {
+export const Logo: FC = () => {
   const logoClass = classNames({
     'text-right': true,
     'text-lowercase': true,

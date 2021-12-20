@@ -5,7 +5,7 @@ import {
 import { MovieInfo } from '../../../types';
 import './Form.css';
 
-export const EditMovieForm: FC<{movieInfo: MovieInfo}> = function (props) {
+export const EditMovieForm: FC<{movieInfo: MovieInfo}>  = (props) => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',

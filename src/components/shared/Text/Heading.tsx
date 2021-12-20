@@ -4,7 +4,7 @@ type HeadingProps = {
   headingText: string
 }
 
-export const Heading: FC<HeadingProps> = function ({ headingText }) {
+export const Heading: FC<HeadingProps> = ({ headingText }) => {
   return (
     <h2 className="text-uppercase">{headingText}</h2>
   );

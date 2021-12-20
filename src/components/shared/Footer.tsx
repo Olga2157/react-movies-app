@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
 import './Footer.css';
 
-export const Footer: FC = function () {
+export const Footer: FC = () => {
   const footerClass = classNames({
     'text-center': true,
   });

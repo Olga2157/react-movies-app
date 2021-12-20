@@ -6,7 +6,7 @@ import { Heading } from '../../shared/Text/Heading';
 import { AddMovieForm } from '../Forms/AddMovieForm';
 import './Modal.css';
 
-export const AddMovie: FC = function () {
+export const AddMovie: FC = () => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
 

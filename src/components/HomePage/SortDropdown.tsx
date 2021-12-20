@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import { SortName } from '../../model/enums/SortName';
 
-export const SortDropdown: FC = function () {
+export const SortDropdown: FC = () => {
   const defaultSortName = 'Sort';
   const [dropdownOpen, setOpen] = React.useState(false);
   const [SortNameValue, setSortName] = React.useState(defaultSortName);

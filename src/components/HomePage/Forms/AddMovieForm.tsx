@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import './Form.css';
 
-export const AddMovieForm: FC = function () {
+export const AddMovieForm: FC = () => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',

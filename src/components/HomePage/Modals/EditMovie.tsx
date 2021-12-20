@@ -7,7 +7,7 @@ import { ButtonType } from '../../../model/enums/ButtonType';
 import { AppButton } from '../../shared/Buttons/AppButton';
 import './Modal.css';
 
-export const EditMovie: FC<{movieInfo: MovieInfo}> = function (props) {
+export const EditMovie: FC<{movieInfo: MovieInfo}> = (props) => {
   const [modal, setModal] = useState(false);
   const handleShow = () => setModal(!modal);
   const { movieInfo } = props;
