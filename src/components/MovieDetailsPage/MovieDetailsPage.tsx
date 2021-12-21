@@ -1,0 +1,24 @@
+import React, { FC } from 'react';
+import { Col, Container, Row } from 'reactstrap';
+import { MoviesSection } from '../MoviesSection/MovieSection';
+import { Footer } from '../shared/Footer';
+import { Header } from '../shared/Header';
+import { MovieDetailsSection } from './MovieDetailsSection';
+import { SearchButton } from './SearchButton/SearchButton';
+
+export const MovieDetailsPage: FC = () => {
+  return (
+    <>
+      <Header />
+      <Container fluid>
+        <Row>
+          <Col><MovieDetailsSection /></Col>
+        </Row>
+        <MoviesSection/>
+      </Container>
+      <SearchButton/>
+      <Footer />
+    </>
+  );
+};
+
