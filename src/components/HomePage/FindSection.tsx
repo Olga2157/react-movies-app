@@ -5,8 +5,8 @@ import { Heading } from '../shared/Text/Heading';
 
 export const FindSection: FC = () => {
   return (
-    <section>
-      <Heading headingText="Find your movie" />
+    <section id="find-section">
+      <Heading headingText="Find your movie" upperCase={true}/>
       <InputGroup>
         <Input />
         <AppButton buttonId="search-btn" buttonText="Search" />

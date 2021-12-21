@@ -24,7 +24,7 @@ export const EditMovie: FC<{movieInfo: MovieInfo}> = (props) => {
         isOpen={modal}
       >
         <ModalHeader toggle={handleShow}>
-          <Heading headingText="EDIT MOVIE" />
+          <Heading headingText="EDIT MOVIE" upperCase={true} />
         </ModalHeader>
         <ModalBody>
           <EditMovieForm movieInfo={movieInfo} />

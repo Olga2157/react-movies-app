@@ -1,0 +1,27 @@
+.red-text {
+  color: #f65261;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.black-text {
+  color: #232323;
+}
+
+.font-size-extra-small {
+  font-size: 11px;
+}
+
+.font-size-small {
+  font-size: 14px;
+}
+
+.font-size-medium {
+  font-size: 20px;
+}
+
+.font-size-large {
+  font-size: 36px;
+}

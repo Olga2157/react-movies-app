@@ -27,7 +27,7 @@ export const DeleteMovie: FC<{ movieInfo: MovieInfo }>  = (props) => {
         isOpen={modal}
       >
         <ModalHeader toggle={handleShow}>
-          <Heading headingText="DELETE MOVIE" />
+          <Heading headingText="DELETE MOVIE" upperCase={true} />
         </ModalHeader>
         <ModalBody>
           <AppText text="Are you shure you want to delete this movie?" />

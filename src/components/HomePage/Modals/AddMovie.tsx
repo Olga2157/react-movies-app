@@ -23,7 +23,7 @@ export const AddMovie: FC = () => {
         isOpen={modal}
       >
         <ModalHeader toggle={handleShow}>
-          <Heading headingText="ADD MOVIE" />
+          <Heading headingText="ADD MOVIE" upperCase={true} />
         </ModalHeader>
         <ModalBody>
           <AddMovieForm />

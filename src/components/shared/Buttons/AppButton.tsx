@@ -8,10 +8,11 @@ type AppButtonProps = {
   buttonId?: string;
   buttonText: string,
   buttonType?: ButtonType,
+  buttonClass?: string,
   listener?: MouseEventHandler<HTMLButtonElement>
 }
 export const AppButton: FC<AppButtonProps> = (props) => {
-  const { buttonId, listener, buttonText, buttonType } = props;
+  const { buttonId, listener, buttonText, buttonType, buttonClass } = props;
   const btnClass = classNames(
     {
       btn: true,
@@ -21,8 +22,7 @@ export const AppButton: FC<AppButtonProps> = (props) => {
       'btn-light btn-block border-bottom m-0': buttonType === ButtonType.BURGER_MENU_ITEM,
       'add-movie-btn': buttonType === ButtonType.ADD_MOVIE,
       chosen: false,
-      // 'btn-over': false,
-    },
+    }, buttonClass
   );
   return (
     <Button id={buttonId} type="button" onClick={listener} className={btnClass}>{buttonText}</Button>

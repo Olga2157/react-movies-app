@@ -6,9 +6,9 @@ import {
   NavbarToggler,
   NavItem,
 } from 'reactstrap';
-import { MovieInfo } from '../../../types';
-import { DeleteMovie } from '../Modals/DeleteMovie';
-import { EditMovie } from '../Modals/EditMovie';
+import { MovieInfo } from '../../../../types';
+import { DeleteMovie } from '../../../HomePage/Modals/DeleteMovie';
+import { EditMovie } from '../../../HomePage/Modals/EditMovie';
 import './BurgerMenu.css';
 
 type BurgerMenuProps = {
@@ -42,5 +42,3 @@ export const BurgerMenu: FC<BurgerMenuProps> = (props) => {
     </div>
   );
 };
-
-export default BurgerMenu;

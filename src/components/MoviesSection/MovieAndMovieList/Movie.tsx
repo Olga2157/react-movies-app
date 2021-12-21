@@ -2,8 +2,9 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import { MovieInfo } from '../../../types';
 import { AppText } from '../../shared/Text/AppText';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './Movie.css';
+import { BurgerMenu } from './BurgerMenu/BurgerMenu';
+import { FontSize } from '../../../model/enums/FontSize';
 
 type MovieProps = {
   movieInfo: MovieInfo
@@ -18,6 +19,7 @@ export const Movie: FC<MovieProps> = function (props) {
     'd-flex': true,
     'flex-row': true,
     'justify-content-between': true,
+    'p-2': true,
     'movie-details': true,
   });
   return (
@@ -27,15 +29,15 @@ export const Movie: FC<MovieProps> = function (props) {
         <BurgerMenu movieInfo={movieInfo} />
       </div>
       <div className={movieClass}>
-        <div className="p-2">
-          <AppText text={title} />
+        <div>
+          <AppText text={title} fontSize={FontSize.SMALL} />
         </div>
-        <div className="p-2">
-          <AppText text={year.toString()} />
+        <div>
+          <AppText text={year.toString()} fontSize={FontSize.SMALL} />
         </div>
       </div>
-      <div className="p-2 movie-details-genre">
-        <AppText text={genre} />
+      <div className="p-2">
+        <AppText text={genre} fontSize={FontSize.EXTRA_SMALL} />
       </div>
     </>
   );

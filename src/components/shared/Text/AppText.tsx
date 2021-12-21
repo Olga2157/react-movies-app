@@ -1,11 +1,26 @@
 import React, { FC } from 'react';
+import { FontSize } from '../../../model/enums/FontSize';
+import './Text.css';
 
 type AppTextProps = {
-  text: string
+  text: string,
+  color?: string,
+  fontSize?: FontSize,
 }
 export const AppText: FC<AppTextProps> = (props) => {
-  const { text } = props;
+  const { text, color, fontSize } = props;
+
+  let textClass = ``;
+
+  if (fontSize) {
+    textClass += `${fontSize} `
+  }
+
+  if (color) {
+    textClass += `${color}-text`
+  }
+
   return (
-    <p>{text}</p>
+    <p className={textClass}>{text}</p>
   );
 };
