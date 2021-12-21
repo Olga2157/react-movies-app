@@ -42,5 +42,3 @@ export const BurgerMenu: FC<BurgerMenuProps> = (props) => {
     </div>
   );
 };
-
-export default BurgerMenu;

@@ -10,7 +10,7 @@ import { ResultsFilters } from './ResultsFilters';
 import { Header } from '../shared/Header';
 import { Footer } from '../shared/Footer';
 
-const HomePage: FC = function () {
+export const HomePage: FC = function () {
   return (
     <>
       <Header />
@@ -42,5 +42,3 @@ const HomePage: FC = function () {
     </>
   );
 };
-
-export default HomePage;

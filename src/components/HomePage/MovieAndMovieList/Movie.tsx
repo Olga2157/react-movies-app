@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import { MovieInfo } from '../../../types';
 import { AppText } from '../../shared/Text/AppText';
-import BurgerMenu from '../BurgerMenu/BurgerMenu';
 import './Movie.css';
+import { BurgerMenu } from '../BurgerMenu/BurgerMenu';
 
 type MovieProps = {
   movieInfo: MovieInfo
