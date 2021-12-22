@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { FontSize } from '../../../model/enums/FontSize';
-import './Text.css';
+import './Text.scss';
 
 type AppTextProps = {
   text: string,

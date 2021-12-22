@@ -1,7 +1,7 @@
 import React, { FC, MouseEventHandler } from 'react';
 import { Button } from 'reactstrap';
 import classNames from 'classnames';
-import './FilterButton.css';
+import './FilterButton.scss';
 
 type FilterButtonProps = {
   buttonId: string;

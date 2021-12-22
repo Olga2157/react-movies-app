@@ -1,7 +1,7 @@
 import React, { FC, MouseEventHandler } from 'react';
 import { Button } from 'reactstrap';
 import classNames from 'classnames';
-import './AppButton.css';
+import './AppButton.scss';
 import { ButtonType } from '../../../model/enums/ButtonType';
 
 type AppButtonProps = {

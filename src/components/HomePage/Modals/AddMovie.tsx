@@ -4,7 +4,7 @@ import { ButtonType } from '../../../model/enums/ButtonType';
 import { AppButton } from '../../shared/Buttons/AppButton';
 import { Heading } from '../../shared/Text/Heading';
 import { AddMovieForm } from '../Forms/AddMovieForm';
-import './Modal.css';
+import './Modal.scss';
 
 export const AddMovie: FC = () => {
   const [modal, setModal] = useState(false);

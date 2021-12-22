@@ -3,7 +3,7 @@ import { Container } from 'reactstrap';
 import { MovieInfo } from '../../../types';
 import { Movie } from './Movie';
 // import classNames from 'classnames';
-import './MovieList.css';
+import './MovieList.scss';
 
 export const MovieList: FC = () => {
   const movies: MovieInfo[] = [

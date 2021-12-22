@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { Button } from 'reactstrap';
-import './SearchButton.css';
+import './SearchButton.scss';
 
 export const SearchButton: FC = () => {
   return (

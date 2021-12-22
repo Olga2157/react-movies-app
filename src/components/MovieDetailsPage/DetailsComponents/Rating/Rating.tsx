@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MovieInfoDetails } from '../../../../types';
-import './Rating.css';
+import './Rating.scss';
 
 type RatingProps = {
   chosenMovieDetails: MovieInfoDetails

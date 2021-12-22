@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MovieInfoDetails } from '../../../types';
-import './Cover.css';
+import './Cover.scss';
 
 type CoverProps = {
   chosenMovieDetails: MovieInfoDetails

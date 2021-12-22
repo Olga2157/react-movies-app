@@ -9,7 +9,7 @@ import {
 import { MovieInfo } from '../../../../types';
 import { DeleteMovie } from '../../../HomePage/Modals/DeleteMovie';
 import { EditMovie } from '../../../HomePage/Modals/EditMovie';
-import './BurgerMenu.css';
+import './BurgerMenu.scss';
 
 type BurgerMenuProps = {
   movieInfo: MovieInfo

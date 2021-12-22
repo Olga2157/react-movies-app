@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
 import { Button, Form } from 'reactstrap';
 import { MovieInfo } from '../../../types';
-// import './Form.css';
 
 export const DeleteMovieForm: FC<{ movieInfo: MovieInfo }> = () => {
   // todo: add function for confirm button onclick

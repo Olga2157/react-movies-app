@@ -8,7 +8,7 @@ import { AppButton } from '../../shared/Buttons/AppButton';
 import { AppText } from '../../shared/Text/AppText';
 import { Heading } from '../../shared/Text/Heading';
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
-import './Modal.css';
+import './Modal.scss';
 
 export const DeleteMovie: FC<{ movieInfo: MovieInfo }>  = (props) => {
   const [modal, setModal] = useState(false);

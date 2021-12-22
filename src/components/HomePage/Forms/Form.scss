@@ -1,0 +1,8 @@
+@use '/src/utilities/variables.scss' as v;
+@use '/src/utilities/mixins' as m;
+
+#add-movie-form-id label,
+#edit-movie-form-id label {
+  color: v.$red-color;
+  @include m.uppercase;
+}

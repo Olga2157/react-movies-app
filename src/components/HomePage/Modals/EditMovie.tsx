@@ -5,7 +5,7 @@ import { Heading } from '../../shared/Text/Heading';
 import { EditMovieForm } from '../Forms/EditMovieForm';
 import { ButtonType } from '../../../model/enums/ButtonType';
 import { AppButton } from '../../shared/Buttons/AppButton';
-import './Modal.css';
+import './Modal.scss';
 
 export const EditMovie: FC<{movieInfo: MovieInfo}> = (props) => {
   const [modal, setModal] = useState(false);

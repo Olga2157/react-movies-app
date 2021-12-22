@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { PaginationItem, PaginationLink } from 'reactstrap';
 import { PaginationItemInfo } from '../../../types';
-import './Pagination.css';
+import './Pagination.scss';
 
 export const PaginationItemWithLink: FC<{ itemInfo: PaginationItemInfo,
   callBack: Function }>  = (props) => {

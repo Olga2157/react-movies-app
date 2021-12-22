@@ -1,3 +1,5 @@
+@use '/src/utilities/variables' as v;
+
 .container {
   display: flex;
   justify-content: space-between;
@@ -11,22 +13,22 @@
   height: auto;
   min-height: 450px;
   margin: 10px;
-  background: #232323;
+  background: v.$dark-grey-color;
 }
 
-@media (max-width: 1155px) {
+@media screen and (max-width: v.$large-screen) {
   .item {
     flex: 0 1 calc(100% / 3 - 20px);
   }
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: v.$medium-screen) {
   .item {
     flex: 0 1 calc(100% / 2 - 20px);
   }
 }
 
-@media (max-width: 600px) {
+@media screen and (max-width: v.$small-screen) {
   .item {
     flex: 0 1 100%;
   }

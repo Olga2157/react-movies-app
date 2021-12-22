@@ -1,3 +1,5 @@
+@use '/src/utilities/variables' as v;
+
 #nav-pagination {
   position: relative;
   display: flex;
@@ -7,8 +9,8 @@
 }
 
 .pagination-item-style.page-item.active button {
-  background-color: #f65261;
-  border-color: #f65261;
+  background-color: v.$red-color;
+  border-color: v.$red-color;
 }
 
 #nav-pagination button {
@@ -20,33 +22,33 @@
 }
 
 .pagination-item-style .page-link {
-  color: #fff;
+  color: v.$light-color;
 }
 
 .pagination-link-style {
-  background-color: #555;
+  background-color: v.$grey-color;
   border-radius: 5px;
 }
 
 .pagination-link-style:hover {
-  background-color: #232323;
+  background-color: v.$dark-grey-color;
 }
 
 .pagination-link-style:active {
-  background-color: #f65261;
+  background-color: v.$red-color;
 }
 
 .pagination-link-style-arrow {
-  color: #141414;
+  color: v.$dark-color;
   border-radius: 5px;
 }
 
 .pagination-link-style-arrow:hover {
-  color: #141414;
+  color: v.$dark-color;
 }
 
 .pagination-link-style-arrow:active {
-  color: #141414;
+  color: v.$dark-color;
 }
 
 #next-page {

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import './Logo.css';
+import './Logo.scss';
 
 export const Logo: FC = () => {
   const logoClass = classNames({

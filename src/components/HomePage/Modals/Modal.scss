@@ -1,5 +1,7 @@
+@use '/src/utilities/variables.scss' as v;
+
 .special-modal .modal-content {
-  background-color: #232323;
+  background-color: v.$dark-color;
   padding: 2%;
 }
 
@@ -12,7 +14,7 @@
 }
 
 .modal-header button {
-  background-color: #fff;
+  background-color: v.$light-color;
 }
 
 /* question: how to change background color for X-close-button?

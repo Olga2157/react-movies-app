@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import { Logo } from './Logo/Logo';
-import './Footer.css';
+import './Footer.scss';
 
 export const Footer: FC = () => {
   const footerClass = classNames({

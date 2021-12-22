@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import classNames from 'classnames';
 import { MovieInfo } from '../../../types';
 import { AppText } from '../../shared/Text/AppText';
-import './Movie.css';
+import './Movie.scss';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { FontSize } from '../../../model/enums/FontSize';
 

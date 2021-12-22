@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
-import './Form.css';
+import './Form.scss';
 
 export const AddMovieForm: FC = () => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
