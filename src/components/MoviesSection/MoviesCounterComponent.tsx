@@ -9,8 +9,7 @@ export const MoviesCounterComponent: FC = () => {
       <strong id="movies-counter" className="fw-bold">
         {moviesCounter}
       </strong>
-      {' '}
-      movies found
+      {' movies found'}
     </p>
   );
 };

@@ -4,9 +4,7 @@ import {
 } from 'reactstrap';
 import { ButtonType } from '../../../model/enums/ButtonType';
 import { MovieInfo } from '../../../types';
-import { AppButton } from '../../shared/Buttons/AppButton';
-import { AppText } from '../../shared/Text/AppText';
-import { Heading } from '../../shared/Text/Heading';
+import { AppButton, AppText, Heading } from '../../shared'
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 import './Modal.scss';
 

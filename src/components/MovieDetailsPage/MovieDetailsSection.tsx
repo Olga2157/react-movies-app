@@ -1,13 +1,8 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { MovieInfoDetails } from '../../types';
-import { Heading } from '../shared/Text/Heading';
-import { Cover } from './DetailsComponents/Cover';
-import { Duration } from './DetailsComponents/Duration';
-import { Rating } from './DetailsComponents/Rating/Rating';
-import { Overview } from './DetailsComponents/Overview';
-import { ReleaseYear } from './DetailsComponents/ReleaseYear';
-import { Tagline } from './DetailsComponents/Tagline';
+import { Heading } from '../shared'
+import { Cover, Duration, Rating, Overview, ReleaseYear, Tagline } from './DetailsComponents';
 
 export const MovieDetailsSection: FC = () => {
 

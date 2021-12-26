@@ -11,14 +11,7 @@ type FilterButtonProps = {
 
 export const FilterButton: FC<FilterButtonProps> = (props) => {
   const { buttonId, listener, buttonText } = props;
-  const btnClass = classNames({
-    btn: true,
-    'text-uppercase': true,
-    'btn-primary': true,
-    'active w-auto': true,
-    chosen: false,
-    // 'btn-over': false,
-  });
+  const btnClass = classNames('btn', 'text-uppercase', 'btn-primary', 'active w-auto');
   return (
     <Button id={buttonId} color="dark" onClick={listener} data-bs-toggle="button" aria-pressed="true" autoComplete="off" className={btnClass}>{buttonText}</Button>
   );

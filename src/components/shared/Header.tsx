@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Logo } from './Logo/Logo';
+import { Logo } from '../shared';
 
 export const Header: FC = () => {
   return (

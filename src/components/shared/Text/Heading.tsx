@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
+import './Text.scss';
 
 type HeadingProps = {
   headingText: string,

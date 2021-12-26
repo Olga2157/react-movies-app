@@ -1,5 +1,7 @@
 @use '/src/utilities/variables' as v;
 
-#color-active-button .chosen {
-  background-color: v.$red-color;
+#color-active-button {
+  .chosen {
+    background-color: v.$red-color;
+  }
 }

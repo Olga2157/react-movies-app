@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
+import { Header, Footer } from '../shared'
 import { MoviesSection } from '../MoviesSection/MovieSection';
-import { Footer } from '../shared/Footer';
-import { Header } from '../shared/Header';
 import { MovieDetailsSection } from './MovieDetailsSection';
 import { SearchButton } from './SearchButton/SearchButton';
 

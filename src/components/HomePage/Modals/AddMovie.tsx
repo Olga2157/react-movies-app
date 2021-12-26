@@ -1,8 +1,7 @@
 import React, { FC, useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { ButtonType } from '../../../model/enums/ButtonType';
-import { AppButton } from '../../shared/Buttons/AppButton';
-import { Heading } from '../../shared/Text/Heading';
+import { AppButton, Heading } from '../../shared'
 import { AddMovieForm } from '../Forms/AddMovieForm';
 import './Modal.scss';
 

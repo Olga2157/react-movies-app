@@ -3,6 +3,7 @@ import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import { MovieInfo } from '../../../types';
+import './Form.scss';
 
 export const EditMovieForm: FC<{movieInfo: MovieInfo}>  = (props) => {
   const movieGenres = ['Action', 'Adventure', 'Animation',

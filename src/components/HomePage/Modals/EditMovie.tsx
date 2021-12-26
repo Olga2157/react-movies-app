@@ -1,10 +1,9 @@
 import React, { FC, useState } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { MovieInfo } from '../../../types';
-import { Heading } from '../../shared/Text/Heading';
+import { AppButton, Heading } from '../../shared'
 import { EditMovieForm } from '../Forms/EditMovieForm';
 import { ButtonType } from '../../../model/enums/ButtonType';
-import { AppButton } from '../../shared/Buttons/AppButton';
 import './Modal.scss';
 
 export const EditMovie: FC<{movieInfo: MovieInfo}> = (props) => {

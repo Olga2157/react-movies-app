@@ -3,11 +3,7 @@ import classNames from 'classnames';
 import './Logo.scss';
 
 export const Logo: FC = () => {
-  const logoClass = classNames({
-    'text-right': true,
-    'text-lowercase': true,
-    'logo-message': true,
-  });
+  const logoClass = classNames('text-right', 'text-lowercase', 'logo-message');
 
   return (
     <p className={logoClass}>

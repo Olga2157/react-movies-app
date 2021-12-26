@@ -6,49 +6,53 @@
   flex: row;
   justify-content: center;
   padding-bottom: 50px;
-}
 
-.pagination-item-style.page-item.active button {
-  background-color: v.$red-color;
-  border-color: v.$red-color;
-}
-
-#nav-pagination button {
-  width: 40px;
+  button {
+    width: 40px;
+  }
 }
 
 .pagination-item-style {
   margin-left: 5px;
+  
+  .page-link {
+    color: v.$light-color;
+  }
+
 }
 
-.pagination-item-style .page-link {
-  color: v.$light-color;
+.pagination-item-style.page-item.active {
+  
+  button {
+    background-color: v.$red-color;
+    border-color: v.$red-color;
+  }
 }
 
 .pagination-link-style {
   background-color: v.$grey-color;
   border-radius: 5px;
+
+  &-arrow {
+    color: v.$dark-color;
+    border-radius: 5px;
+  }
 }
 
 .pagination-link-style:hover {
   background-color: v.$dark-grey-color;
+
+  &-arrow {
+    color: v.$dark-color;
+  } 
 }
 
 .pagination-link-style:active {
   background-color: v.$red-color;
-}
 
-.pagination-link-style-arrow {
-  color: v.$dark-color;
-  border-radius: 5px;
-}
-
-.pagination-link-style-arrow:hover {
-  color: v.$dark-color;
-}
-
-.pagination-link-style-arrow:active {
-  color: v.$dark-color;
+  &-arrow {
+    color: v.$dark-color;
+  } 
 }
 
 #next-page {

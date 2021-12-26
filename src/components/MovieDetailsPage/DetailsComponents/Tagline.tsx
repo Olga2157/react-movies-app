@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MovieInfoDetails } from '../../../types';
-import { AppText } from '../../shared/Text/AppText';
+import { AppText } from '../../shared';
 
 type TaglineProps = {
   chosenMovieDetails: MovieInfoDetails

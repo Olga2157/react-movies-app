@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
 import { MovieInfo } from '../../../types';
-import { AppText } from '../../shared/Text/AppText';
-import './Movie.scss';
+import { AppText } from '../../shared';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { FontSize } from '../../../model/enums/FontSize';
+import './Movie.scss';
 
 type MovieProps = {
   movieInfo: MovieInfo
@@ -15,13 +15,7 @@ export const Movie: FC<MovieProps> = function (props) {
   const {
     posterPath, title, genre, year,
   } = movieInfo;
-  const movieClass = classNames({
-    'd-flex': true,
-    'flex-row': true,
-    'justify-content-between': true,
-    'p-2': true,
-    'movie-details': true,
-  });
+  const movieClass = classNames('d-flex', 'flex-row', 'justify-content-between', 'p-2', 'movie-details');
   return (
     <>
       <div>

@@ -13,15 +13,16 @@ export const SortDropdown: FC = () => {
 
   const sortOptions = [SortName.HIGHEST_RATING, SortName.NEWEST];
 
-  const items = [];
-  for (let i = 0; i < sortOptions.length; i++) {
-    items.push(<DropdownItem>
-      {sortOptions[i]}
-    </DropdownItem>);
-    if (i < sortOptions.length - 1) {
-      items.push(<DropdownItem divider />);
-    }
-  }
+  const items = sortOptions.map(
+    (option, id) => (
+      <div key={option}>
+      <DropdownItem>
+      {option}
+    </DropdownItem>
+    {id !== sortOptions.length - 1 ? <DropdownItem divider /> : ''}
+    </div>
+    )
+  )
 
   const chooseSortName = (e: React.MouseEvent<HTMLButtonElement>) => {
     const button = e.target as HTMLButtonElement;
@@ -43,7 +44,7 @@ export const SortDropdown: FC = () => {
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} size="md">
       <DropdownToggle caret>{SortNameValue}</DropdownToggle>
       <DropdownMenu onClickCapture={chooseSortName}>
-        {items}
+      {items}
       </DropdownMenu>
     </ButtonDropdown>
   );

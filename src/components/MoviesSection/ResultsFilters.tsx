@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { ButtonGroup } from 'reactstrap';
 import { FilterButtonInfo } from '../../types';
-import { FilterButton } from '../shared/Buttons/FilterButton';
+import { FilterButton } from '../shared';
 
 export const ResultsFilters: FC = () => {
   const filterClick = (button: FilterButtonInfo) => {

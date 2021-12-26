@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Container } from 'reactstrap';
 import { MovieInfo } from '../../../types';
 import { Movie } from './Movie';
-// import classNames from 'classnames';
 import './MovieList.scss';
 
 export const MovieList: FC = () => {
@@ -64,12 +63,6 @@ export const MovieList: FC = () => {
       genre: 'Fantasy',
     },
   ];
-
-  // const movieClass = classNames({
-  // 'd-flex': true,
-  // 'flex-column': true,
-  // 'item': true,
-  // });
 
   return (
     <Container>
