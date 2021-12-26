@@ -1,26 +1,25 @@
-import React, { FC } from 'react';
+import React, { FC, useState } from 'react';
 import {
   ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle,
 } from 'reactstrap';
+import { useToggle } from 'react-use';
 import { SortName } from '../../model/enums/SortName';
 
 export const SortDropdown: FC = () => {
   const defaultSortName = 'Sort';
-  const [dropdownOpen, setOpen] = React.useState(false);
-  const [SortNameValue, setSortName] = React.useState(defaultSortName);
-
-  const toggle = () => setOpen(!dropdownOpen);
+  const [dropdownOpen, toggle] = useToggle(false);
+  const [SortNameValue, setSortName] = useState(defaultSortName);
 
   const sortOptions = [SortName.HIGHEST_RATING, SortName.NEWEST];
 
   const items = sortOptions.map(
     (option, id) => (
       <div key={option}>
-      <DropdownItem>
-      {option}
-    </DropdownItem>
-    {id !== sortOptions.length - 1 ? <DropdownItem divider /> : ''}
-    </div>
+        <DropdownItem>
+          {option}
+        </DropdownItem>
+        {id !== sortOptions.length - 1 ? <DropdownItem divider /> : ''}
+      </div>
     )
   )
 
@@ -44,7 +43,7 @@ export const SortDropdown: FC = () => {
     <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} size="md">
       <DropdownToggle caret>{SortNameValue}</DropdownToggle>
       <DropdownMenu onClickCapture={chooseSortName}>
-      {items}
+        {items}
       </DropdownMenu>
     </ButtonDropdown>
   );

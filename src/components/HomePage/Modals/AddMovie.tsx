@@ -1,17 +1,18 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
+import { useToggle } from 'react-use';
 import { ButtonType } from '../../../model/enums/ButtonType';
 import { AppButton, Heading } from '../../shared'
 import { AddMovieForm } from '../Forms/AddMovieForm';
 import './Modal.scss';
 
 export const AddMovie: FC = () => {
-  const [modal, setModal] = useState(false);
-  const handleShow = () => setModal(!modal);
+
+  const [on, toggle] = useToggle(false);
 
   return (
     <>
-      <AppButton buttonId="add-movie-btn" listener={handleShow} buttonText="+ Add movie" buttonType={ButtonType.ADD_MOVIE} />
+      <AppButton buttonId="add-movie-btn" listener={toggle} buttonText="+ Add movie" buttonType={ButtonType.ADD_MOVIE} />
       <Modal
         backdrop={false}
         centered
@@ -19,9 +20,9 @@ export const AddMovie: FC = () => {
         scrollable
         size="md"
         className="special-modal"
-        isOpen={modal}
+        isOpen={on}
       >
-        <ModalHeader toggle={handleShow}>
+        <ModalHeader toggle={toggle}>
           <Heading headingText="ADD MOVIE" upperCase={true} />
         </ModalHeader>
         <ModalBody>
