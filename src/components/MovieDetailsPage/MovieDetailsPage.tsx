@@ -5,7 +5,7 @@ import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieDetailsSection } from './MovieDetailsSection';
 import { SearchButton } from './SearchButton/SearchButton';
 
-export const MovieDetailsPage: FC = function () {
+export const MovieDetailsPage: FC = () => {
   return (
     <>
       <Header />

@@ -5,7 +5,7 @@ import {
 import { useToggle } from 'react-use';
 import { SortName } from '../../model/enums/SortName';
 
-export const SortDropdown: FC = function () {
+export const SortDropdown: FC = () => {
   const defaultSortName = 'Sort';
   const [dropdownOpen, toggle] = useToggle(false);
   const [SortNameValue, setSortName] = useState(defaultSortName);

@@ -15,7 +15,7 @@ type InputWithLabelProps = {
   readonly?: boolean,
 }
 
-export const InputWithLabel: FC<InputWithLabelProps> = function (props) {
+export const InputWithLabel: FC<InputWithLabelProps> = (props) => {
   const {
     id, label, name, placeholder, type, size, readonly,
   } = props;

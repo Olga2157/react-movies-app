@@ -6,7 +6,7 @@ type RatingProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Rating: FC<RatingProps> = function (props) {
+export const Rating: FC<RatingProps> = (props) => {
   const { chosenMovieDetails } = props;
   const { rating } = chosenMovieDetails;
 

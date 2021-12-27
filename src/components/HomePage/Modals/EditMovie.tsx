@@ -7,14 +7,14 @@ import { EditMovieForm } from '../Forms/EditMovieForm';
 import { ButtonType } from '../../../model/enums/ButtonType';
 import './Modal.scss';
 
-export const EditMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = function (props) {
+export const EditMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = (props) => {
   const { movieInfo, callBack } = props;
   const [on, toggle] = useToggle(false);
   const onClick = useCallback(() => {
     callBack();
     toggle();
   }, [callBack, toggle]);
-  
+
   return (
     <>
       <AppButton listener={onClick} buttonText="Edit" buttonType={ButtonType.BURGER_MENU_ITEM} />

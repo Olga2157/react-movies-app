@@ -6,7 +6,7 @@ import { AppButton, Heading } from '../../shared';
 import { AddMovieForm } from '../Forms/AddMovieForm';
 import './Modal.scss';
 
-export const AddMovie: FC = function () {
+export const AddMovie: FC = () => {
   const [on, toggle] = useToggle(false);
 
   return (

@@ -9,7 +9,7 @@ import { AppButton, AppText, Heading } from '../../shared';
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 import './Modal.scss';
 
-export const DeleteMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = function (props) {
+export const DeleteMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = (props) => {
   const { movieInfo, callBack } = props;
   const [on, toggle] = useToggle(false);
   const onClick = useCallback(() => {

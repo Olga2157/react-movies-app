@@ -6,7 +6,7 @@ import { PaginationComponent } from './PaginationComponents/PaginationComponent'
 import { ResultsFilters } from './ResultsFilters';
 import { SortDropdown } from './SortDropdown';
 
-export const MoviesSection: FC = function () {
+export const MoviesSection: FC = () => {
   return (
     <section id="movies-section">
       <Row className="mt-5">

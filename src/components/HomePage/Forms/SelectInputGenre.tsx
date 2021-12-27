@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import './Form.scss';
 
-export const SelectInputGenre: FC = function () {
+export const SelectInputGenre: FC = () => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',

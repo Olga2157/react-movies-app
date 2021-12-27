@@ -5,7 +5,7 @@ import { FindSection } from './FindSection';
 import { AddMovie } from './Modals/AddMovie';
 import { MoviesSection } from '../MoviesSection/MovieSection';
 
-export const HomePage: FC = function () {
+export const HomePage: FC = () => {
   return (
     <>
       <Header />

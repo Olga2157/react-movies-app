@@ -4,7 +4,7 @@ import { MovieInfo } from '../../../types';
 import { Movie } from './Movie';
 import './MovieList.scss';
 
-export const MovieList: FC = function () {
+export const MovieList: FC = () => {
   const movies: MovieInfo[] = [
     {
       id: 1,

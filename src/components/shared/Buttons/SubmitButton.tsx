@@ -5,7 +5,7 @@ type SubmitButtonProps = {
   buttonText: string,
 }
 
-export const SubmitButton: FC<SubmitButtonProps> = function (props) {
+export const SubmitButton: FC<SubmitButtonProps> = (props) => {
   const { buttonText } = props;
   return (
     <Button

@@ -7,7 +7,7 @@ type ReleaseYearProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const ReleaseYear: FC<ReleaseYearProps> = function (props) {
+export const ReleaseYear: FC<ReleaseYearProps> = (props) => {
   const { chosenMovieDetails } = props;
   const { year } = chosenMovieDetails;
   return (

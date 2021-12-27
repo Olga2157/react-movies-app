@@ -5,7 +5,7 @@ type DurationProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Duration: FC<DurationProps> = function (props) {
+export const Duration: FC<DurationProps> = (props) => {
   const { chosenMovieDetails } = props;
   const { duration } = chosenMovieDetails;
 

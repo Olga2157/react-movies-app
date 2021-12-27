@@ -5,7 +5,7 @@ import './Form.scss';
 import { InputWithLabel } from './InputWithLabel';
 import { SelectInputGenre } from './SelectInputGenre';
 
-export const AddMovieForm: FC = function () {
+export const AddMovieForm: FC = () => {
   return (
     <Form id="add-movie-form-id">
 

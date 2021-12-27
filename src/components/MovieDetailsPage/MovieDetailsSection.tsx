@@ -6,7 +6,7 @@ import {
   Cover, Duration, Rating, Overview, ReleaseYear, Tagline,
 } from './DetailsComponents';
 
-export const MovieDetailsSection: FC = function () {
+export const MovieDetailsSection: FC = () => {
   const chosenMovieDetails: MovieInfoDetails = {
     id: 1,
     title: 'Star Wars: The Last Jedi',
