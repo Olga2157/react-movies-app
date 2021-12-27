@@ -1,12 +1,10 @@
-import * as React from 'react';
-import Logo from './Logo';
+import React, { FC } from 'react';
+import { Logo } from './Logo/Logo';
 
-const Header: React.FC<{}> = () => {
+export const Header: FC = () => {
   return (
     <header>
       <Logo />
     </header>
   );
 };
-
-export default Header;

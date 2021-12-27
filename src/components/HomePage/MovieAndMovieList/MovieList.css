@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.item {
+  position: relative;
+  flex: 0 1 calc(100% / 4 - 20px);
+  height: auto;
+  min-height: 450px;
+  margin: 10px;
+  background: #232323;
+}
+
+@media (max-width: 1155px) {
+  .item {
+    flex: 0 1 calc(100% / 3 - 20px);
+  }
+}
+
+@media (max-width: 900px) {
+  .item {
+    flex: 0 1 calc(100% / 2 - 20px);
+  }
+}
+
+@media (max-width: 600px) {
+  .item {
+    flex: 0 1 100%;
+  }
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+}

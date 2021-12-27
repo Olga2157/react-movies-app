@@ -1,8 +1,12 @@
-import * as React from 'react';
-import Logo from './Logo';
+import React, { FC } from 'react';
+import classNames from 'classnames';
+import { Logo } from './Logo/Logo';
+import './Footer.css';
 
-const Footer: React.FC<{}> = () => {
-  const footerClass = 'text-center';
+export const Footer: FC = () => {
+  const footerClass = classNames({
+    'text-center': true,
+  });
   const marginClass = 'mt-2';
 
   return (
@@ -13,5 +17,3 @@ const Footer: React.FC<{}> = () => {
     </footer>
   );
 };
-
-export default Footer;

@@ -1,18 +1,11 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { Input, InputGroup } from 'reactstrap';
-import AppButton from '../shared/Buttons/AppButton';
-import Heading from '../shared/Heading';
+import { AppButton } from '../shared/Buttons/AppButton';
+import { Heading } from '../shared/Text/Heading';
 
-const FindSection: React.FC<{}> = () => {
-  const addMovieClick = () => {
-    const addMoviePopup = document.getElementById('add-movie-popup') as HTMLButtonElement;
-    addMoviePopup.classList.remove('invisible');
-    // todo: add logic when I start task 4 and 7
-  };
-
+export const FindSection: FC = () => {
   return (
     <section>
-      <AppButton buttonId="add-movie-btn" listener={addMovieClick} buttonText="+ Add movie" />
       <Heading headingText="Find your movie" />
       <InputGroup>
         <Input />
@@ -21,5 +14,3 @@ const FindSection: React.FC<{}> = () => {
     </section>
   );
 };
-
-export default FindSection;

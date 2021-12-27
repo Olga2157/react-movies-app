@@ -1,0 +1,5 @@
+#add-movie-form-id label,
+#edit-movie-form-id label {
+  color: #f65261;
+  text-transform: uppercase;
+}
