@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
-import { Button, Form } from 'reactstrap';
+import { Form } from 'reactstrap';
 import { MovieInfo } from '../../../types';
+import { SubmitButton } from '../../shared'
 import './Form.scss';
 
 export const DeleteMovieForm: FC<{ movieInfo: MovieInfo }> = () => {
@@ -10,13 +11,7 @@ export const DeleteMovieForm: FC<{ movieInfo: MovieInfo }> = () => {
 
   return (
     <Form id="DeleteMovieFormId" className="text-right">
-      <Button
-        type="submit"
-        color="danger"
-        className="text-uppercase"
-      >
-        Confirm
-      </Button>
+      <SubmitButton buttonText="Confirm" />
     </Form>
   );
 };

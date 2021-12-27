@@ -10,7 +10,7 @@ type MovieProps = {
   movieInfo: MovieInfo
 };
 
-export const Movie: FC<MovieProps> = function (props) {
+export const Movie: FC<MovieProps> = (props) => {
   const { movieInfo } = props;
   const {
     posterPath, title, genre, year,

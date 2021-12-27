@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import {
-  Button, Form, FormGroup, Input, Label,
-} from 'reactstrap';
+import { Form } from 'reactstrap';
+import { ResetButton, SubmitButton } from '../../shared'
 import './Form.scss';
 import { InputWithLabel } from './InputWithLabel';
 import { SelectInputGenre } from './SelectInputGenre';
@@ -19,24 +18,10 @@ export const AddMovieForm: FC = () => {
       <InputWithLabel id="movieOverview" label="Overview" name="text" type="textarea" placeholder="Overview here" size="sm" />
       <InputWithLabel id="movieRuntime" label="Runtime" type="textarea" placeholder="Runtime here" size="sm" />
       {/* tothink: or better type="number" ? */}
-
       <div className="d-flex justify-content-md-end">
-        <Button
-          type="reset"
-          color="outline-danger"
-          className="text-uppercase"
-        >
-          Reset
-        </Button>
-        <Button
-          type="submit"
-          color="danger"
-          className="text-uppercase"
-        >
-          Submit
-        </Button>
+        <ResetButton/>
+        <SubmitButton buttonText="Submit" />
       </div>
-
     </Form>
   );
 };
