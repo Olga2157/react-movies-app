@@ -3,97 +3,22 @@ import {
   Button, Form, FormGroup, Input, Label,
 } from 'reactstrap';
 import './Form.scss';
+import { InputWithLabel } from './InputWithLabel';
+import { SelectInputGenre } from './SelectInputGenre';
 
 export const AddMovieForm: FC = () => {
-  const movieGenres = ['Action', 'Adventure', 'Animation',
-    'Comedy', 'Drama', 'Family',
-    'Fantasy', 'Horror', 'Music',
-    'Mystery', 'Romance', 'Science Fiction',
-    'Thriller'];
 
   return (
     <Form id="add-movie-form-id">
-      <FormGroup>
-        <Label for="movieTitle">
-          Title
-        </Label>
-        <Input
-          id="movieTitle"
-          type="textarea"
-          placeholder="Title here"
-          bsSize="sm"
-        />
-      </FormGroup>
 
-      <FormGroup>
-        <Label for="releaseDate">
-          Release Date
-        </Label>
-        <Input
-          id="releaseDate"
-          name="date"
-          placeholder="Select Date"
-          type="date"
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="movieUrl">
-          Movie URL
-        </Label>
-        <Input
-          id="movieUrl"
-          type="url"
-          placeholder="Movie URL here"
-          bsSize="sm"
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="movieGenre">
-          Genre
-        </Label>
-        <Input
-          id="movieGenre"
-          name="select"
-          type="select"
-          bsSize="sm"
-          // multiple
-        >
-          <option value="" disabled selected className="display:none;">Select Genre</option>
-
-          {movieGenres.map((genre) => (
-            <option key={genre}>{genre}</option>
-          ))}
-
-        </Input>
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="movieOverview">
-          Overview
-        </Label>
-        <Input
-          id="movieOverview"
-          name="text"
-          type="textarea"
-          placeholder="Overview here"
-          bsSize="sm"
-        />
-      </FormGroup>
-
-      <FormGroup>
-        <Label for="movieRuntime">
-          Runtime
-        </Label>
-        <Input
-          id="movieRuntime"
-          type="textarea"
-          // think: or better type="number" ?
-          placeholder="Runtime here"
-          bsSize="sm"
-        />
-      </FormGroup>
+      <InputWithLabel id="movieTitle" label="Title" type="textarea"
+        placeholder="Title here" size="sm" />
+      <InputWithLabel id="releaseDate" label="Release Date" name="date" type="date" placeholder="Select Date" />
+      <InputWithLabel id="movieUrl" label="Movie URL" type="url" placeholder="Movie URL here" size="sm" />
+      <SelectInputGenre />
+      <InputWithLabel id="movieOverview" label="Overview" name="text" type="textarea" placeholder="Overview here" size="sm" />
+      <InputWithLabel id="movieRuntime" label="Runtime" type="textarea" placeholder="Runtime here" size="sm" />
+      {/* tothink: or better type="number" ? */}
 
       <div className="d-flex justify-content-md-end">
         <Button
