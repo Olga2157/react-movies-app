@@ -5,15 +5,15 @@ type SubmitButtonProps = {
   buttonText: string,
 }
 
-export const SubmitButton: FC<SubmitButtonProps> = (props) => {
+export const SubmitButton: FC<SubmitButtonProps> = function (props) {
   const { buttonText } = props;
   return (
     <Button
-          type="submit"
-          color="danger"
-          className="text-uppercase"
-        >
-          {buttonText}
-        </Button>
+      type="submit"
+      color="danger"
+      className="text-uppercase"
+    >
+      {buttonText}
+    </Button>
   );
 };

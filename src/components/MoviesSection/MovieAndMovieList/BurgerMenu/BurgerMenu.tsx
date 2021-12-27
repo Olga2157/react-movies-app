@@ -16,7 +16,7 @@ type BurgerMenuProps = {
   movieInfo: MovieInfo
 };
 
-export const BurgerMenu: FC<BurgerMenuProps> = (props) => {
+export const BurgerMenu: FC<BurgerMenuProps> = function (props) {
   const { movieInfo } = props;
   const [isOpen, toggle] = useToggle(false);
 

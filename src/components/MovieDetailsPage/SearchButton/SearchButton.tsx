@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { Button } from 'reactstrap';
 import './SearchButton.scss';
 
-export const SearchButton: FC = () => {
+export const SearchButton: FC = function () {
   return (
     <Button id="search-button" type="button" className="btn rounded-pill">
       <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#f65261" className="bi bi-search" viewBox="0 0 16 16">

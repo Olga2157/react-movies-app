@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
-import { Header, Footer } from '../shared'
+import { Header, Footer } from '../shared';
 import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieDetailsSection } from './MovieDetailsSection';
 import { SearchButton } from './SearchButton/SearchButton';
 
-export const MovieDetailsPage: FC = () => {
+export const MovieDetailsPage: FC = function () {
   return (
     <>
       <Header />
@@ -13,11 +13,10 @@ export const MovieDetailsPage: FC = () => {
         <Row>
           <Col><MovieDetailsSection /></Col>
         </Row>
-        <MoviesSection/>
+        <MoviesSection />
       </Container>
-      <SearchButton/>
+      <SearchButton />
       <Footer />
     </>
   );
 };
-

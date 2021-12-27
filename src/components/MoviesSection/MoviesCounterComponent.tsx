@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-export const MoviesCounterComponent: FC = () => {
+export const MoviesCounterComponent: FC = function () {
   const moviesCounter = '15';
   // mock data, later it will be data from (db results)
 

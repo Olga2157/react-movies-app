@@ -6,7 +6,7 @@ type TaglineProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Tagline: FC<TaglineProps> = (props) => {
+export const Tagline: FC<TaglineProps> = function (props) {
   const { chosenMovieDetails } = props;
   const { tagline } = chosenMovieDetails;
   return (

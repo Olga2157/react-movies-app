@@ -1,11 +1,12 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { MovieInfoDetails } from '../../types';
-import { Heading } from '../shared'
-import { Cover, Duration, Rating, Overview, ReleaseYear, Tagline } from './DetailsComponents';
+import { Heading } from '../shared';
+import {
+  Cover, Duration, Rating, Overview, ReleaseYear, Tagline,
+} from './DetailsComponents';
 
-export const MovieDetailsSection: FC = () => {
-
+export const MovieDetailsSection: FC = function () {
   const chosenMovieDetails: MovieInfoDetails = {
     id: 1,
     title: 'Star Wars: The Last Jedi',
@@ -15,8 +16,8 @@ export const MovieDetailsSection: FC = () => {
     overview: 'Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.',
     duration: 154,
     rating: 4.9,
-    tagline: "The Saga Continues",
-  }
+    tagline: 'The Saga Continues',
+  };
 
   return (
     <section id="movie-details-section">
@@ -27,9 +28,11 @@ export const MovieDetailsSection: FC = () => {
           </Col>
           <Col>
             <Row>
-              <Col><Heading headingText={chosenMovieDetails.title} upperCase={false} />
+              <Col>
+                <Heading headingText={chosenMovieDetails.title} upperCase={false} />
               </Col>
-              <Col><Rating chosenMovieDetails={chosenMovieDetails} />
+              <Col>
+                <Rating chosenMovieDetails={chosenMovieDetails} />
               </Col>
             </Row>
             <Row><Tagline chosenMovieDetails={chosenMovieDetails} /></Row>

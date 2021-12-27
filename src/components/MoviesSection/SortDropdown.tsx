@@ -5,7 +5,7 @@ import {
 import { useToggle } from 'react-use';
 import { SortName } from '../../model/enums/SortName';
 
-export const SortDropdown: FC = () => {
+export const SortDropdown: FC = function () {
   const defaultSortName = 'Sort';
   const [dropdownOpen, toggle] = useToggle(false);
   const [SortNameValue, setSortName] = useState(defaultSortName);
@@ -20,8 +20,8 @@ export const SortDropdown: FC = () => {
         </DropdownItem>
         {id !== sortOptions.length - 1 ? <DropdownItem divider /> : ''}
       </div>
-    )
-  )
+    ),
+  );
 
   const chooseSortName = (e: React.MouseEvent<HTMLButtonElement>) => {
     const button = e.target as HTMLButtonElement;

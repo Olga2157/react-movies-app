@@ -15,18 +15,18 @@ type InputWithLabelProps = {
   readonly?: boolean,
 }
 
-export const InputWithLabel: FC<InputWithLabelProps> = (props) => {
-  const { id, label, name, placeholder, type, size, readonly } = props;
-  return <FormGroup>
-    <Label for={id}>
-      {label}
-    </Label>
-    {readonly ?
-      <Input id={id} name={name} type={type} placeholder={placeholder} bsSize={size} readonly="readonly" />
-      :
-      <Input id={id} name={name} type={type} placeholder={placeholder} bsSize={size} />
-    }
-  </FormGroup>
+export const InputWithLabel: FC<InputWithLabelProps> = function (props) {
+  const {
+    id, label, name, placeholder, type, size, readonly,
+  } = props;
+  return (
+    <FormGroup>
+      <Label for={id}>
+        {label}
+      </Label>
+      {readonly
+        ? <Input id={id} name={name} type={type} placeholder={placeholder} bsSize={size} readonly="readonly" />
+        : <Input id={id} name={name} type={type} placeholder={placeholder} bsSize={size} />}
+    </FormGroup>
+  );
 };
-
-

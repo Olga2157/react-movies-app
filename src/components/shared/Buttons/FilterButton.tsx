@@ -9,7 +9,7 @@ type FilterButtonProps = {
   listener?: MouseEventHandler<HTMLButtonElement>
 }
 
-export const FilterButton: FC<FilterButtonProps> = (props) => {
+export const FilterButton: FC<FilterButtonProps> = function (props) {
   const { buttonId, listener, buttonText } = props;
   const btnClass = classNames('btn', 'text-uppercase', 'btn-primary', 'active w-auto');
   return (

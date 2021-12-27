@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import { Input, InputGroup } from 'reactstrap';
-import { AppButton, Heading } from '../shared'
+import { AppButton, Heading } from '../shared';
 
-export const FindSection: FC = () => {
+export const FindSection: FC = function () {
   return (
     <section id="find-section">
-      <Heading headingText="Find your movie" upperCase={true}/>
+      <Heading headingText="Find your movie" upperCase />
       <InputGroup>
         <Input />
         <AppButton buttonId="search-btn" buttonText="Search" />

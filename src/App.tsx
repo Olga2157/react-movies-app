@@ -4,7 +4,7 @@ import ErrorBoundary from './components/shared/ErrorBoundary';
 import { HomePage } from './components/HomePage/HomePage';
 import { MovieDetailsPage } from './components/MovieDetailsPage/MovieDetailsPage';
 
-export const App: FC = () => {
+export const App: FC = function () {
   return (
     <ErrorBoundary>
       {/* <HomePage /> */}

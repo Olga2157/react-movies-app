@@ -7,17 +7,17 @@ type AppTextProps = {
   color?: string,
   fontSize?: FontSize,
 }
-export const AppText: FC<AppTextProps> = (props) => {
+export const AppText: FC<AppTextProps> = function (props) {
   const { text, color, fontSize } = props;
 
-  let textClass = ``;
+  let textClass = '';
 
   if (fontSize) {
-    textClass += `${fontSize} `
+    textClass += `${fontSize} `;
   }
 
   if (color) {
-    textClass += `${color}-text`
+    textClass += `${color}-text`;
   }
 
   return (

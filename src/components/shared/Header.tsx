@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { Logo } from '../shared';
+import { Logo } from '.';
 
-export const Header: FC = () => {
+export const Header: FC = function () {
   return (
     <header>
       <Logo />

@@ -6,12 +6,12 @@ type CoverProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Cover: FC<CoverProps> = (props) => {
+export const Cover: FC<CoverProps> = function (props) {
   const { chosenMovieDetails } = props;
   const { posterPath } = chosenMovieDetails;
   return (
     <div>
-        <img src={posterPath} alt="poster" />
-      </div>
+      <img src={posterPath} alt="poster" />
+    </div>
   );
 };

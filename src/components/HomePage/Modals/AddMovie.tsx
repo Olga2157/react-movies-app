@@ -2,12 +2,11 @@ import React, { FC } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { useToggle } from 'react-use';
 import { ButtonType } from '../../../model/enums/ButtonType';
-import { AppButton, Heading } from '../../shared'
+import { AppButton, Heading } from '../../shared';
 import { AddMovieForm } from '../Forms/AddMovieForm';
 import './Modal.scss';
 
-export const AddMovie: FC = () => {
-
+export const AddMovie: FC = function () {
   const [on, toggle] = useToggle(false);
 
   return (
@@ -23,7 +22,7 @@ export const AddMovie: FC = () => {
         isOpen={on}
       >
         <ModalHeader toggle={toggle}>
-          <Heading headingText="ADD MOVIE" upperCase={true} />
+          <Heading headingText="ADD MOVIE" upperCase />
         </ModalHeader>
         <ModalBody>
           <AddMovieForm />
