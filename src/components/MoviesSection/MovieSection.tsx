@@ -6,8 +6,7 @@ import { PaginationComponent } from './PaginationComponents/PaginationComponent'
 import { ResultsFilters } from './ResultsFilters';
 import { SortDropdown } from './SortDropdown';
 
-export const MoviesSection: FC = () => {
-  return (
+export const MoviesSection: FC = () => (
     <section id="movies-section">
       <Row className="mt-5">
         <Col>
@@ -28,4 +27,3 @@ export const MoviesSection: FC = () => {
       </Row>
     </section>
   );
-};

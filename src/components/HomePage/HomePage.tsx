@@ -5,8 +5,7 @@ import { FindSection } from './FindSection';
 import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieModal } from './Modals/MovieModal';
 
-export const HomePage: FC = () => {
-  return (
+export const HomePage: FC = () => (
     <>
       <Header />
       <Container fluid>
@@ -15,8 +14,7 @@ export const HomePage: FC = () => {
         </Row>
         <MoviesSection />
       </Container>
-      <MovieModal newMovie={true} />
+      <MovieModal newMovie />
       <Footer />
     </>
   );
-};

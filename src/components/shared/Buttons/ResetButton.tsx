@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 import { Button } from 'reactstrap';
 
-export const ResetButton: FC = () => {
-  return (
+export const ResetButton: FC = () => (
     <Button
       type="reset"
       color="outline-danger"
@@ -11,4 +10,3 @@ export const ResetButton: FC = () => {
       Reset
     </Button>
   );
-};

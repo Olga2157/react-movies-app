@@ -17,8 +17,7 @@ type InputWithLabelProps = {
 
 export const InputWithLabel: FC<InputWithLabelProps> = ({
   id, label, name, placeholder, type, size, readonly,
-}) => {
-  return (
+}) => (
     <FormGroup>
       <Label for={id}>
         {label}
@@ -28,4 +27,3 @@ export const InputWithLabel: FC<InputWithLabelProps> = ({
         bsSize={size} disabled={readonly} />
     </FormGroup>
   );
-};

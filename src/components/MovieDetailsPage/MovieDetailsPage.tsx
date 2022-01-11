@@ -5,8 +5,7 @@ import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieDetailsSection } from './MovieDetailsSection';
 import { SearchButton } from './SearchButton/SearchButton';
 
-export const MovieDetailsPage: FC = () => {
-  return (
+export const MovieDetailsPage: FC = () => (
     <>
       <Header />
       <Container fluid>
@@ -19,4 +18,3 @@ export const MovieDetailsPage: FC = () => {
       <Footer />
     </>
   );
-};

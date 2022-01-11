@@ -5,8 +5,7 @@ type SubmitButtonProps = {
   buttonText: string,
 }
 
-export const SubmitButton: FC<SubmitButtonProps> = ({ buttonText }) => {
-  return (
+export const SubmitButton: FC<SubmitButtonProps> = ({ buttonText }) => (
     <Button
       type="submit"
       color="danger"
@@ -15,4 +14,3 @@ export const SubmitButton: FC<SubmitButtonProps> = ({ buttonText }) => {
       {buttonText}
     </Button>
   );
-};

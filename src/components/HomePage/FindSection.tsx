@@ -2,8 +2,7 @@ import React, { FC } from 'react';
 import { Input, InputGroup } from 'reactstrap';
 import { AppButton, Heading } from '../shared';
 
-export const FindSection: FC = () => {
-  return (
+export const FindSection: FC = () => (
     <section id="find-section">
       <Heading headingText="Find your movie" upperCase />
       <InputGroup>
@@ -12,4 +11,3 @@ export const FindSection: FC = () => {
       </InputGroup>
     </section>
   );
-};
