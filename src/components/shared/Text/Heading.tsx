@@ -7,8 +7,7 @@ type HeadingProps = {
   upperCase?: boolean
 }
 
-export const Heading: FC<HeadingProps> = (props) => {
-  const { headingText, upperCase } = props;
+export const Heading: FC<HeadingProps> = ({ headingText, upperCase }) => {
   const headingClass = classNames(
     {
       'text-uppercase': upperCase,

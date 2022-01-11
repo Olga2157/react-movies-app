@@ -10,8 +10,7 @@ type MovieProps = {
   movieInfo: MovieInfo
 };
 
-export const Movie: FC<MovieProps> = (props) => {
-  const { movieInfo } = props;
+export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   const {
     posterPath, title, genre, year,
   } = movieInfo;
@@ -27,7 +26,7 @@ export const Movie: FC<MovieProps> = (props) => {
           <AppText text={title} fontSize={FontSize.SMALL} />
         </div>
         <div>
-          <AppText text={year.toString()} fontSize={FontSize.SMALL} />
+          <AppText text={year} fontSize={FontSize.SMALL} />
         </div>
       </div>
       <div className="p-2">

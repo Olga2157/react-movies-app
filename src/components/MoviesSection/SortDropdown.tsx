@@ -7,7 +7,7 @@ import { SortName } from '../../model/enums/SortName';
 
 export const SortDropdown: FC = () => {
   const defaultSortName = 'Sort';
-  const [dropdownOpen, toggle] = useToggle(false);
+  const [dropdownOpen, toggleDropdown] = useToggle(false);
   const [SortNameValue, setSortName] = useState(defaultSortName);
 
   const sortOptions = [SortName.HIGHEST_RATING, SortName.NEWEST];
@@ -36,11 +36,11 @@ export const SortDropdown: FC = () => {
     } else {
       setSortName(defaultSortName);
     }
-    toggle();
+    toggleDropdown();
   };
 
   return (
-    <ButtonDropdown isOpen={dropdownOpen} toggle={toggle} size="md">
+    <ButtonDropdown isOpen={dropdownOpen} toggle={toggleDropdown} size="md">
       <DropdownToggle caret>{SortNameValue}</DropdownToggle>
       <DropdownMenu onClickCapture={chooseSortName}>
         {items}

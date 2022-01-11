@@ -5,17 +5,15 @@ type DurationProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Duration: FC<DurationProps> = (props) => {
-  const { chosenMovieDetails } = props;
+export const Duration: FC<DurationProps> = ({ chosenMovieDetails }) => {
   const { duration } = chosenMovieDetails;
 
   return (
     <p className="mt-2 text-danger fs-5">
       <strong id="movies-counter" className="fw-bold">
-        {duration.toString()}
+        {duration}
       </strong>
-      {' '}
-      min
+      {' min'}
     </p>
   );
 };

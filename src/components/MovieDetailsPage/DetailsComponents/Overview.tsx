@@ -6,8 +6,7 @@ type OverviewProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const Overview: FC<OverviewProps> = (props) => {
-  const { chosenMovieDetails } = props;
+export const Overview: FC<OverviewProps> = ({ chosenMovieDetails }) => {
   const { overview } = chosenMovieDetails;
   return (
     <AppText text={overview} />

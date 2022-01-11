@@ -9,13 +9,13 @@ import { AppButton, AppText, Heading } from '../../shared';
 import { DeleteMovieForm } from '../Forms/DeleteMovieForm';
 import './Modal.scss';
 
-export const DeleteMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = (props) => {
-  const { movieInfo, callBack } = props;
-  const [on, toggle] = useToggle(false);
+export const DeleteMovie: FC<{ movieInfo: MovieInfo, 
+  onClickCallBack: Function }> = ({ movieInfo, onClickCallBack }) => {
+  const [isOpen, toggleModal] = useToggle(false);
   const onClick = useCallback(() => {
-    callBack();
-    toggle();
-  }, [callBack, toggle]);
+    onClickCallBack();
+    toggleModal();
+  }, [onClickCallBack, toggleModal]);
 
   return (
     <>
@@ -27,9 +27,9 @@ export const DeleteMovie: FC<{ movieInfo: MovieInfo, callBack: Function }> = (pr
         scrollable
         size="md"
         className="special-modal"
-        isOpen={on}
+        isOpen={isOpen}
       >
-        <ModalHeader toggle={toggle}>
+        <ModalHeader toggle={toggleModal}>
           <Heading headingText="DELETE MOVIE" upperCase />
         </ModalHeader>
         <ModalBody>

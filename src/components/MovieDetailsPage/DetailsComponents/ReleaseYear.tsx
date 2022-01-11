@@ -7,10 +7,9 @@ type ReleaseYearProps = {
   chosenMovieDetails: MovieInfoDetails
 };
 
-export const ReleaseYear: FC<ReleaseYearProps> = (props) => {
-  const { chosenMovieDetails } = props;
+export const ReleaseYear: FC<ReleaseYearProps> = ({ chosenMovieDetails }) => {
   const { year } = chosenMovieDetails;
   return (
-    <AppText text={year.toString()} color="red" fontSize={FontSize.MEDIUM} />
+    <AppText text={year} color="red" fontSize={FontSize.MEDIUM} />
   );
 };

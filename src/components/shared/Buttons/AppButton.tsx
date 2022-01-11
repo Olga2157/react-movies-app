@@ -11,10 +11,9 @@ type AppButtonProps = {
   buttonClass?: string,
   listener?: MouseEventHandler<HTMLButtonElement>
 }
-export const AppButton: FC<AppButtonProps> = (props) => {
-  const {
-    buttonId, listener, buttonText, buttonType, buttonClass,
-  } = props;
+export const AppButton: FC<AppButtonProps> = ({
+  buttonId, listener, buttonText, buttonType, buttonClass,
+}) => {
   const btnClass = classNames({
     'text-uppercase': buttonType !== ButtonType.BURGER_MENU_ITEM,
     'burger-menu-btn': buttonType === ButtonType.BURGER_MENU || buttonType === ButtonType.BURGER_MENU_ITEM,

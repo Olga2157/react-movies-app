@@ -9,28 +9,27 @@ import {
 import { useToggle } from 'react-use';
 import { MovieInfo } from '../../../../types';
 import { DeleteMovie } from '../../../HomePage/Modals/DeleteMovie';
-import { EditMovie } from '../../../HomePage/Modals/EditMovie';
 import './BurgerMenu.scss';
+import { MovieModal } from '../../../HomePage/Modals/MovieModal';
 
 type BurgerMenuProps = {
   movieInfo: MovieInfo
 };
 
-export const BurgerMenu: FC<BurgerMenuProps> = (props) => {
-  const { movieInfo } = props;
-  const [isOpen, toggle] = useToggle(false);
+export const BurgerMenu: FC<BurgerMenuProps> = ({ movieInfo }) => {
+  const [isOpen, toggleMenu] = useToggle(false);
 
   return (
     <div className="burger-menu-movie">
       <Navbar color="light" light>
-        <NavbarToggler className="me-2" onClick={toggle} />
+        <NavbarToggler className="me-2" onClick={toggleMenu} />
         <Collapse navbar isOpen={isOpen} className="mt-2">
           <Nav navbar>
             <NavItem>
-              <EditMovie movieInfo={movieInfo} callBack={toggle} />
+              <MovieModal newMovie={false} movieInfo={movieInfo} onClickCallBack={toggleMenu} />
             </NavItem>
             <NavItem>
-              <DeleteMovie movieInfo={movieInfo} callBack={toggle} />
+              <DeleteMovie movieInfo={movieInfo} onClickCallBack={toggleMenu} />
             </NavItem>
           </Nav>
         </Collapse>

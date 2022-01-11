@@ -2,8 +2,8 @@ import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { Header, Footer } from '../shared';
 import { FindSection } from './FindSection';
-import { AddMovie } from './Modals/AddMovie';
 import { MoviesSection } from '../MoviesSection/MovieSection';
+import { MovieModal } from './Modals/MovieModal';
 
 export const HomePage: FC = () => {
   return (
@@ -15,7 +15,7 @@ export const HomePage: FC = () => {
         </Row>
         <MoviesSection />
       </Container>
-      <AddMovie />
+      <MovieModal newMovie={true} />
       <Footer />
     </>
   );
