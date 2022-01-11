@@ -36,20 +36,10 @@ module.exports = {
           loader: "ts-loader",
         },
       },
-      // для автоматической сборки проекта со стилями
-      // {
-      //   test: /\.css$/,
-      //   use: ExtractTextPlugin.extract(
-      //     {
-      //       fallback: 'style-loader',
-      //       use: ['css-loader']
-      //     })
-      // }
-      // ниже плагин MiniCssExtractPlugin тоже самое делает
-      // Optimize CSS Loading
+      // Optimize auto CSS Loading
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        test: /\.(s*)css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       // Handle Images
       {

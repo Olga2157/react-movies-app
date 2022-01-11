@@ -1,0 +1,23 @@
+@use '/src/utilities/variables.scss' as v;
+
+.special-modal {
+  .modal-content {
+    background-color: v.$dark-grey-color;
+    padding: 2%;
+  }
+}
+
+.modal-header {
+  border-bottom: none;
+  button {
+      background-color: v.$light-color;
+    }
+/* question: how to change background color for X-close-button?
+In react-bootstrap we can add closeconstiant='#fff' for ModalHeader in AddMovieModal
+instead of changing background-color here in css.
+What we can add in reactstrap for ModalHeader in AddMovieModal ? */ 
+}
+
+.modal-footer {
+  border-top: none;
+}

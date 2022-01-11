@@ -1,20 +1,20 @@
 import React, { FC } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import { Header, Footer } from '../shared';
-import { FindSection } from './FindSection';
 import { MoviesSection } from '../MoviesSection/MovieSection';
-import { MovieModal } from './Modals/MovieModal';
+import { MovieDetailsSection } from './MovieDetailsSection';
+import { SearchButton } from './SearchButton/SearchButton';
 
-export const HomePage: FC = () => (
+export const MovieDetailsPage: FC = () => (
     <>
       <Header />
       <Container fluid>
         <Row>
-          <Col><FindSection /></Col>
+          <Col><MovieDetailsSection /></Col>
         </Row>
         <MoviesSection />
       </Container>
-      <MovieModal newMovie />
+      <SearchButton />
       <Footer />
     </>
   );

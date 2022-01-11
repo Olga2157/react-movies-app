@@ -1,0 +1,39 @@
+@use '/src/utilities/variables' as v;
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.item {
+  position: relative;
+  flex: 0 1 calc(100% / 4 - 20px);
+  height: auto;
+  min-height: 450px;
+  margin: 10px;
+  background: v.$dark-grey-color;
+    img {
+      width: 100%;
+      height: auto;
+    }
+}
+
+@media screen and (max-width: v.$large-screen) {
+  .item {
+    flex: 0 1 calc(100% / 3 - 20px);
+  }
+}
+
+@media screen and (max-width: v.$medium-screen) {
+  .item {
+    flex: 0 1 calc(100% / 2 - 20px);
+  }
+}
+
+@media screen and (max-width: v.$small-screen) {
+  .item {
+    flex: 0 1 100%;
+  }
+}

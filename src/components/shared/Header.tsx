@@ -1,10 +1,8 @@
 import React, { FC } from 'react';
-import { Logo } from './Logo/Logo';
+import { Logo } from '.';
 
-export const Header: FC = () => {
-  return (
+export const Header: FC = () => (
     <header>
       <Logo />
     </header>
   );
-};

@@ -1,0 +1,16 @@
+@mixin reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+}
+
+@mixin lowercase {
+  text-transform: lowercase;
+}
+
+@mixin invisible {
+  display: none;
+}

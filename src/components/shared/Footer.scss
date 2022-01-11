@@ -1,0 +1,13 @@
+@use '/src/utilities/variables' as v;
+
+footer {
+  background-color: v.$grey-color;
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+}
+
+/* todo: move this scss in bootstrap way */

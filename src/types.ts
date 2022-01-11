@@ -11,6 +11,13 @@ export type MovieInfo = {
     genre: string;
   }
 
+  export type MovieInfoDetails  = MovieInfo & {
+    overview: string;
+    duration: number;
+    rating: number;
+    tagline: string;
+  }
+
   export type PaginationItemInfo = {
     pageKey: number;
     active: boolean;
