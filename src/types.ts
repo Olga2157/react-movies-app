@@ -22,3 +22,7 @@ export type MovieInfo = {
     pageKey: number;
     active: boolean;
   } 
+
+  export type InitialStateMovie  =  {
+    movies: MovieInfoDetails[];
+  }
