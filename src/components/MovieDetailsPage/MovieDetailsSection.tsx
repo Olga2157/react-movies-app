@@ -11,10 +11,10 @@ export const MovieDetailsSection: FC = () => {
     id: 1,
     title: 'Star Wars: The Last Jedi',
     posterPath: 'https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg',
-    year: 2017,
-    genre: 'Fantasy',
+    releaseDate: '2017-11-11',
+    genres: ['Fantasy', 'Adventure'],
     overview: 'Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.',
-    duration: 154,
+    runtime: 154,
     rating: 4.9,
     tagline: 'The Saga Continues',
   };

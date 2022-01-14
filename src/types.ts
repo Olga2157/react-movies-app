@@ -7,13 +7,13 @@ export type MovieInfo = {
     id: number;
     title: string;
     posterPath: string;
-    year: number;
-    genre: string;
+    releaseDate: string;
+    genres: string[];
   }
 
   export type MovieInfoDetails  = MovieInfo & {
     overview: string;
-    duration: number;
+    runtime: number;
     rating: number;
     tagline: string;
   }
@@ -25,4 +25,9 @@ export type MovieInfo = {
 
   export type InitialStateMovie  =  {
     movies: MovieInfoDetails[];
+  }
+
+  export type MovieResults = {
+    totalAmount: number;
+    data: MovieInfoDetails[];
   }

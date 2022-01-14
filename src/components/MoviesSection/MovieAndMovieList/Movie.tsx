@@ -12,9 +12,20 @@ type MovieProps = {
 
 export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   const {
-    posterPath, title, genre, year,
+    title, genres, releaseDate,
   } = movieInfo;
+  // api provided incorrect path for this one now
+  let { posterPath } = movieInfo;
+  if (posterPath === 'https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg') {
+    posterPath = 'https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg';
+  }
   const movieClass = classNames('d-flex', 'flex-row', 'justify-content-between', 'p-2', 'movie-details');
+  const year = releaseDate.substring(0, 4);
+  let movieGenres = '';
+  for (let i = 0; i < genres.length; i++) {
+    movieGenres += genres[i] + " ";
+  }
+
   return (
     <>
       <div>
@@ -30,7 +41,7 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
         </div>
       </div>
       <div className="p-2">
-        <AppText text={genre} fontSize={FontSize.EXTRA_SMALL} />
+        <AppText text={movieGenres} fontSize={FontSize.EXTRA_SMALL} />
       </div>
     </>
   );
