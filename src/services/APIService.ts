@@ -12,12 +12,15 @@ export default {
         const { sortBy, search, sortOrder, searchBy, filter } = filterSearch;
         if (sortBy) {
           url += `&sortBy=${sortBy}`;
+          if (sortOrder) {
+            url += `&sortOrder=${sortOrder}`;
+          } else {
+            url += `&sortOrder=desc`;
+          }
         }
+        console.log('fs : ' + JSON.stringify(filterSearch));
         if (search) {
           url += `&search=${search}`;
-        }
-        if (sortOrder) {
-          url += `&sortOrder=${sortOrder}`;
         }
         if (searchBy) {
           url += `&searchBy=${searchBy}`;
@@ -26,6 +29,7 @@ export default {
           url += `&filter=${filter}`;
         }
     }
+    console.log('url : ' + url);
     const response = await fetch(`${url}`);
     if (response.ok) {
       const movies = await response.json() as MovieResults;

@@ -4,8 +4,11 @@ import {
 } from 'reactstrap';
 import { useToggle } from 'react-use';
 import { SortName } from '../../model/enums/SortName';
+import { useDispatch } from 'react-redux';
+import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
 
 export const SortDropdown: FC = () => {
+  const dispatch = useDispatch();
   const defaultSortName = 'Sort';
   const [dropdownOpen, toggleDropdown] = useToggle(false);
   const [SortNameValue, setSortName] = useState(defaultSortName);
@@ -28,11 +31,17 @@ export const SortDropdown: FC = () => {
     e.stopPropagation();
     if (button.textContent) {
       setSortName(button.textContent);
+      let sortField = '';
       if (button.textContent === SortName.HIGHEST_RATING) {
-        // todo: add logic in next tasks
+        sortField = 'vote_average';
       } else if (button.textContent === SortName.NEWEST) {
-        // todo: add logic in next tasks
+        sortField = 'release_date';
       }
+      dispatch(getMoviesCreator(1, 8,
+        {
+          'sortBy': sortField
+        }
+      ));
     } else {
       setSortName(defaultSortName);
     }

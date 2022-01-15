@@ -17,8 +17,8 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
     title, genres, releaseDate,
   } = movieInfo;
   let { posterPath } = movieInfo;
-  // api provided incorrect path for some posters
-  // https://media.istockphoto.com/vectors/cinema-and-movie-time-vector-id640312764
+    // api provided incorrect path for some posters
+// https://media.istockphoto.com/vectors/cinema-and-movie-time-vector-id640312764
   // await ApiService.urlIsAvailable(posterPath)
   // if (posterPath === 'https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg') {
   //   posterPath = 'https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg';
@@ -29,10 +29,16 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   for (let i = 0; i < genres.length; i++) {
     movieGenres += genres[i] + " ";
   }
+  const goToMovieDetails = (movie: MovieInfo) => {
+    const homePage = document.getElementById('home-page');
+    homePage?.classList.add('invisible');
+    const movieDetailsPage = document.getElementById('movie-details-page');
+    movieDetailsPage?.classList.remove('invisible');
+  }
   return (
     <>
       <div>
-        <img src={posterPath} alt="poster" />
+        <img src={posterPath} onClick={() => goToMovieDetails(movieInfo)} alt="poster" />
         <BurgerMenu movieInfo={movieInfo} />
       </div>
       <div className={movieClass}>

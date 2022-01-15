@@ -13,7 +13,7 @@ export const ResultsFilters: FC = () => {
     if (button.buttonId === 'all-filter') {
       dispatch(getMoviesCreator());
     } else {
-      dispatch(getMoviesCreator(1,10,
+      dispatch(getMoviesCreator(1, 8,
         {
           'filter': button.buttonText
         }
