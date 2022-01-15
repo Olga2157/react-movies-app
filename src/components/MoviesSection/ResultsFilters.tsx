@@ -8,21 +8,21 @@ import { FilterButton } from '../shared';
 export const ResultsFilters: FC = () => {
   const dispatch = useDispatch();
   const filterClick = (button: FilterButtonInfo) => {
-    // console.log(button.buttonText);
-    // todo: add logic when I start next tasks
-    if (button.buttonId === 'all-filter') {
-      dispatch(getMoviesCreator());
-    } else {
-      dispatch(getMoviesCreator(1, 8,
-        {
-          'filter': button.buttonText
-        }
-      ));
-    }
+    const chosenButton = document.getElementById(button.buttonId) as HTMLButtonElement;
+    chosenButton.parentElement?.childNodes.forEach(child => {
+      const curButton = child as HTMLButtonElement;
+      curButton.classList.remove('chosen');
+    });
+    chosenButton?.classList.add('chosen');
+    dispatch(getMoviesCreator(1, 8,
+      {
+        'filter': button.buttonText
+      }
+    ));
   };
 
   const buttons: FilterButtonInfo[] = [
-    { buttonId: 'all-filter', buttonText: 'all' },
+    { buttonId: 'all-filter', buttonText: 'All' },
     { buttonId: 'documentary-filter', buttonText: 'Documentary' },
     { buttonId: 'comedy-filter', buttonText: 'Comedy' },
     { buttonId: 'horror-filter', buttonText: 'Horror' },

@@ -3,8 +3,8 @@ import {
   ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle,
 } from 'reactstrap';
 import { useToggle } from 'react-use';
-import { SortName } from '../../model/enums/SortName';
 import { useDispatch } from 'react-redux';
+import { SortName } from '../../model/enums/SortName';
 import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
 
 export const SortDropdown: FC = () => {

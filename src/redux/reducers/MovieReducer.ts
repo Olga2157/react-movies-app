@@ -1,9 +1,14 @@
-import { InitialStateMovie, MovieResults } from "../../types"
+import { InitialStateMovie } from "../../types"
 import { ActionTypes, MovieActions } from "../actions/actionTypes/actionTypes";
 import camelcaseKeys from 'camelcase-keys';
+import { Genres } from "../../model/enums/Genres";
 
 const initialState: InitialStateMovie = {
-  movies: []
+  movies: [],
+  totalAmount: 0,
+  totalPages: 0,
+  currentPage: 1,
+  chosenGenre: Genres.ALL
 }
 
 export default function MovieReducer(
@@ -12,10 +17,19 @@ export default function MovieReducer(
 ): InitialStateMovie {
   switch (action.type) {
     case ActionTypes.GOT_MOVIES:
-      const res = camelcaseKeys(action.movies.data);
       return {
         ...state,
-        movies: res
+        movies: camelcaseKeys(action.movies.data),
+        chosenGenre: action.chosenGenre,
+        totalAmount: action.totalAmount,
+        totalPages: Math.ceil(action.totalAmount / 8),
+        currentPage: 1
+      }
+    case ActionTypes.UPDATE_CURRENT_PAGE_WITH_MOVIES:
+      return {
+        ...state,
+        currentPage: action.page,
+        movies: camelcaseKeys(action.movies.data),
       }
     default:
       return state

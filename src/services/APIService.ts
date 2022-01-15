@@ -6,34 +6,32 @@ import camelcaseKeys from 'camelcase-keys';
 const baseUrl = 'http://localhost:4000/';
 
 export default {
-  getMovies: async (offset = 0, limit = 8, filterSearch? : FilterSearch): Promise<MovieResults> => {
+  getMovies: async (offset = 0, limit = 8, filterSearch?: FilterSearch): Promise<MovieResults> => {
     let url = `${baseUrl}movies?offset=${offset}&limit=${limit}`;
     if (filterSearch) {
-        const { sortBy, search, sortOrder, searchBy, filter } = filterSearch;
-        if (sortBy) {
-          url += `&sortBy=${sortBy}`;
-          if (sortOrder) {
-            url += `&sortOrder=${sortOrder}`;
-          } else {
-            url += `&sortOrder=desc`;
-          }
+      const { sortBy, search, sortOrder, searchBy, filter } = filterSearch;
+      if (sortBy) {
+        url += `&sortBy=${sortBy}`;
+        if (sortOrder) {
+          url += `&sortOrder=${sortOrder}`;
+        } else {
+          url += `&sortOrder=desc`;
         }
-        console.log('fs : ' + JSON.stringify(filterSearch));
-        if (search) {
-          url += `&search=${search}`;
-        }
-        if (searchBy) {
-          url += `&searchBy=${searchBy}`;
-        }
-        if (filter) {
-          url += `&filter=${filter}`;
-        }
+      }
+      if (search) {
+        url += `&search=${search}`;
+      }
+      if (searchBy) {
+        url += `&searchBy=${searchBy}`;
+      }
+      if (filter && filter.toString() !== 'All') {
+        url += `&filter=${filter}`;
+      }
     }
-    console.log('url : ' + url);
     const response = await fetch(`${url}`);
     if (response.ok) {
       const movies = await response.json() as MovieResults;
-      const createdPromises : Promise<boolean>[] = [];
+      const createdPromises: Promise<boolean>[] = [];
       movies.data.forEach(movie => {
         const urlIsAvailablePromise = urlIsAvailable(camelcaseKeys(movie).posterPath);
         createdPromises.push(urlIsAvailablePromise);

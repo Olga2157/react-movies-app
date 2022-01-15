@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
 import { Col, Container, Row } from 'reactstrap';
+import { moviesDataSelector } from '../../redux/selector/selectors';
 import { MovieInfoDetails } from '../../types';
 import { Heading } from '../shared';
 import {
@@ -7,6 +9,7 @@ import {
 } from './DetailsComponents';
 
 export const MovieDetailsSection: FC = () => {
+  const { movies } = useSelector(moviesDataSelector);
   const chosenMovieDetails: MovieInfoDetails = {
     id: 1,
     title: 'Star Wars: The Last Jedi',

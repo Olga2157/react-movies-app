@@ -5,8 +5,7 @@ import { AppText } from '../../shared';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { FontSize } from '../../../model/enums/FontSize';
 import './Movie.scss';
-import './../../../app.scss';
-import ApiService from '../../../services/APIService'
+import '../../../app.scss';
 
 type MovieProps = {
   movieInfo: MovieInfo
@@ -14,9 +13,8 @@ type MovieProps = {
 
 export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   const {
-    title, genres, releaseDate,
+    title, genres, releaseDate, posterPath
   } = movieInfo;
-  let { posterPath } = movieInfo;
     // api provided incorrect path for some posters
 // https://media.istockphoto.com/vectors/cinema-and-movie-time-vector-id640312764
   // await ApiService.urlIsAvailable(posterPath)
@@ -34,7 +32,7 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
     homePage?.classList.add('invisible');
     const movieDetailsPage = document.getElementById('movie-details-page');
     movieDetailsPage?.classList.remove('invisible');
-  }
+  };
   return (
     <>
       <div>

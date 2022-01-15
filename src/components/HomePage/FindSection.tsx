@@ -15,6 +15,7 @@ export const FindSection: FC = () => {
         'searchBy': 'title'
       }
     ));
+    input.value = '';
   }, []);
 
   return (
