@@ -31,3 +31,11 @@ export type MovieInfo = {
     totalAmount: number;
     data: MovieInfoDetails[];
   }
+
+  export type FilterSearch = {
+    sortBy: string,
+    sortOrder: 'asc' | 'desc',
+    search: string,
+    searchBy: 'genres' | 'title',
+    filter: string
+  }

@@ -1,7 +1,6 @@
 import { InitialStateMovie, MovieResults } from "../../types"
 import { ActionTypes, MovieActions } from "../actions/actionTypes/actionTypes";
 import camelcaseKeys from 'camelcase-keys';
-import ApiService from '../../services/APIService'
 
 const initialState: InitialStateMovie = {
   movies: []

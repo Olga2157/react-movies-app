@@ -3,7 +3,7 @@ import { ActionCreator } from "redux";
 import { ActionTypes, GotMovies, MovieActions } from "../actionTypes/actionTypes";
 import { ThunkAction } from 'redux-thunk'
 import ApiService from '../../../services/APIService'
-import { MovieInfoDetails } from "../../../types";
+import { FilterSearch, MovieInfoDetails } from "../../../types";
 
 export const getMoviesCreator: ActionCreator<ThunkAction<
   // The type of the last action to be dispatched - will always be promise<T> for async actions
@@ -14,9 +14,9 @@ export const getMoviesCreator: ActionCreator<ThunkAction<
   null,
   // The type of the last action to be dispatched
   GotMovies
->> = () => {
+>> = (offset?: number, limit? : number, filterSearch?: FilterSearch) => {
   return async (dispatch: Dispatch<MovieActions>) => {
-    const movies = await ApiService.getMovies();
+    const movies = await ApiService.getMovies(offset, limit, filterSearch);
     const gotMovieAction: MovieActions = {
       type: ActionTypes.GOT_MOVIES,
       movies

@@ -12,15 +12,21 @@ export const ResultsFilters: FC = () => {
     // todo: add logic when I start next tasks
     if (button.buttonId === 'all-filter') {
       dispatch(getMoviesCreator());
+    } else {
+      dispatch(getMoviesCreator(1,10,
+        {
+          'filter': button.buttonText
+        }
+      ));
     }
   };
 
   const buttons: FilterButtonInfo[] = [
     { buttonId: 'all-filter', buttonText: 'all' },
-    { buttonId: 'documentary-filter', buttonText: 'documentary' },
-    { buttonId: 'comedy-filter', buttonText: 'comedy' },
-    { buttonId: 'horror-filter', buttonText: 'horror' },
-    { buttonId: 'crime-filter', buttonText: 'crime' },
+    { buttonId: 'documentary-filter', buttonText: 'Documentary' },
+    { buttonId: 'comedy-filter', buttonText: 'Comedy' },
+    { buttonId: 'horror-filter', buttonText: 'Horror' },
+    { buttonId: 'crime-filter', buttonText: 'Crime' },
   ];
 
   return (
