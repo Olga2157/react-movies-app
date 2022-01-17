@@ -10,20 +10,21 @@ type InputWithLabelProps = {
   label: string,
   name?: string,
   type?: InputType,
+  defaultValue?: string,
   placeholder: string,
   size?: 'lg' | 'sm',
   readonly?: boolean,
 }
 
 export const InputWithLabel: FC<InputWithLabelProps> = ({
-  id, label, name, placeholder, type, size, readonly,
+  id, label, name, defaultValue, placeholder, type, size, readonly,
 }) => (
-    <FormGroup>
-      <Label for={id}>
-        {label}
-      </Label>
-      <Input id={id} 
-        name={name} type={type} placeholder={placeholder}
-        bsSize={size} disabled={readonly} />
-    </FormGroup>
-  );
+  <FormGroup>
+    <Label for={id}>
+      {label}
+    </Label>
+    <Input id={id}
+      name={name} type={type} placeholder={placeholder}
+      bsSize={size} disabled={readonly} defaultValue={defaultValue} />
+  </FormGroup>
+);

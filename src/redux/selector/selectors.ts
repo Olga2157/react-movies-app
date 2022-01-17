@@ -1,5 +1,5 @@
-import { RootState } from "../../store";
-import { InitialStateMovie } from "../../types";
+import { RootState } from '../../store';
+import { InitialStateMovie } from '../../types';
 
 export const moviesDataSelector = ({
   movieReducer,

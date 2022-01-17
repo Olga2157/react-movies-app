@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 import './Form.scss';
 
-export const SelectInputGenre: FC = () => {
+export const SelectInputGenre: FC<{ defaultSelected?: string[] }> = ({ defaultSelected }) => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',
@@ -21,11 +21,12 @@ export const SelectInputGenre: FC = () => {
         name="select"
         type="select"
         bsSize="sm"
+        multiple
       >
-        <option value="" disabled selected className="display:none;">Select Genre</option>
+        <option value="" disabled className="display:none;">Select Genre</option>
 
         {movieGenres.map((genre) => (
-          <option key={genre}>{genre}</option>
+          <option key={genre} selected={defaultSelected?.includes(genre)}>{genre}</option>
         ))}
       </Input>
     </FormGroup>

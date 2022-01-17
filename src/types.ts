@@ -1,4 +1,4 @@
-import { Genres } from "./model/enums/Genres";
+import { Genres } from './model/enums/Genres';
 
 export type FilterButtonInfo = {
   buttonId: string;

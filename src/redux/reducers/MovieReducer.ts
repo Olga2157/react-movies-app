@@ -1,7 +1,7 @@
-import { InitialStateMovie } from "../../types"
-import { ActionTypes, MovieActions } from "../actions/actionTypes/actionTypes";
 import camelcaseKeys from 'camelcase-keys';
-import { Genres } from "../../model/enums/Genres";
+import { InitialStateMovie } from '../../types';
+import { ActionTypes, MovieActions } from '../actions/actionTypes/actionTypes';
+import { Genres } from '../../model/enums/Genres';
 
 const initialState: InitialStateMovie = {
   movies: [],

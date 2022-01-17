@@ -1,11 +1,28 @@
-import { Dispatch } from "react";
-import { ActionCreator } from "redux";
-import { ActionTypes, GotMovies, MovieActions, UpdateCurrentPage } from "../actionTypes/actionTypes";
+import { Dispatch } from 'react';
+import { ActionCreator } from 'redux';
 import { ThunkAction } from 'redux-thunk'
+import { ActionTypes, GotMovies, MovieActions, UpdateCurrentPageWithMovies } from '../actionTypes/actionTypes';
 import ApiService from '../../../services/APIService'
-import { FilterSearch, MovieInfoDetails, MovieResults } from "../../../types";
-import { Genres } from "../../../model/enums/Genres";
-import store from "../../../store";
+import { FilterSearch, MovieInfoDetails } from '../../../types';
+import { Genres } from '../../../model/enums/Genres';
+import store from '../../../store';
+
+async function updateMovies() {
+  const currentPage = store.getState().movieReducer.currentPage;
+  const chosenGenre = store.getState().movieReducer.chosenGenre;
+  let filterSearch = {
+    filter: chosenGenre ? chosenGenre : Genres.ALL
+  };
+  const movies = await ApiService.getMovies(currentPage - 1, 8, filterSearch);
+  const totalAmount = movies.totalAmount;
+  const gotMovieAction: MovieActions = {
+    type: ActionTypes.GOT_MOVIES,
+    movies,
+    totalAmount,
+    chosenGenre: filterSearch.filter ? filterSearch.filter : Genres.ALL
+  };
+  return gotMovieAction;
+}
 
 export const getMoviesCreator: ActionCreator<ThunkAction<
   // The type of the last action to be dispatched - will always be promise<T> for async actions
@@ -43,14 +60,10 @@ export const getMoviesCreator: ActionCreator<ThunkAction<
 };
 
 export const setCurrentPageCreator: ActionCreator<ThunkAction<
-  // The type of the last action to be dispatched - will always be promise<T> for async actions
   Promise<void>,
-  // The type for the data within the last action
   MovieInfoDetails[],
-  // The type of the parameter for the nested function
   null,
-  // The type of the last action to be dispatched
-  UpdateCurrentPage
+  UpdateCurrentPageWithMovies
 >> = (page: number) => {
   return async (dispatch: Dispatch<MovieActions>) => {
     const currentGenreFilter = store.getState().movieReducer.chosenGenre;
@@ -68,4 +81,44 @@ export const setCurrentPageCreator: ActionCreator<ThunkAction<
     };
     return dispatch(gotMovieAction);
   };
+};
+
+export const addMovieCreator: ActionCreator<ThunkAction<
+  Promise<void>,
+  MovieInfoDetails[],
+  null,
+  GotMovies
+>> = (movie: MovieInfoDetails) => {
+  return async (dispatch: Dispatch<MovieActions>) => {
+    await ApiService.createMovie(movie);
+    const gotMovieAction = await updateMovies();
+    return dispatch(gotMovieAction);
+  };
+};
+
+export const updateMovieCreator: ActionCreator<ThunkAction<
+  Promise<void>,
+  MovieInfoDetails[],
+  null,
+  GotMovies
+>> = (movie: MovieInfoDetails) => {
+  return async (dispatch: Dispatch<MovieActions>) => {
+    await ApiService.updateMovie(movie);
+    const gotMovieAction = await updateMovies();
+    return dispatch(gotMovieAction);
+  };
+};
+
+export const deleteMovieCreator: ActionCreator<ThunkAction<
+  Promise<void>,
+  MovieInfoDetails[],
+  null,
+  GotMovies
+>> = (movieId: number) => {
+  return async (dispatch: Dispatch<MovieActions>) => {
+    await ApiService.deleteMovie(movieId);
+    const gotMovieAction = await updateMovies();
+    return dispatch(gotMovieAction);
+  };
+
 };

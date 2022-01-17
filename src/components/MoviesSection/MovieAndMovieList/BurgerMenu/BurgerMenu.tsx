@@ -7,13 +7,13 @@ import {
   NavItem,
 } from 'reactstrap';
 import { useToggle } from 'react-use';
-import { MovieInfo } from '../../../../types';
+import { MovieInfoDetails } from '../../../../types';
 import { DeleteMovie } from '../../../HomePage/Modals/DeleteMovie';
 import './BurgerMenu.scss';
 import { MovieModal } from '../../../HomePage/Modals/MovieModal';
 
 type BurgerMenuProps = {
-  movieInfo: MovieInfo
+  movieInfo: MovieInfoDetails
 };
 
 export const BurgerMenu: FC<BurgerMenuProps> = ({ movieInfo }) => {
