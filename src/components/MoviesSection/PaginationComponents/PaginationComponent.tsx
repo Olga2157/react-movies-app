@@ -9,13 +9,12 @@ import { setCurrentPageCreator } from '../../../redux/actions/actionCreators/act
 
 export const PaginationComponent: FC = () => {
 
-  let { totalPages, totalAmount } = useSelector(moviesDataSelector);
+  let { totalPages } = useSelector(moviesDataSelector);
   const { currentPage } = useSelector(moviesDataSelector);
   const dispatch = useDispatch();
 
   store.subscribe(() => {
     totalPages = store.getState().movieReducer.totalPages;
-    totalAmount = store.getState().movieReducer.totalAmount;
   });
 
   const changePage = useCallback((page: number) => {
@@ -24,23 +23,23 @@ export const PaginationComponent: FC = () => {
     }
   }, []);
 
-  const range = (currentPage: number, totalPages: number) => {
-    if (totalPages === 0) {
+  const range = (current: number, total: number) => {
+    if (total === 0) {
       return [];
     }
-    let start = 0;
-    let end = 0;
-    if (currentPage === 1) {
+    let start: number;
+    let end: number;
+    if (current === 1) {
       start = 1;
-      end = Math.min(totalPages + 1, 9);
-    } else if (currentPage < 8) {
+      end = Math.min(total + 1, 9);
+    } else if (current < 8) {
       start = 1;
-      end = Math.min(9, totalPages + 1);
+      end = Math.min(9, total + 1);
     } else {
-      start = currentPage;
-      end = Math.min(start + 8, totalPages + 1);
+      start = current;
+      end = Math.min(start + 8, total + 1);
     }
-    return Array.from(Array.from(Array(Math.ceil(end - start)).keys()), x => start + x);
+    return Array(end - start).fill(start).map((x, y) => x + y);
   };
 
   return (

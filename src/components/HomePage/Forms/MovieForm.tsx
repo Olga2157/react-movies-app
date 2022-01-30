@@ -1,4 +1,4 @@
-import React, { FC, FormEvent } from 'react';
+import React, {FC, FormEvent, useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { Form } from 'reactstrap';
 import { addMovieCreator, updateMovieCreator } from '../../../redux/actions/actionCreators/actionCreators';
@@ -10,28 +10,23 @@ import { SelectInputGenre } from './SelectInputGenre';
 
 export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({ movieInfo }) => {
   const dispatch = useDispatch();
+  const [title, setTitle] = useState(movieInfo ? movieInfo.title : "");
+  const [releaseDate, setReleaseDate] = useState(movieInfo ? movieInfo.releaseDate : "");
+  const [posterPath, setPosterPath] = useState(movieInfo ? movieInfo.posterPath : "");
+  const [overview, setOverview] = useState(movieInfo ? movieInfo.overview : "");
+  const [runtime, setRuntime] = useState(movieInfo ? movieInfo.runtime : "");
+  const [genres, setGenres] = useState(movieInfo ? movieInfo.genres : []);
 
   const submit = (e: FormEvent<HTMLElement>) => {
     e.preventDefault();
     // todo check if mandatory fields filled
-    const title = (document.getElementById('movieTitle') as HTMLTextAreaElement).value;
-    const releaseDate = (document.getElementById('releaseDate') as HTMLInputElement).value;
-    const posterPath = (document.getElementById('movieUrl') as HTMLInputElement).value;
-    const runtime = Number((document.getElementById('movieRuntime') as HTMLInputElement).value);
-    const overview = (document.getElementById('movieOverview') as HTMLTextAreaElement).value;
-    const movieGenresSelecter = (document.getElementById('movieGenre') as HTMLSelectElement);
-    const movieOptions = Array.prototype.filter.apply(
-      movieGenresSelecter.options,
-      [(option) => option.selected && option.value !== '']
-    ) as HTMLOptionElement[];
-    const genres = movieOptions.map(e => e.value);
     if (movieInfo?.id) {
       dispatch(updateMovieCreator({
         'id': movieInfo.id,
         title,
         releaseDate,
         posterPath,
-        runtime,
+        runtime : +runtime,
         overview,
         genres
       }));
@@ -40,7 +35,7 @@ export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({ movieInfo }) =
         title,
         releaseDate,
         posterPath,
-        runtime,
+        runtime : +runtime,
         overview,
         genres
       }));
@@ -48,14 +43,8 @@ export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({ movieInfo }) =
   };
 
   let existedId = 0;
-  let title = '';
-  let releaseDate = '';
-  let posterPath = '';
-  let overview = '';
-  let genres: string[] = [];
-  let runtime = 0;
   if (movieInfo) {
-    ({ id: existedId, title, releaseDate, posterPath, overview, runtime, genres } = movieInfo);
+    ({ id: existedId } = movieInfo);
   }
   return (
     <Form id={existedId ? 'edit-movie-form-id' : 'add-movie-form-id'} onSubmit={e => { submit(e); }}>
@@ -66,12 +55,18 @@ export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({ movieInfo }) =
         type="textarea"
         placeholder={existedId ? title : 'Title here'}
         defaultValue={title}
-        size="sm" />
-      <InputWithLabel id="releaseDate" label="Release Date" name="date" type="date" placeholder="Select Date" defaultValue={releaseDate} />
-      <InputWithLabel id="movieUrl" label="Movie poster URL" type="url" placeholder="Movie URL here" size="sm" defaultValue={posterPath} />
-      <SelectInputGenre defaultSelected={genres} />
-      <InputWithLabel id="movieOverview" label="Overview" name="text" type="textarea" placeholder="Overview here" size="sm" defaultValue={overview} />
-      <InputWithLabel id="movieRuntime" label="Runtime" type="number" placeholder="Runtime here" size="sm" defaultValue={runtime.toString()} />
+        size="sm"
+        onChangeCallBack={setTitle}
+      />
+      <InputWithLabel id="releaseDate" label="Release Date" name="date" type="date" placeholder="Select Date" defaultValue={releaseDate}
+                      onChangeCallBack={setReleaseDate}/>
+      <InputWithLabel id="movieUrl" label="Movie poster URL" type="url" placeholder="Movie URL here" size="sm" defaultValue={posterPath}
+                      onChangeCallBack={setPosterPath}/>
+      <SelectInputGenre defaultSelected={genres} onChangeCallBack={setGenres}/>
+      <InputWithLabel id="movieOverview" label="Overview" name="text" type="textarea" placeholder="Overview here" size="sm" defaultValue={overview}
+                      onChangeCallBack={setOverview}/>
+      <InputWithLabel id="movieRuntime" label="Runtime" type="number" placeholder="Runtime here" size="sm" defaultValue={runtime.toString()}
+                      onChangeCallBack={setRuntime}/>
       <div className="d-flex justify-content-md-end">
         <ResetButton />
         <SubmitButton buttonText={existedId ? 'Save' : 'Submit'} />

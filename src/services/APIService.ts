@@ -1,8 +1,9 @@
 import camelcaseKeys from 'camelcase-keys';
-import { urlIsAvailable } from '../helpers/urlIsAvailable';
+import {urlIsAvailable} from '../helpers/urlIsAvailable';
 import { FilterSearch, MovieInfoDetails, MovieResults } from '../types';
 
 const baseUrl = 'http://localhost:4000/';
+const notFoundImage = 'https://media.istockphoto.com/vectors/cinema-and-movie-time-vector-id640312764';
 
 export default {
     getMovies: async (offset = 0, limit = 8, filterSearch?: FilterSearch): Promise<MovieResults> => {
@@ -27,21 +28,19 @@ export default {
                 url += `&filter=${filter}`;
             }
         }
-        const response = await fetch(`${url}`);
+        const response = await fetch(url);
         if (response.ok) {
             const movies = await response.json() as MovieResults;
-            const createdPromises: Promise<boolean>[] = [];
             // api provided incorrect path for some posters
-            movies.data.forEach(movie => {
-                const urlIsAvailablePromise = urlIsAvailable(camelcaseKeys(movie).posterPath);
-                createdPromises.push(urlIsAvailablePromise);
-                urlIsAvailablePromise.then(isAvailable => {
-                    if (!isAvailable && camelcaseKeys(movie).posterPath.startsWith('https://image.tmdb.org')) {
-                        movie.posterPath = 'https://media.istockphoto.com/vectors/cinema-and-movie-time-vector-id640312764';
-                    }
-                });
-            })
-            await Promise.all(createdPromises);
+            for (const movie of movies.data) {
+                await urlIsAvailable(camelcaseKeys(movie).posterPath)
+                    .then(isAvailable => {
+                        if (!isAvailable && camelcaseKeys(movie).posterPath.startsWith('https://image.tmdb.org')) {
+                            movie.posterPath = notFoundImage;
+                        }
+                    })
+                    .catch((err: Error) => movie.posterPath = notFoundImage);
+            }
             return movies;
         }
         return {

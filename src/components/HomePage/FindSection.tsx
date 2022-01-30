@@ -1,30 +1,29 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { Input, InputGroup } from 'reactstrap';
 import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
 import { AppButton, Heading } from '../shared';
 
 export const FindSection: FC = () => {
-  const dispatch = useDispatch();
 
-  const search = useCallback(() => {
-    const input = document.getElementById('input-find-section') as HTMLInputElement;
-    dispatch(getMoviesCreator(1, 8,
-      {
-        'search': input?.value,
-        'searchBy': 'title'
-      }
-    ));
-    input.value = '';
-  }, []);
+    const searchRef = useRef<HTMLInputElement | null>(null);
+    const dispatch = useDispatch();
+    const search = () => {
+        dispatch(getMoviesCreator(1, 8,
+            {
+                'search': searchRef.current?.value,
+                'searchBy': 'title'
+            }
+        ));
+    };
 
-  return (
-    <section id="find-section">
-      <Heading headingText="Find your movie" upperCase />
-      <InputGroup>
-        <Input id="input-find-section" />
-        <AppButton buttonId="search-btn" buttonText="Search" listener={search} />
-      </InputGroup>
-    </section>
-  );
+    return (
+        <section id="find-section">
+            <Heading headingText="Find your movie" upperCase/>
+            <InputGroup>
+                <Input innerRef={searchRef} id="input-find-section" />
+                <AppButton buttonId="search-btn" buttonText="Search" listener={search}/>
+            </InputGroup>
+        </section>
+    );
 };

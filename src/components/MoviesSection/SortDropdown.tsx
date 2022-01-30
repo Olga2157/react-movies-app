@@ -6,6 +6,7 @@ import { useToggle } from 'react-use';
 import { useDispatch } from 'react-redux';
 import { SortName } from '../../model/enums/SortName';
 import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
+import {SortFields} from "../../model/enums/SortFields";
 
 export const SortDropdown: FC = () => {
   const dispatch = useDispatch();
@@ -33,9 +34,9 @@ export const SortDropdown: FC = () => {
       setSortName(button.textContent);
       let sortField = '';
       if (button.textContent === SortName.HIGHEST_RATING) {
-        sortField = 'vote_average';
+        sortField = SortFields.VOTE_AVERAGE;
       } else if (button.textContent === SortName.NEWEST) {
-        sortField = 'release_date';
+        sortField = SortFields.RELEASE_DATE;
       }
       dispatch(getMoviesCreator(1, 8,
         {

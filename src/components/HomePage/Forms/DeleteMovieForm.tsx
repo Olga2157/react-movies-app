@@ -12,11 +12,11 @@ export const DeleteMovieForm: FC<{ movieInfo: MovieInfo }> = ({ movieInfo }) => 
     const submit = (e: FormEvent<HTMLElement>) => {
         e.preventDefault();
         dispatch(deleteMovieCreator(movieInfo.id));
-    }
+    };
 
     return (
         <Form id="DeleteMovieFormId" className="text-right" onSubmit={e => { submit(e); }}>
             <SubmitButton buttonText="Confirm" />
         </Form>
     );
-}
+};

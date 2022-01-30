@@ -4,7 +4,8 @@ import {
 } from 'reactstrap';
 import './Form.scss';
 
-export const SelectInputGenre: FC<{ defaultSelected?: string[] }> = ({ defaultSelected }) => {
+export const SelectInputGenre: FC<{ defaultSelected?: string[],
+    onChangeCallBack: Function }> = ({ defaultSelected, onChangeCallBack }) => {
   const movieGenres = ['Action', 'Adventure', 'Animation',
     'Comedy', 'Drama', 'Family',
     'Fantasy', 'Horror', 'Music',
@@ -22,9 +23,13 @@ export const SelectInputGenre: FC<{ defaultSelected?: string[] }> = ({ defaultSe
         type="select"
         bsSize="sm"
         multiple
+        onInput={e => {
+            const selectedOptions = Array.from((e.target as HTMLSelectElement).selectedOptions);
+            onChangeCallBack(selectedOptions.map(item => item.text));
+        }
+        }
       >
         <option value="" disabled className="display:none;">Select Genre</option>
-
         {movieGenres.map((genre) => (
           <option key={genre} selected={defaultSelected?.includes(genre)}>{genre}</option>
         ))}

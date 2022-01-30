@@ -19,8 +19,8 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   const year = releaseDate ? releaseDate.substring(0, 4) : 'n/a';
   let movieGenres = '';
   if (genres) {
-    for (let i = 0; i < genres.length; i++) {
-      movieGenres += genres[i] + " ";
+    for (let i = 0; i < genres.length; i += 1) {
+      movieGenres += `${genres[i]  } `;
     }
   }
   return (

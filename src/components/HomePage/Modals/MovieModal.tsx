@@ -1,4 +1,4 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC } from 'react';
 import { Modal, ModalBody, ModalHeader } from 'reactstrap';
 import { useToggle } from 'react-use';
 import { ButtonType } from '../../../model/enums/ButtonType';
@@ -13,12 +13,12 @@ export const MovieModal: FC<{
 }> = ({ newMovie,
   movieInfo, onClickCallBack }) => {
     const [isOpen, toggleModal] = useToggle(false);
-    const onClick = useCallback(() => {
+    const onClick = () => {
       if (onClickCallBack) {
         onClickCallBack();
       }
       toggleModal();
-    }, [onClickCallBack, toggleModal]);
+    };
 
     return (
       <div id="modal-movie">
