@@ -9,7 +9,7 @@ export const FindSection: FC = () => {
     const searchRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useDispatch();
     const search = () => {
-        dispatch(getMoviesCreator(1, 8,
+        dispatch(getMoviesCreator(0, 8,
             {
                 'search': searchRef.current?.value,
                 'searchBy': 'title'

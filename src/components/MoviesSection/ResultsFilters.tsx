@@ -14,7 +14,7 @@ export const ResultsFilters: FC = () => {
       curButton.classList.remove('chosen');
     });
     chosenButton?.classList.add('chosen');
-    dispatch(getMoviesCreator(1, 8,
+    dispatch(getMoviesCreator(0, 8,
       {
         'filter': button.buttonText
       }

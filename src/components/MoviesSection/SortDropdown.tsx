@@ -38,7 +38,7 @@ export const SortDropdown: FC = () => {
       } else if (button.textContent === SortName.NEWEST) {
         sortField = SortFields.RELEASE_DATE;
       }
-      dispatch(getMoviesCreator(1, 8,
+      dispatch(getMoviesCreator(0, 8,
         {
           'sortBy': sortField
         }
