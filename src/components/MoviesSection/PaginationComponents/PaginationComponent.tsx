@@ -1,27 +1,25 @@
-import React, { FC, useCallback } from 'react';
+import React, { FC } from 'react';
 import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { PaginationItemWithLink } from './PaginationItemWithLink';
 import './Pagination.scss';
-import { moviesDataSelector } from '../../../redux/selector/selectors';
-import store from '../../../store';
+import { moviesDataSelector, moviesTotalPagesSelector } from '../../../redux/selector/selectors';
 import { setCurrentPageCreator } from '../../../redux/actions/actionCreators/actionCreators';
 
 export const PaginationComponent: FC = () => {
-
-  let { totalPages } = useSelector(moviesDataSelector);
+  const totalPages = useSelector(moviesTotalPagesSelector);
   const { currentPage } = useSelector(moviesDataSelector);
   const dispatch = useDispatch();
 
-  store.subscribe(() => {
-    totalPages = store.getState().movieReducer.totalPages;
-  });
-
-  const changePage = useCallback((page: number) => {
-    if (page > 0 && page <= totalPages) {
+  const changePage = (total: number, page: number) => {
+    if (page > 0 && page <= total) {
       dispatch(setCurrentPageCreator(page));
     }
-  }, []);
+  };
+
+  const changePageCallback = (total: number)=> {
+    return changePage.bind(null, total)
+  }
 
   const range = (current: number, total: number) => {
     if (total === 0) {
@@ -44,7 +42,7 @@ export const PaginationComponent: FC = () => {
 
   return (
     <Pagination id="nav-pagination">
-      <PaginationItem onClickCapture={() => changePage(currentPage - 1)}>
+      <PaginationItem onClickCapture={() => changePage(totalPages, currentPage - 1)}>
         <PaginationLink id="previous-page" className="pagination-link-style-arrow" previous />
       </PaginationItem>
       {
@@ -55,11 +53,11 @@ export const PaginationComponent: FC = () => {
               pageKey: key,
               active: currentPage === key,
             }}
-            callBack={changePage}
+            callBack={changePageCallback(totalPages)}
           />
         ))
       }
-      <PaginationItem onClickCapture={() => changePage(currentPage + 1)}>
+      <PaginationItem onClickCapture={() => changePage(totalPages, currentPage + 1)}>
         <PaginationLink id="next-page" className="pagination-link-style-arrow" next />
       </PaginationItem>
     </Pagination>
