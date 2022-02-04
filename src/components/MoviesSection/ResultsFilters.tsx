@@ -1,20 +1,32 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { ButtonGroup } from 'reactstrap';
+import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
 import { FilterButtonInfo } from '../../types';
 import { FilterButton } from '../shared';
 
 export const ResultsFilters: FC = () => {
+  const dispatch = useDispatch();
   const filterClick = (button: FilterButtonInfo) => {
-    // console.log(button.buttonText);
-    // todo: add logic when I start next tasks
+    const chosenButton = document.getElementById(button.buttonId) as HTMLButtonElement;
+    chosenButton.parentElement?.childNodes.forEach(child => {
+      const curButton = child as HTMLButtonElement;
+      curButton.classList.remove('chosen');
+    });
+    chosenButton?.classList.add('chosen');
+    dispatch(getMoviesCreator(0, 8,
+      {
+        'filter': button.buttonText
+      }
+    ));
   };
 
-  const buttons : FilterButtonInfo[] = [
-    { buttonId: 'all-filter', buttonText: 'all' },
-    { buttonId: 'documentary-filter', buttonText: 'documentary' },
-    { buttonId: 'comedy-filter', buttonText: 'comedy' },
-    { buttonId: 'horror-filter', buttonText: 'horror' },
-    { buttonId: 'crime-filter', buttonText: 'crime' },
+  const buttons: FilterButtonInfo[] = [
+    { buttonId: 'all-filter', buttonText: 'All' },
+    { buttonId: 'documentary-filter', buttonText: 'Documentary' },
+    { buttonId: 'comedy-filter', buttonText: 'Comedy' },
+    { buttonId: 'horror-filter', buttonText: 'Horror' },
+    { buttonId: 'crime-filter', buttonText: 'Crime' },
   ];
 
   return (

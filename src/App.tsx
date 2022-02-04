@@ -6,7 +6,7 @@ import { MovieDetailsPage } from './components/MovieDetailsPage/MovieDetailsPage
 
 export const App: FC = () => (
   <ErrorBoundary>
-    {/* <HomePage /> */}
-    <MovieDetailsPage />
+    <HomePage />
+    {/* <MovieDetailsPage /> */}
   </ErrorBoundary>
 );

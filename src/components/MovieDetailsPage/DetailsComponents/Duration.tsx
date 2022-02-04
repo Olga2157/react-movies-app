@@ -6,12 +6,12 @@ type DurationProps = {
 };
 
 export const Duration: FC<DurationProps> = ({ chosenMovieDetails }) => {
-  const { duration } = chosenMovieDetails;
+  const { runtime } = chosenMovieDetails;
 
   return (
     <p className="mt-2 text-danger fs-5">
       <strong id="movies-counter" className="fw-bold">
-        {duration}
+        {runtime}
       </strong>
       {' min'}
     </p>

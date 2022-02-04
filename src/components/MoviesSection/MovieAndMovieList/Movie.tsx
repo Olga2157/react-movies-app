@@ -1,20 +1,28 @@
 import React, { FC } from 'react';
 import classNames from 'classnames';
-import { MovieInfo } from '../../../types';
+import { MovieInfoDetails } from '../../../types';
 import { AppText } from '../../shared';
 import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { FontSize } from '../../../model/enums/FontSize';
 import './Movie.scss';
+import '../../../app.scss';
 
 type MovieProps = {
-  movieInfo: MovieInfo
+  movieInfo: MovieInfoDetails
 };
 
 export const Movie: FC<MovieProps> = ({ movieInfo }) => {
   const {
-    posterPath, title, genre, year,
+    title, genres, releaseDate, posterPath
   } = movieInfo;
   const movieClass = classNames('d-flex', 'flex-row', 'justify-content-between', 'p-2', 'movie-details');
+  const year = releaseDate ? releaseDate.substring(0, 4) : 'n/a';
+  let movieGenres = '';
+  if (genres) {
+    for (let i = 0; i < genres.length; i += 1) {
+      movieGenres += `${genres[i]  } `;
+    }
+  }
   return (
     <>
       <div>
@@ -30,7 +38,7 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
         </div>
       </div>
       <div className="p-2">
-        <AppText text={genre} fontSize={FontSize.EXTRA_SMALL} />
+        <AppText text={movieGenres} fontSize={FontSize.EXTRA_SMALL} />
       </div>
     </>
   );
