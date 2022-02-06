@@ -6,16 +6,20 @@ import { AppButton, Heading } from '../../shared';
 import './Modal.scss';
 import { MovieForm } from '../Forms/MovieForm';
 import { MovieInfoDetails } from '../../../types';
+import {getCurrentGenresCreator} from "../../../redux/actions/actionCreators/actionCreators";
+import {useDispatch} from "react-redux";
 
 export const MovieModal: FC<{
   newMovie: boolean,
   movieInfo?: MovieInfoDetails, onClickCallBack?: Function
 }> = ({ newMovie,
   movieInfo, onClickCallBack }) => {
+    const dispatch = useDispatch();
     const [isOpen, toggleModal] = useToggle(false);
     const onClick = () => {
       if (onClickCallBack) {
         onClickCallBack();
+        dispatch(getCurrentGenresCreator(movieInfo ? movieInfo.genres : []));
       }
       toggleModal();
     };

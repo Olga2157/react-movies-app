@@ -122,3 +122,12 @@ export const deleteMovieCreator: ActionCreator<ThunkAction<
   };
 
 };
+
+export const getCurrentGenresCreator = (genres: string[]) => {
+  const getCurrentGenres: MovieActions = {
+    type: ActionTypes.UPDATE_CURRENT_GENRES,
+    genres
+  };
+  console.log('updating : ' + genres.length);
+  return getCurrentGenres;
+}
