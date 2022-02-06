@@ -7,11 +7,11 @@ import {InputWithLabel} from './InputWithLabel';
 import {SelectInputGenre} from './SelectInputGenre';
 import {useDispatch} from "react-redux";
 import {
-    addMovieCreator,
+    addMovieCreator, toggleCurrentGenresCreator,
     updateMovieCreator
 } from "../../../redux/actions/actionCreators/actionCreators";
 
-export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({movieInfo}) => {
+export const MovieForm: FC<{ movieInfo?: MovieInfoDetails, onClickCallBack?: Function }> = ({movieInfo, onClickCallBack}) => {
     let existedId = 0;
     const dispatch = useDispatch();
 
@@ -46,8 +46,11 @@ export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({movieInfo}) => 
                     overview: values.overview,
                     genres: values.genres
                 }));
+                dispatch(toggleCurrentGenresCreator());
             }
-
+            if (onClickCallBack) {
+                onClickCallBack();
+            }
         }}
                 onReset={(values, formikHelpers) => {
                     formikHelpers.setFieldValue("title", movieInfo ? movieInfo.title : "");

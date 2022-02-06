@@ -9,7 +9,7 @@ const initialState: InitialStateMovie = {
   totalPages: 0,
   currentPage: 1,
   chosenGenre: Genres.ALL,
-  genresCurrentMovie: []
+  congratsModal: false
 }
 
 export default function MovieReducer(
@@ -32,10 +32,10 @@ export default function MovieReducer(
         currentPage: action.page,
         movies: camelcaseKeys(action.movies.data),
       }
-    case ActionTypes.UPDATE_CURRENT_GENRES:
+    case ActionTypes.UPDATE_CONGRATS_MODAL_STATUS:
       return {
         ...state,
-        genresCurrentMovie: action.genres,
+        congratsModal: !state.congratsModal,
       }
     default:
       return state

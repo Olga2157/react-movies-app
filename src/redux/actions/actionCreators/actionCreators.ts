@@ -123,11 +123,9 @@ export const deleteMovieCreator: ActionCreator<ThunkAction<
 
 };
 
-export const getCurrentGenresCreator = (genres: string[]) => {
-  const getCurrentGenres: MovieActions = {
-    type: ActionTypes.UPDATE_CURRENT_GENRES,
-    genres
+export const toggleCurrentGenresCreator = () => {
+  const toggleModalStatus: MovieActions = {
+    type: ActionTypes.UPDATE_CONGRATS_MODAL_STATUS,
   };
-  console.log('updating : ' + genres.length);
-  return getCurrentGenres;
+  return toggleModalStatus;
 }

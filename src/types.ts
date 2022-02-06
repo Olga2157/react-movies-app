@@ -31,7 +31,7 @@ export type MovieInfo = {
     totalPages: number;
     currentPage: number;
     chosenGenre: Genres,
-    genresCurrentMovie: string[]
+    congratsModal: boolean
   }
 
   export type MovieResults = {

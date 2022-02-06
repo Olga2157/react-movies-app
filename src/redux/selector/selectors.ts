@@ -10,9 +10,8 @@ export const moviesTotalPagesSelector = ({
 }: RootState): number =>  movieReducer.totalPages
 
 
-export const genresCurrentMovieSelector = ({
+export const congratsModalStatusSelector = ({
    movieReducer,
-}: RootState): string[] =>  {
-    console.log('genresCurrentMovieSelector : ' + movieReducer.genresCurrentMovie.length)
-    return movieReducer.genresCurrentMovie
+}: RootState): boolean =>  {
+    return movieReducer.congratsModal
 }
