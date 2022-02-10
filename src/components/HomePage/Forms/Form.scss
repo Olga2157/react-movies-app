@@ -3,7 +3,17 @@
 
 #add-movie-form-id,
 #edit-movie-form-id {
-  label {color: v.$red-color;
-  @include m.uppercase;
+  label {
+    color: v.$red-color;
+    @include m.uppercase;
+    margin-right: 2%;
   }
+}
+
+.errorsMessages {
+  color: v.$orange-color;
+  position: relative;
+  margin-top: -5px;
+  font-size: v.$text-small bold;
+  margin-bottom: 10px;
 }
