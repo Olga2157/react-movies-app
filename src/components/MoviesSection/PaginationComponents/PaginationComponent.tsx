@@ -17,9 +17,7 @@ export const PaginationComponent: FC = () => {
     }
   };
 
-  const changePageCallback = (total: number)=> {
-    return changePage.bind(null, total)
-  }
+  const changePageCallback = (total: number) => changePage.bind(null, total);
 
   const range = (current: number, total: number) => {
     if (total === 0) {

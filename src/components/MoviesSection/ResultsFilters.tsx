@@ -27,6 +27,8 @@ export const ResultsFilters: FC = () => {
     { buttonId: 'comedy-filter', buttonText: 'Comedy' },
     { buttonId: 'horror-filter', buttonText: 'Horror' },
     { buttonId: 'crime-filter', buttonText: 'Crime' },
+    { buttonId: 'fantasy-filter', buttonText: 'Fantasy' },
+    { buttonId: 'adventure-filter', buttonText: 'Adventure' },
   ];
 
   return (

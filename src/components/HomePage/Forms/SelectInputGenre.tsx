@@ -1,4 +1,4 @@
-import React, {FC, useRef} from 'react';
+import React, { FC, useRef } from 'react';
 import {
     Input, Label,
 } from 'reactstrap';
@@ -8,13 +8,13 @@ import { Field, useField } from "formik";
 export const SelectInputGenre: FC<{
     defaultSelected: string[],
     id: string
-}> = ({defaultSelected, id}) => {
+}> = ({ defaultSelected, id }) => {
     const inputRef = useRef<HTMLInputElement | null>(null);
     const movieGenres = ['Action', 'Adventure', 'Animation',
-        'Comedy', 'Drama', 'Family',
-        'Fantasy', 'Horror', 'Music',
-        'Mystery', 'Romance', 'Science Fiction',
-        'Thriller'];
+        'Comedy', 'Crime', 'Documentary',
+        'Drama', 'Family', 'Fantasy',
+        'Horror', 'Music', 'Mystery',
+        'Romance', 'Science Fiction', 'Thriller'];
     const genresName = "genres";
     const [form, meta, field] = useField(genresName);
 
