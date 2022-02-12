@@ -1,4 +1,4 @@
-@use '/src/utilities/variables' as v;
+@import '/src/utilities/variables';
 
 .container {
   display: flex;
@@ -13,26 +13,26 @@
   height: auto;
   min-height: 450px;
   margin: 10px;
-  background: v.$dark-grey-color;
+  background: $dark-grey-color;
     img {
       width: 100%;
       height: auto;
     }
 }
 
-@media screen and (max-width: v.$large-screen) {
+@media screen and (max-width: $large-screen) {
   .item {
     flex: 0 1 calc(100% / 3 - 20px);
   }
 }
 
-@media screen and (max-width: v.$medium-screen) {
+@media screen and (max-width: $medium-screen) {
   .item {
     flex: 0 1 calc(100% / 2 - 20px);
   }
 }
 
-@media screen and (max-width: v.$small-screen) {
+@media screen and (max-width: $small-screen) {
   .item {
     flex: 0 1 100%;
   }

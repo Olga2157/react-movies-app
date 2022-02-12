@@ -1,8 +1,8 @@
-@use '/src/utilities/variables' as v;
+@import '/src/utilities/variables';
 
 #movie-rating {
   width: 75px;
   height: 75px;
-  font-size: v.$text-large;
-  color: v.$green-color;
+  font-size: $text-large;
+  color: $green-color;
 }

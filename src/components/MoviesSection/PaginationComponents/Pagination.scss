@@ -1,4 +1,4 @@
-@use '/src/utilities/variables' as v;
+@import '/src/utilities/variables';
 
 #nav-pagination {
   position: relative;
@@ -16,7 +16,7 @@
   margin-left: 5px;
   
   .page-link {
-    color: v.$light-color;
+    color: $light-color;
   }
 
 }
@@ -24,34 +24,34 @@
 .pagination-item-style.page-item.active {
   
   button {
-    background-color: v.$red-color;
-    border-color: v.$red-color;
+    background-color: $red-color;
+    border-color: $red-color;
   }
 }
 
 .pagination-link-style {
-  background-color: v.$grey-color;
+  background-color: $grey-color;
   border-radius: 5px;
 
   &-arrow {
-    color: v.$dark-color;
+    color: $dark-color;
     border-radius: 5px;
   }
 }
 
 .pagination-link-style:hover {
-  background-color: v.$dark-grey-color;
+  background-color: $dark-grey-color;
 
   &-arrow {
-    color: v.$dark-color;
+    color: $dark-color;
   } 
 }
 
 .pagination-link-style:active {
-  background-color: v.$red-color;
+  background-color: $red-color;
 
   &-arrow {
-    color: v.$dark-color;
+    color: $dark-color;
   } 
 }
 

@@ -1,7 +1,7 @@
-@use '/src/utilities/variables' as v;
+@import '/src/utilities/variables';
 
 footer {
-  background-color: v.$grey-color;
+  background-color: $grey-color;
   position: fixed;
   height: 50px;
   bottom: 0;
