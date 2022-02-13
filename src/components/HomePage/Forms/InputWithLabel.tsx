@@ -12,23 +12,29 @@ type InputWithLabelProps = {
   defaultValue?: string,
   placeholder: string,
   size?: 'lg' | 'sm',
-  readonly?: boolean
+  readonly?: boolean,
+  errors?: string | null
 }
 
 export const InputWithLabel: FC<InputWithLabelProps> = ({
-  id, label, name, defaultValue, placeholder, type, size, readonly
+  id, label, name, defaultValue, placeholder, type, size, readonly, errors
 }) => (
+  <>
+    <Field name={name}>
+      {() => (
+        <div>
+          <Label for={id}>
+            {label}
+          </Label>
+          <Field id={id}
+            name={name} type={type} placeholder={placeholder}
+            bsSize={size} disabled={readonly} defaultValue={defaultValue} />
+        </div>
+      )}
+    </Field>
+    {errors ? (
+      <div className="errorsMessages">{errors}</div>
+    ) : null}
+  </>
 
-  <Field name={name}>
-    {() => (
-      <div>
-        <Label for={id}>
-          {label}
-        </Label>
-        <Field id={id}
-          name={name} type={type} placeholder={placeholder}
-          bsSize={size} disabled={readonly} defaultValue={defaultValue} />
-      </div>
-    )}
-  </Field>
 );

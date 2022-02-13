@@ -4,7 +4,7 @@ import { Header, Footer } from '../shared';
 import { FindSection } from './FindSection';
 import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieModal } from './Modals/MovieModal';
-import { Congratulation } from "./Modals/Congratulation";
+import { Congratulation } from './Modals/Congratulation';
 
 export const HomePage: FC = () => (
     <>

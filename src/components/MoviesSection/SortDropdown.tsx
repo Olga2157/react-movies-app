@@ -6,7 +6,7 @@ import { useToggle } from 'react-use';
 import { useDispatch } from 'react-redux';
 import { SortName } from '../../model/enums/SortName';
 import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
-import {SortFields} from "../../model/enums/SortFields";
+import {SortFields} from '../../model/enums/SortFields';
 
 export const SortDropdown: FC = () => {
   const dispatch = useDispatch();
