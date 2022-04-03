@@ -122,3 +122,10 @@ export const deleteMovieCreator: ActionCreator<ThunkAction<
   };
 
 };
+
+export const toggleCurrentGenresCreator = () => {
+  const toggleModalStatus: MovieActions = {
+    type: ActionTypes.UPDATE_CONGRATS_MODAL_STATUS,
+  };
+  return toggleModalStatus;
+}

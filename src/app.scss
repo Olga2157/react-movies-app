@@ -1,8 +1,8 @@
-@use '/src/utilities/variables' as v;
-@use '/src/utilities/mixins' as m;
+@import '/src/utilities/variables';
+@import '/src/utilities/mixins';
 
 * {
-  @include m.reset;
+  @include reset;
 }
 
 html,
@@ -13,8 +13,8 @@ body {
 
 body {
   border: none;
-  background: v.$dark-color;
-  color: v.$light-color;
+  background: $dark-color;
+  color: $light-color;
   padding: 30px 50px;
 }
 

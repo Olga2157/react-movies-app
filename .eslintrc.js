@@ -39,7 +39,8 @@ module.exports = {
           },
         ],
         "import/prefer-default-export": "off",
-        "semi": "error"
+        "semi": "error",
+        "quotes": [2, "single", { "avoidEscape": true }]
       },
     },
     {

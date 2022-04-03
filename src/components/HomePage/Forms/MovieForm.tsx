@@ -1,76 +1,100 @@
-import React, {FC, FormEvent, useState} from 'react';
+import React, { FC } from 'react';
+import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
-import { Form } from 'reactstrap';
-import { addMovieCreator, updateMovieCreator } from '../../../redux/actions/actionCreators/actionCreators';
 import { MovieInfoDetails } from '../../../types';
 import { ResetButton, SubmitButton } from '../../shared';
-import './Form.scss';
 import { InputWithLabel } from './InputWithLabel';
 import { SelectInputGenre } from './SelectInputGenre';
+import {
+    addMovieCreator, toggleCurrentGenresCreator,
+    updateMovieCreator
+} from '../../../redux/actions/actionCreators/actionCreators';
+import './Form.scss';
+import { formSchema } from './FormSchema';
+import { formFields } from './constants';
 
-export const MovieForm: FC<{ movieInfo?: MovieInfoDetails }> = ({ movieInfo }) => {
-  const dispatch = useDispatch();
-  const [title, setTitle] = useState(movieInfo ? movieInfo.title : "");
-  const [releaseDate, setReleaseDate] = useState(movieInfo ? movieInfo.releaseDate : "");
-  const [posterPath, setPosterPath] = useState(movieInfo ? movieInfo.posterPath : "");
-  const [overview, setOverview] = useState(movieInfo ? movieInfo.overview : "");
-  const [runtime, setRuntime] = useState(movieInfo ? movieInfo.runtime : "");
-  const [genres, setGenres] = useState(movieInfo ? movieInfo.genres : []);
-
-  const submit = (e: FormEvent<HTMLElement>) => {
-    e.preventDefault();
-    // todo check if mandatory fields filled
-    if (movieInfo?.id) {
-      dispatch(updateMovieCreator({
-        'id': movieInfo.id,
-        title,
-        releaseDate,
-        posterPath,
-        runtime : +runtime,
-        overview,
-        genres
-      }));
-    } else {
-      dispatch(addMovieCreator({
-        title,
-        releaseDate,
-        posterPath,
-        runtime : +runtime,
-        overview,
-        genres
-      }));
+export const MovieForm: FC<{ movieInfo?: MovieInfoDetails, onClickCallBack?: Function }> = ({
+    movieInfo,
+    onClickCallBack
+}) => {
+    let existedId = 0;
+    const dispatch = useDispatch();
+    if (movieInfo) {
+        ({ id: existedId } = movieInfo);
     }
-  };
 
-  let existedId = 0;
-  if (movieInfo) {
-    ({ id: existedId } = movieInfo);
-  }
-  return (
-    <Form id={existedId ? 'edit-movie-form-id' : 'add-movie-form-id'} onSubmit={e => { submit(e); }}>
-      {existedId ? <InputWithLabel id='movieId' label='Movie ID' placeholder={existedId.toString()} size='sm' readonly /> : ''}
-      <InputWithLabel
-        id="movieTitle"
-        label="Title"
-        type="textarea"
-        placeholder={existedId ? title : 'Title here'}
-        defaultValue={title}
-        size="sm"
-        onChangeCallBack={setTitle}
-      />
-      <InputWithLabel id="releaseDate" label="Release Date" name="date" type="date" placeholder="Select Date" defaultValue={releaseDate}
-                      onChangeCallBack={setReleaseDate}/>
-      <InputWithLabel id="movieUrl" label="Movie poster URL" type="url" placeholder="Movie URL here" size="sm" defaultValue={posterPath}
-                      onChangeCallBack={setPosterPath}/>
-      <SelectInputGenre defaultSelected={genres} onChangeCallBack={setGenres}/>
-      <InputWithLabel id="movieOverview" label="Overview" name="text" type="textarea" placeholder="Overview here" size="sm" defaultValue={overview}
-                      onChangeCallBack={setOverview}/>
-      <InputWithLabel id="movieRuntime" label="Runtime" type="number" placeholder="Runtime here" size="sm" defaultValue={runtime.toString()}
-                      onChangeCallBack={setRuntime}/>
-      <div className="d-flex justify-content-md-end">
-        <ResetButton />
-        <SubmitButton buttonText={existedId ? 'Save' : 'Submit'} />
-      </div>
-    </Form>
-  );
+    return (
+        <Formik initialValues={{
+            title: movieInfo ? movieInfo.title : '',
+            releaseDate: movieInfo ? movieInfo.releaseDate : '',
+            posterPath: movieInfo ? movieInfo.posterPath : '',
+            overview: movieInfo ? movieInfo.overview : '',
+            runtime: movieInfo ? movieInfo.runtime : '',
+            genres: movieInfo ? movieInfo.genres : []
+        }}
+            validationSchema={formSchema}
+            onSubmit={(values) => {
+                if (movieInfo?.id) {
+                    dispatch(updateMovieCreator({
+                        id: movieInfo.id,
+                        title: values.title,
+                        releaseDate: values.releaseDate,
+                        posterPath: values.posterPath,
+                        runtime: Number(values.runtime),
+                        overview: values.overview,
+                        genres: values.genres
+                    }));
+                } else {
+                    dispatch(addMovieCreator({
+                        title: values.title,
+                        releaseDate: values.releaseDate,
+                        posterPath: values.posterPath,
+                        runtime: +values.runtime,
+                        overview: values.overview,
+                        genres: values.genres
+                    }));
+                    dispatch(toggleCurrentGenresCreator());
+                }
+                if (onClickCallBack) {
+                    onClickCallBack();
+                }
+            }}
+            onReset={(_, formikHelpers) => {
+                formFields.forEach(field => {
+                    const str = field as keyof typeof movieInfo;
+                    formikHelpers.setFieldValue(field, movieInfo ? movieInfo[str] : '');
+                });
+                const genresOptions = document.getElementById('genres')?.childNodes;
+                const originalGenres = movieInfo ? movieInfo.genres : [];
+                genresOptions?.forEach(child => {
+                    const option = child as HTMLOptionElement;
+                    const text = option.textContent ? option.textContent : '';
+                    (option as HTMLOptionElement).selected = originalGenres && originalGenres.includes(text);
+                });
+            }}
+        >
+            {({ errors, touched }) => (
+                <Form id={existedId ? 'edit-movie-form-id' : 'add-movie-form-id'}>
+                    {existedId ?
+                        <InputWithLabel id='movieId' label='Movie ID' name="movieId" placeholder={existedId.toString()}
+                            size='sm' readonly /> : ''}
+                    <InputWithLabel id="title" label="title" name="title" type="textarea"
+                        placeholder='Title here' size="sm" errors={errors.title && touched.title ? errors.title : null} />
+                    <InputWithLabel id="releaseDate" label="Release Date" name="releaseDate" type="date"
+                        placeholder="Select Date" errors={errors.releaseDate && touched.releaseDate ? errors.releaseDate : null} />
+                    <InputWithLabel id="movieUrl" label="Movie poster URL" name="posterPath" type="url"
+                        placeholder="Movie URL here" size="sm" errors={errors.posterPath && touched.posterPath ? errors.posterPath : null} />
+                    <SelectInputGenre id="genres" defaultSelected={movieInfo ? movieInfo.genres : []} errors={errors.genres && touched.genres ? errors.genres : null} />
+                    <InputWithLabel id="movieOverview" label="Overview" name="overview" type="textarea"
+                        placeholder="Overview here" size="sm" errors={errors.overview && touched.overview ? errors.overview : null} />
+                    <InputWithLabel id="movieRuntime" label="Runtime" name="runtime" type="number"
+                        placeholder="Runtime here" size="sm" errors={errors.runtime && touched.runtime ? errors.runtime : null} />
+                    <div className="d-flex justify-content-md-end">
+                        <ResetButton />
+                        <SubmitButton buttonText={existedId ? 'Save' : 'Submit'} />
+                    </div>
+                </Form>
+            )}
+        </Formik>
+    );
 };

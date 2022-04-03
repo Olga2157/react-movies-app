@@ -1,9 +1,19 @@
-@use '/src/utilities/variables.scss' as v;
-@use '/src/utilities/mixins' as m;
+@import '/src/utilities/variables.scss';
+@import '/src/utilities/mixins';
 
 #add-movie-form-id,
 #edit-movie-form-id {
-  label {color: v.$red-color;
-  @include m.uppercase;
+  label {
+    color: $red-color;
+    @include uppercase;
+    margin-right: 2%;
   }
+}
+
+.errorsMessages {
+  color: $orange-color;
+  position: relative;
+  margin-top: -5px;
+  font-size: $text-small bold;
+  margin-bottom: 10px;
 }

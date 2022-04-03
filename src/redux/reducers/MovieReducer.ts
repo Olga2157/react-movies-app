@@ -8,7 +8,8 @@ const initialState: InitialStateMovie = {
   totalAmount: 0,
   totalPages: 0,
   currentPage: 1,
-  chosenGenre: Genres.ALL
+  chosenGenre: Genres.ALL,
+  congratsModal: false
 }
 
 export default function MovieReducer(
@@ -30,6 +31,11 @@ export default function MovieReducer(
         ...state,
         currentPage: action.page,
         movies: camelcaseKeys(action.movies.data),
+      }
+    case ActionTypes.UPDATE_CONGRATS_MODAL_STATUS:
+      return {
+        ...state,
+        congratsModal: !state.congratsModal,
       }
     default:
       return state

@@ -15,10 +15,14 @@ export interface UpdateCurrentPageWithMovies {
     totalAmount: number
 }
 
-export type MovieActions = GotMovies | UpdateCurrentPageWithMovies
+export interface UpdateCongratsModalStatus {
+    type: ActionTypes.UPDATE_CONGRATS_MODAL_STATUS,
+}
+
+export type MovieActions = GotMovies | UpdateCurrentPageWithMovies | UpdateCongratsModalStatus
 
 export enum ActionTypes {
-    GET_MOVIES = 'GET_MOVIES',
     GOT_MOVIES = 'GOT_MOVIES',
     UPDATE_CURRENT_PAGE_WITH_MOVIES = 'UPDATE_CURRENT_PAGE_WITH_MOVIES',
+    UPDATE_CONGRATS_MODAL_STATUS = 'UPDATE_CONGRATS_MODAL_STATUS',
 }

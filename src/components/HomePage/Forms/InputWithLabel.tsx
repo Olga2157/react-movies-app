@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import {
-  FormGroup, Input, Label,
-} from 'reactstrap';
+import { Field } from 'formik';
+import { Label, } from 'reactstrap';
 import { InputType } from 'reactstrap/types/lib/Input';
 import './Form.scss';
 
@@ -14,19 +13,28 @@ type InputWithLabelProps = {
   placeholder: string,
   size?: 'lg' | 'sm',
   readonly?: boolean,
-  onChangeCallBack?: Function
+  errors?: string | null
 }
 
 export const InputWithLabel: FC<InputWithLabelProps> = ({
-  id, label, name, defaultValue, placeholder, type, size, readonly,onChangeCallBack
+  id, label, name, defaultValue, placeholder, type, size, readonly, errors
 }) => (
-  <FormGroup>
-    <Label for={id}>
-      {label}
-    </Label>
-    <Input id={id}
-      onInput={e => onChangeCallBack ? onChangeCallBack((e.target as HTMLInputElement).value) : ''}
-      name={name} type={type} placeholder={placeholder}
-      bsSize={size} disabled={readonly} defaultValue={defaultValue} />
-  </FormGroup>
+  <>
+    <Field name={name}>
+      {() => (
+        <div>
+          <Label for={id}>
+            {label}
+          </Label>
+          <Field id={id}
+            name={name} type={type} placeholder={placeholder}
+            bsSize={size} disabled={readonly} defaultValue={defaultValue} />
+        </div>
+      )}
+    </Field>
+    {errors ? (
+      <div className="errorsMessages">{errors}</div>
+    ) : null}
+  </>
+
 );

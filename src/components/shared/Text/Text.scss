@@ -1,29 +1,29 @@
-@use '/src/utilities/variables' as v;
+@import '/src/utilities/variables';
 
 .red-text {
-  color: v.$red-color;
+  color: $red-color;
 }
 
 .white-text {
-  color: v.$light-color;;
+  color: $light-color;;
 }
 
 .black-text {
-  color: v.$dark-grey-color;
+  color: $dark-grey-color;
 }
 
 .font-size-extra-small {
-  font-size: v.$text-extra-small;
+  font-size: $text-extra-small;
 }
 
 .font-size-small {
-  font-size: v.$text-small;
+  font-size: $text-small;
 }
 
 .font-size-medium {
-  font-size: v.$text-medium;
+  font-size: $text-medium;
 }
 
 .font-size-large {
-  font-size: v.$text-large;
+  font-size: $text-large;
 }

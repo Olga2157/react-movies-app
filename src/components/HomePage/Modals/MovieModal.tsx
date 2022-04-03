@@ -12,6 +12,7 @@ export const MovieModal: FC<{
   movieInfo?: MovieInfoDetails, onClickCallBack?: Function
 }> = ({ newMovie,
   movieInfo, onClickCallBack }) => {
+    // const dispatch = useDispatch();
     const [isOpen, toggleModal] = useToggle(false);
     const onClick = () => {
       if (onClickCallBack) {
@@ -39,7 +40,7 @@ export const MovieModal: FC<{
             <Heading headingText={newMovie ? 'ADD MOVIE' : 'EDIT MOVIE'} upperCase />
           </ModalHeader>
           <ModalBody>
-            <MovieForm movieInfo={movieInfo} />
+            <MovieForm movieInfo={movieInfo} onClickCallBack={toggleModal}/>
           </ModalBody>
         </Modal>
       </div>

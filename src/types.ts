@@ -30,7 +30,8 @@ export type MovieInfo = {
     totalAmount: number;
     totalPages: number;
     currentPage: number;
-    chosenGenre: Genres
+    chosenGenre: Genres,
+    congratsModal: boolean
   }
 
   export type MovieResults = {
