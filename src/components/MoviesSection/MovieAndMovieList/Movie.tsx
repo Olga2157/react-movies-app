@@ -6,6 +6,7 @@ import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 import { FontSize } from '../../../model/enums/FontSize';
 import './Movie.scss';
 import '../../../app.scss';
+import { Link } from 'react-router-dom';
 
 type MovieProps = {
   movieInfo: MovieInfoDetails
@@ -23,10 +24,13 @@ export const Movie: FC<MovieProps> = ({ movieInfo }) => {
       movieGenres += `${genres[i]  } `;
     }
   }
+  const linkToDetails = `/film/${movieInfo.id}`;
   return (
     <>
       <div>
-        <img src={posterPath} alt="poster" />
+        <Link to={linkToDetails}>
+          <img src={posterPath} alt="poster" />
+        </Link>
         <BurgerMenu movieInfo={movieInfo} />
       </div>
       <div className={movieClass}>
