@@ -5,7 +5,7 @@ import { AppText, Heading } from '../../shared';
 import './Modal.scss';
 import { toggleCurrentGenresCreator } from '../../../redux/actions/actionCreators/actionCreators';
 import { congratsModalStatusSelector } from '../../../redux/selector/selectors';
-import { CheckCircle } from '../../../images/checkCircle';
+import SvgCircleIcon from "../../../images/checkCircle.svg";
 
 export const Congratulation: FC = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,8 @@ export const Congratulation: FC = () => {
         >
             <ModalHeader toggle={toggleModal}>
                 <div className="d-flex flex-row align-items-center">
-                    <CheckCircle />
+                    <img src={SvgCircleIcon} alt="done"></img>
+                    {/* importing svg as an image */}
                     <Heading headingText="Congratulations!" upperCase />
                 </div>
             </ModalHeader>
