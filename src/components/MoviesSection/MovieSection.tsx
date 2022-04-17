@@ -2,7 +2,6 @@ import React, { FC } from 'react';
 import { Col, Row } from 'reactstrap';
 import { MovieList } from './MovieAndMovieList/MovieList';
 import { MoviesCounterComponent } from './MoviesCounterComponent';
-import { NoMovie } from './NoMovie';
 import { PaginationComponent } from './PaginationComponents/PaginationComponent';
 import { ResultsFilters } from './ResultsFilters';
 import { SortDropdown } from './SortDropdown';
@@ -23,9 +22,6 @@ export const MoviesSection: FC = () => (
       <Row>
         <MovieList />
       </Row>
-      {/* <Row>
-        <NoMovie/>
-      </Row> */}
       <Row>
         <Col className="text-center"><PaginationComponent /></Col>
       </Row>
