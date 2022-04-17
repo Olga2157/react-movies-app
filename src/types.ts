@@ -16,7 +16,7 @@ export type MovieInfo = {
   export type MovieInfoDetails  = MovieInfo & {
     overview: string;
     runtime: number;
-    rating: number;
+    voteAverage: number;
     tagline: string;
   }
 

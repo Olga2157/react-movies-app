@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container } from 'reactstrap';
 import { getMoviesCreator } from '../../../redux/actions/actionCreators/actionCreators';
 import { moviesDataSelector } from '../../../redux/selector/selectors';
+import { NoMovie } from '../NoMovie';
 import { Movie } from './Movie';
 import './MovieList.scss';
 
@@ -18,6 +19,7 @@ export const MovieList: FC = () => {
       {movies.map((movie) => (
         <div key={movie.id} className="item"><Movie movieInfo={movie} /></div>
       ))}
+      {movies.length === 0 ? <NoMovie /> : ""}
     </Container>
   );
 };
