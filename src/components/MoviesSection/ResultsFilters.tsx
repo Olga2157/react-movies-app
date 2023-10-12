@@ -1,5 +1,6 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { ButtonGroup } from 'reactstrap';
 import { getMoviesCreator } from '../../redux/actions/actionCreators/actionCreators';
 import { FilterButtonInfo } from '../../types';
@@ -7,7 +8,11 @@ import { FilterButton } from '../shared';
 
 export const ResultsFilters: FC = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const filterClick = (button: FilterButtonInfo) => {
+    history.push({
+        pathname: "/"
+    });
     const chosenButton = document.getElementById(button.buttonId) as HTMLButtonElement;
     chosenButton.parentElement?.childNodes.forEach(child => {
       const curButton = child as HTMLButtonElement;

@@ -4,6 +4,7 @@ import { Header, Footer } from '../shared';
 import { MoviesSection } from '../MoviesSection/MovieSection';
 import { MovieDetailsSection } from './MovieDetailsSection';
 import { SearchButton } from './SearchButton/SearchButton';
+import { Link } from 'react-router-dom';
 
 export const MovieDetailsPage: FC = () => (
     <>
@@ -14,7 +15,7 @@ export const MovieDetailsPage: FC = () => (
         </Row>
         <MoviesSection />
       </Container>
-      <SearchButton />
+      <Link to="/"><SearchButton /></Link>
       <Footer />
     </>
   );

@@ -7,7 +7,7 @@ type RatingProps = {
 };
 
 export const Rating: FC<RatingProps> = ({ chosenMovieDetails }) => {
-  const { rating } = chosenMovieDetails;
+  const { voteAverage } = chosenMovieDetails;
 
   return (
     <div
@@ -15,7 +15,7 @@ export const Rating: FC<RatingProps> = ({ chosenMovieDetails }) => {
       className="d-flex justify-content-center align-items-center
     text-center rounded-circle border-bottom-2 border"
     >
-      {rating}
+      {voteAverage}
     </div>
   );
 };
